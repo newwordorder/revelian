@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+
+<h1 id="revelian">revelian</h1>
+
+<hr />
+
+<p>Travis build: <a href="https://travis-ci.org/understrap/understrap"><img src="https://travis-ci.org/understrap/understrap.svg?branch=master" alt="Build Status" /></a></p>
+
+<h4 id="see:officialdemohttps:understrap.comunderstrapread:officialdocspagehttps:understrap.github.io">See: <a href="https://understrap.com/understrap">Official Demo</a> | Read: <a href="https://understrap.github.io/">Official Docs Page</a></h4>
+
+<h1 id="understrapwordpressthemeframework">UnderStrap WordPress Theme Framework</h1>
+
+<p>Website: <a href="https://understrap.com">https://understrap.com</a></p>
+
+<p>Child Theme Project: <a href="https://github.com/holger1411/understrap-child">https://github.com/holger1411/understrap-child</a></p>
+
+<h2 id="about">About</h2>
+
+<p>I’m a huge fan of Underscores, Bootstrap, and Sass. Why not combine these into a solid WordPress Theme Framework?
+That’s what UnderStrap is.
+You can use it as starter theme and build your own theme on top of it. Or you use it as parent theme and create your own child theme for UnderStrap.</p>
+
+<h2 id="license">License</h2>
+
+<p>UnderStrap WordPress Theme, Copyright 2013&#8211;2017 Holger Koenemann
+UnderStrap is distributed under the terms of the GNU GPL version 2</p>
+
+<p>http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html</p>
+
+<h2 id="changelog">Changelog</h2>
+
+<p>See <a href="CHANGELOG.md">changelog</a></p>
+
+<h2 id="basicfeatures">Basic Features</h2>
+
+<ul>
+<li>Combines Underscore’s PHP/JS files and Bootstrap’s HTML/CSS/JS.</li>
+<li>Comes with Bootstrap (v4) Sass source files and additional .scss files. Nicely sorted and ready to add your own variables and customize the Bootstrap variables.</li>
+<li>Uses a single and minified CSS file for all the basic stuff.</li>
+<li><a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a> integration (v4.7.0)</li>
+<li>Jetpack ready.</li>
+<li>WooCommerce support.</li>
+<li>Contact Form 7 support.</li>
+<li><a href="https://github.com/holger1411/understrap-child">Child Theme</a> ready.</li>
+<li>Translation ready.</li>
+</ul>
+
+<h2 id="starterthemehtmlframeworkwordpressthemeframework">Starter Theme + HTML Framework = WordPress Theme Framework</h2>
+
+<p>The _s theme is a good starting point to develop a WordPress theme. But it is “just” a raw starter theme. That means it outputs all the WordPress stuff correctly but without any layout or design.
+Why not add a well known and supported layout framework to have a solid, clean and responsive foundation? That’s where Bootstrap comes in.</p>
+
+<h2 id="confusedbyallthecssandsassfiles">Confused by All the CSS and Sass Files?</h2>
+
+<p>Some basics about the Sass and CSS files that come with UnderStrap:</p>
+
+<ul>
+<li><p>The theme itself uses the <code>/style.css</code>file just to identify the theme inside of WordPress. The file is not loaded by the theme and does not include any styles.</p></li>
+<li><p>The <code>/css/theme.css</code> and its minified little brother <code>/css/theme.min.css</code> file(s) provides all styles. It is composed of five different SCSS sets and one variable file at <code>/sass/theme.scss</code>:</p>
+
+<pre><code>          - 1 &quot;theme/theme_variables&quot;;  // &lt;--------- Add your variables into this file. Also add variables to overwrite Bootstrap or UnderStrap variables here
+          - 2 &quot;../src/bootstrap-sass/assets/stylesheets/bootstrap&quot;;  // &lt;--------- All the Bootstrap stuff - Don´t edit this!
+          - 3 &quot;understrap/understrap&quot;; // &lt;--------- Some basic WordPress stylings and needed styles to combine Boostrap and Underscores
+          - 4 &quot;../src/fontawesome/scss/font-awesome&quot;; // &lt;--------- Font Awesome Icon styles
+
+          // Any additional imported files //
+          - 5 &quot;theme/theme&quot;;  // &lt;--------- Add your styles into this file
+</code></pre></li>
+<li><p>Don’t edit the files no. 2&#8211;4 files/filesets or you won’t be able to update it without overwriting your own work!</p></li>
+<li><p>Your design goes into: <code>/sass/theme</code>. Add your styles to the <code>/sass/theme/_theme.scss</code> file and your variables to the <code>/sass/theme/_theme_variables.scss</code>. Or add other .scss files into it and <code>@import</code> it into <code>/sass/theme/_theme.scss</code>.</p></li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<h3 id="classicinstall">Classic install</h3>
+
+<ul>
+<li>Download the understrap folder from GitHub or from <a href="https://understrap.com">https://understrap.com</a></li>
+<li>IMPORTANT: If you download it from GitHub make sure you rename the &#8220;understrap-master.zip&#8221; file just to &#8220;understrap.zip&#8221; or you might have problems using child themes !!</li>
+<li>Upload it into your WordPress installation subfolder here: <code>/wp-content/themes/</code></li>
+<li>Login to your WordPress backend</li>
+<li>Go to Appearance → Themes</li>
+<li>Activate the UnderStrap theme</li>
+</ul>
+
+<h3 id="npminstall">npm install</h3>
+
+<ul>
+<li>Open your terminal</li>
+<li>Change to the directory where you want to add UnderStrap</li>
+<li>Type <code>npm install understrap</code></li>
+</ul>
+
+<h3 id="wordpress.orginstall">WordPress.org install</h3>
+
+<ul>
+<li>Open your WordPress backend</li>
+<li>Click on &#8220;Appearance -&gt; Themes&#8221;</li>
+<li>Hit the &#8220;Add new&#8221; button</li>
+<li>Search for &#8220;UnderStrap&#8221;</li>
+<li>Hit the &#8220;install&#8221; button</li>
+<li>Activate the theme</li>
+</ul>
+
+<h2 id="developingwithnpmgulpandsassandbrowsersync1">Developing With npm, Gulp and SASS and [Browser Sync][1]</h2>
+
+<h3 id="installingdependencies">Installing Dependencies</h3>
+
+<ul>
+<li>Make sure you have installed Node.js and Browser-Sync* (* optional, if you wanna use it) on your computer globally</li>
+<li>Then open your terminal and browse to the location of your UnderStrap copy</li>
+<li>Run: <code>$ npm install</code></li>
+</ul>
+
+<h3 id="running">Running</h3>
+
+<p>To work and compile your Sass files on the fly start:</p>
+
+<ul>
+<li><code>$ gulp watch</code></li>
+</ul>
+
+<p>Or, to run with Browser-Sync:</p>
+
+<ul>
+<li>First change the browser-sync options to reflect your environment in the file <code>/gulpconfig.json</code> in the beginning of the file:</li>
+</ul>
+
+<pre><code class="javascript">{
+    &quot;browserSyncOptions&quot; : {
+        &quot;proxy&quot;: &quot;localhost/theme_test/&quot;, // &lt;----- CHANGE HERE
+        &quot;notify&quot;: false
+    },
+    ...
+};
+</code></pre>
+
+<ul>
+<li>then run: <code>$ gulp watch-bs</code></li>
+</ul>
+
+<h2 id="howtousethebuild-inwidgetslider">How to Use the Build-In Widget Slider</h2>
+
+<p>The front-page slider is widget driven. Simply add more than one widget to widget position “Hero”.</p>
+
+<ul>
+<li>Click on Appearance → Widgets.</li>
+<li>Add two, or more, widgets of any kind to widget area “Hero”.</li>
+<li>That’s it.</li>
+</ul>
+
+<h2 id="rtlstyles">RTL styles?</h2>
+
+<p>Just add a new file to the themes root folder called rtl.css. Add all alignments to this file according to this description:
+https://codex.wordpress.org/Right_to_Left_Language_Support</p>
+
+<h2 id="pagetemplates">Page Templates</h2>
+
+<h3 id="blanktemplate">Blank Template</h3>
+
+<p>The <code>blank.php</code> template is useful when working with various page builders and can be used as a starting blank canvas.</p>
+
+<h3 id="emptytemplate">Empty Template</h3>
+
+<p>The <code>empty.php</code> template displays a header and a footer only. A good starting point for landing pages.</p>
+
+<h3 id="fullwidthtemplate">Full Width Template</h3>
+
+<p>The <code>fullwidthpage.php</code> template has full width layout without a sidebar.</p>
+
+<p>[1] Visit <a href="http://browsersync.io">http://browsersync.io</a> for more information on Browser Sync</p>
+
+<p>Licenses &amp; Credits
+=</p>
+
+<ul>
+<li>Font Awesome: http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)</li>
+<li>Bootstrap: http://getbootstrap.com | https://github.com/twbs/bootstrap/blob/master/LICENSE (Code licensed under MIT documentation under CC BY 3.0.)
+
+and of course</li>
+<li>jQuery: https://jquery.org | (Code licensed under MIT)</li>
+<li>WP Bootstrap Navwalker by Edward McIntyre: https://github.com/twittem/wp-bootstrap-navwalker | GNU GPL</li>
+<li>Bootstrap Gallery Script based on Roots Sage Gallery: https://github.com/roots/sage/blob/5b9786b8ceecfe717db55666efe5bcf0c9e1801c/lib/gallery.php</li>
+</ul>
+
+<p><a href="https://github.com/igrigorik/ga-beacon"><img src="https://ga-beacon.appspot.com/UA-139292-31/chromeskel_a/readme" alt="Analytics" /></a></p>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>initial commit</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+
+<h1 id="revelian">revelian</h1>
+
+</body>
+</html>
+

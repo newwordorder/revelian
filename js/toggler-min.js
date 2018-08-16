@@ -1,0 +1,1 @@
+function togglerSetup(){function o(){console.log("yo")}var c=document.querySelectorAll("[data-toggle]");console.log(c),$(c).click(function(){o()})}jQuery(myFunc);

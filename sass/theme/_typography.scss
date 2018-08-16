@@ -1,0 +1,189 @@
+@font-face {
+    font-family: "Isidora Sans Bold";
+    src: url('../fonts/isidora/Isidora\ Sans\ Bold.otf');
+}
+
+@font-face{
+  font-family: "Isidora Sans SemiBold";
+  src: url('../fonts/isidora/Isidora\ Sans\ SemiBold.otf');
+}
+
+@font-face{
+  font-family: "Isidora Sans Regular";
+  src: url('../fonts/isidora/Isidora\ Sans\ Regular.otf');
+}
+
+@font-face{
+  font-family: "Isidora Sans Regular It";
+  src: url('../fonts/isidora/Isidora\ Sans\ Regular\ It.otf');
+}
+
+@font-face {
+  font-family: "Isidora Sans Light";
+  src: url('../fonts/isidora/Isidora\ Sans\ Light.otf');
+}
+
+@font-face{
+  font-family: "Font Awesome 5";
+  src: url('../fonts/fontawesome-webfont.eot');
+  src: url('../fonts/fontawesome-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../../fonts/fontawesome-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../../fonts/fontawesome-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../../fonts/fontawesome-webfont.svg') format('svg'); /* Legacy iOS */
+}
+
+$isidora-bold: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif !default;
+$isidora-semibold: "Isidora Sans SemiBold", "Helvetica Neue", Helvetica, sans-serif !default;
+$isidora-regular: "Isidora Sans Regular", "Helvetica Neue", Helvetica, sans-serif !default;
+$isidora-regular-italic: "Isidora Sans Regular It", "Helvetica Neue", Helvetica, sans-serif !default;
+$isidora-light: "Isidora Sans Light", "Helvetica Neue", Helvetica, sans-serif !default;
+
+
+
+html{
+  font-size: 16px !important;
+  line-height: 26px;
+}
+body {
+  font-family: sans-serif;
+  font-size: 1rem;
+  line-height: 1.625rem;
+  margin: auto;
+}
+h1, .h1 {
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+
+}
+h2, .h2 {
+  font-size: 2rem;
+  line-height: 2rem;
+
+}
+h3, .h3 {
+  font-size: 1.75rem;
+  line-height: 1.75rem;
+
+}
+h4, .h4 {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+
+}
+h5, .h5 {
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+}
+
+h6, .h6 {
+  font-size:1rem;
+  line-height:1.25rem;
+}
+
+.lead{
+  font-size:1.25rem;
+  line-height:1.875rem;
+}
+
+p{
+  font-size:1rem;
+  line-height:1.625rem;
+}
+
+.small{
+  font-size:0.875rem;
+  line-height:1.367rem;
+}
+
+html {
+  font-size: 1rem;
+
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p {
+  margin-bottom: 1rem;
+  color: $heading-color;
+  font-family: $isidora-light;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-family: $isidora-bold;
+  text-transform: none;
+}
+
+p {
+  color: $body-color;
+  font-family:$isidora-regular;
+}
+
+.lead {
+  color: $heading-color;
+}
+
+.page-title {
+  font-size: 5em;
+  line-height: 1em;
+}
+
+p:last-of-type {
+  margin-bottom: 0;
+}
+
+.page-title {
+  margin-bottom: 0;
+}
+
+ul {
+  font-family: $isidora-light;
+}
+
+hr {
+  &.short {
+    height: 3px;
+    width: 70px;
+    background: $primary;
+    border: none;
+  }
+}
+
+strong{
+  font-family: $isidora-bold;
+}
+
+blockquote{
+  font-family:$isidora-regular-italic;
+  font-size:1.875rem;
+  line-height:2.5rem;
+  *{
+    font-family:$isidora-regular-italic;
+    font-size:1.875rem;
+    line-height:2.5rem;
+  }
+}
+
+.headingtext{
+  font-family: $isidora-light;
+  font-size:4.5rem;
+  line-height:4.5rem;
+}
+
+#site-logo{
+  font-size:2rem;
+}
+
+#main-menu{
+  *{
+    font-size:0.875rem;
+  }
+}
