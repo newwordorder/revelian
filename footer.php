@@ -46,9 +46,7 @@ function setAppSize(app, width, height){
   app.renderer.resize(width, height);
 }
 
-
 function setImgSize(sprite, width, height, imgSize){
-	console.log(imgSize);
 
 	let aspectRatio = (width / height);
 	let imageRatio = (imgSize.width / imgSize.height);
@@ -61,7 +59,6 @@ function setImgSize(sprite, width, height, imgSize){
 		scaleFactor = width / imgSize.width;
 		sprite.height = scaleFactor * imgSize.height;
 		offsetY = (sprite.height - height) / 2;
-		console.log('offset');
 		sprite.y = 0 - offsetY;
 		sprite.x = 0;
 	}else{
@@ -76,7 +73,6 @@ function setImgSize(sprite, width, height, imgSize){
 }
 
 function onResize(app, appContainer, sprite, width, height, imgSize){
-	console.log('resize');
   width = appContainer.offsetWidth;
   height = appContainer.offsetHeight;
   setAppSize(app, width, height);
@@ -93,7 +89,6 @@ function followMouse(app, delta, speed, xp, yp, name){
 	let position = name.position;
 	const target = app.renderer.plugins.interaction.mouse.global;
 
-	console.log(xp);
   
 	xp += ((target.x - xp)/6);
 	yp += ((target.y - yp)/6);
@@ -131,24 +126,63 @@ async function loaded(appContainer){
   var speed = 0.8;
   
   let app = new PIXI.Application();
+  var slider = [];
+
 
   app.renderer.backgroundColor = 0x061639;
 
   setAppSize(app, width, height);
 
   <?php 
-			$backgroundImage_ = get_field('background_image');
-			$image_ = $backgroundImage_['background_image'];
-			$url_ = $image_['url'];
+		$backgroundImage_ = get_field('background_image');
+		$image_ = $backgroundImage_['background_image'];
+		$url_ = $image_['url'];
 
-		?>
+		$isSlider = get_field('background_image_is_slider');
+		$slider = get_field('background_image_bg_slider');
 
-  var sprite = PIXI.Sprite.fromImage('<?php echo $url_; ?>');
-  var blurFilter = new PIXI.filters.BlurFilter();
+			if($isSlider):
+				?> 
+				console.log('is a slider');
+				<?
+
+				if( have_rows('background_image_bg_slider') ):
+				
+					// loop through the rows of data
+				   while ( have_rows('background_image_bg_slider') ) : the_row();
+			   
+					   // display a sub field value
+					   $img = get_sub_field('slider_img');
+					   ?>
+						console.log('<?php echo $img['url']; ?>');
+						slider.push('<?php echo $img['url']; ?>');
+
+					   <?php 
+			   
+				   endwhile;
+			   
+			   else :
+			   
+				   // no rows found
+			   
+			   endif;
+
+			endif;
+  ?>
+
+  console.log(slider);
+
+  var texture = PIXI.Texture.fromImage('<?php echo $url_; ?>');
+
+  var sprite = new PIXI.Sprite(texture);
 		
-  var sprite__clear = PIXI.Sprite.fromImage('<?php echo $url_; ?>');
-  sprite.filters = [blurFilter];
+  var texture__clear = PIXI.Texture.fromImage('<?php echo $url_; ?>');
 
+  var sprite__clear = new PIXI.Sprite(texture__clear);
+
+  var blurFilter = new PIXI.filters.BlurFilter();
+
+  sprite.filters = [blurFilter];
 
   var size = {'width':0,'height':0};
 
@@ -168,12 +202,9 @@ async function loaded(appContainer){
 
   var imgSize = await imgpromise;
 
-  console.log(size);
 
   var imgHeight = sprite.height;
   var imgWidth = sprite.width;
-
-  console.log(imgHeight + " " + imgWidth);
 
   //Add the Sprite to the Stage
 

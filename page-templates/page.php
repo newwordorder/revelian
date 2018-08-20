@@ -123,175 +123,175 @@ if( !empty($image) ):
   }, time);
 
 
-// Percentage Increment Animation
-var PercentageID = $("#precent"),
-        start = 0,
-        end = 100,
-        durataion = time;
-        animateValue(PercentageID, start, end, durataion);
-        
-function animateValue(id, start, end, duration) {
-  
-    var range = end - start,
-      current = start,
-      increment = end > start? 1 : -1,
-      stepTime = Math.abs(Math.floor(duration / range)),
-      obj = $(id);
+  // Percentage Increment Animation
+  var PercentageID = $("#precent"),
+          start = 0,
+          end = 100,
+          durataion = time;
+          animateValue(PercentageID, start, end, durataion);
+          
+  function animateValue(id, start, end, duration) {
     
-    var timer = setInterval(function() {
-        current += increment;
-        $(obj).text(current + "%");
-      //obj.innerHTML = current;
-        if (current == end) {
-            clearInterval(timer);
-        }
-    }, stepTime);
-}
+      var range = end - start,
+        current = start,
+        increment = end > start? 1 : -1,
+        stepTime = Math.abs(Math.floor(duration / range)),
+        obj = $(id);
+      
+      var timer = setInterval(function() {
+          current += increment;
+          $(obj).text(current + "%");
+        //obj.innerHTML = current;
+          if (current == end) {
+              clearInterval(timer);
+          }
+      }, stepTime);
+  }
 
-// Fading Out Loadbar on Finised
-setTimeout(function(){
-  $('.preloader-wrap').fadeOut(300);
-  animateIn();
-}, time);
+  // Fading Out Loadbar on Finised
+  setTimeout(function(){
+    $('.preloader-wrap').fadeOut(300);
+    animateIn();
+  }, time);
 
-function animateIn(){
+  function animateIn(){
 
-    let masterTimeline = new TimelineMax();
+      let masterTimeline = new TimelineMax();
 
-    const t1 = new TimelineMax();
+      const t1 = new TimelineMax();
 
-    let t2 = new TimelineMax();
+      let t2 = new TimelineMax();
 
-    t1Setup(t1);
+      t1Setup(t1);
 
-    t2Setup(t2);
-
-
-    masterTimeline.add(t1);
-    masterTimeline.add(t2, '-=0.6');
-
-};
-
-function t1Setup(t1){
-
-    t1
-
-    .set('.navbar__navigation',{
-      opacity:0,
-    })
-
-    .set('.page-header',{
-      backgroundColor:'#000'
-    })
+      t2Setup(t2);
 
 
-    .set('.dropdown',{
-      opacity:0,
-    })
+      masterTimeline.add(t1);
+      masterTimeline.add(t2, '-=0.6');
 
-    .set('#site-logo',{
-      opacity:0,
-    })
+  };
 
+  function t1Setup(t1){
 
-    .to('#site-logo',0.6,{
-      opacity:1,
-    },)
+      t1
 
-    .to('.navbar__navigation',0.6,{
-      opacity:1,
-    },'-=0.6')
+      .set('.navbar__navigation',{
+        opacity:0,
+      })
 
-    .to('.navbar__upper', 0.6,{
-      opacity:1,
-    }, '-=0.6')
-
-    .to('.dropdown',0.6,{
-      opacity:1,
-    },'-=0.6')
-
-}
-
-function t2Setup(t2){
+      .set('.page-header',{
+        backgroundColor:'#000'
+      })
 
 
-    t2.set('.line-container--before',{
-      opacity:0,
-      height:0,
-    })
-    
-    .set('.line-container--after',{
-      opacity:0,
-      height:0,
-      bottom:120,
-    })
+      .set('.dropdown',{
+        opacity:0,
+      })
 
-    .set('canvas', {
-      opacity:0,
-    })
-
-    .set('h4',{
-      opacity:0,
-    })
-
-    .set('.headingtext',{
-      opacity:0,
-    })
-
-    .set('.zoomimg', {
-      opacity:0,
-    })
-
-    .set('.bg--none',{
-      backgroundColor:'#000',
-    })
-
-    .set('.fa-arrow-down',{
-      opacity:0,
-      bottom:'80px'
-    })
-
-    .to('h4',0.6, {
-      opacity:1,
-      ease: Power1.easeInOut
-    })
-
-    .to('.headingtext',0.6,{
-      opacity:1,
-      ease: Power1.easeInOut
-    },"-=0.6")
+      .set('#site-logo',{
+        opacity:0,
+      })
 
 
-    .to('.line-container--before',0.3,{
-      opacity:1,
-      height:140,
-      ease: Power1.easeInOut
-    },'-=0.4')
+      .to('#site-logo',0.6,{
+        opacity:1,
+      },)
 
-     .to('.line-container--after',0.3,{
-      opacity:1,
-      height:140,
-      ease: Power1.easeInOut,
-      bottom:'-20px',
-    }, '-=0.3')
+      .to('.navbar__navigation',0.6,{
+        opacity:1,
+      },'-=0.6')
 
-    .to('.fa-arrow-down',0.3,{
-      opacity:1,
-      bottom:'40px'
-    }, '-=0.1')
+      .to('.navbar__upper', 0.6,{
+        opacity:1,
+      }, '-=0.6')
+
+      .to('.dropdown',0.6,{
+        opacity:1,
+      },'-=0.6')
+
+  }
+
+  function t2Setup(t2){
 
 
-    .to('canvas',1.2, {
-      opacity:1,
-      ease: Power1.easeInOut
-    }, '-=0.3')
+      t2.set('.line-container--before',{
+        opacity:0,
+        height:0,
+      })
+      
+      .set('.line-container--after',{
+        opacity:0,
+        height:0,
+        bottom:120,
+      })
 
-    .to('.zoomimg', 0.8, {
-      opacity:1,
-      ease:Power1.easeInOut,
-    },"-=0.8")
+      .set('canvas', {
+        opacity:0,
+      })
 
-}
+      .set('h4',{
+        opacity:0,
+      })
+
+      .set('.headingtext',{
+        opacity:0,
+      })
+
+      .set('.zoomimg', {
+        opacity:0,
+      })
+
+      .set('.bg--none',{
+        backgroundColor:'#000',
+      })
+
+      .set('.fa-arrow-down',{
+        opacity:0,
+        bottom:'80px'
+      })
+
+      .to('h4',0.6, {
+        opacity:1,
+        ease: Power1.easeInOut
+      })
+
+      .to('.headingtext',0.6,{
+        opacity:1,
+        ease: Power1.easeInOut
+      },"-=0.6")
+
+
+      .to('.line-container--before',0.3,{
+        opacity:1,
+        height:140,
+        ease: Power1.easeInOut
+      },'-=0.4')
+
+      .to('.line-container--after',0.3,{
+        opacity:1,
+        height:140,
+        ease: Power1.easeInOut,
+        bottom:'-20px',
+      }, '-=0.3')
+
+      .to('.fa-arrow-down',0.3,{
+        opacity:1,
+        bottom:'40px'
+      }, '-=0.1')
+
+
+      .to('canvas',1.2, {
+        opacity:1,
+        ease: Power1.easeInOut
+      }, '-=0.3')
+
+      .to('.zoomimg', 0.8, {
+        opacity:1,
+        ease:Power1.easeInOut,
+      },"-=0.8")
+
+  }
 
 </script>
 
