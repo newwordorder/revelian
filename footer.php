@@ -129,7 +129,7 @@ async function loaded(appContainer){
   var slider = [];
   var activeImg = 0;
 
-  app.renderer.backgroundColor = 0x061639;
+  app.renderer.backgroundColor = 0x000000;
 
   setAppSize(app, width, height);
 
@@ -143,7 +143,6 @@ async function loaded(appContainer){
 
 			if($isSlider):
 				?> 
-				console.log('is a slider');
 				<?
 
 				if( have_rows('background_image_bg_slider') ):
@@ -154,7 +153,6 @@ async function loaded(appContainer){
 					   // display a sub field value
 					   $img = get_sub_field('slider_img');
 					   ?>
-						console.log('<?php echo $img['url']; ?>');
 						slider.push('<?php echo $img['url']; ?>');
 
 					   <?php 
@@ -171,22 +169,30 @@ async function loaded(appContainer){
   ?>
 
 
-  console.log(slider);
-
   if(slider.length > 0){
 	  var texture = [];
 	  var texture__clear = [];
 	  for(i = 0; i < slider.length; i++){
 		texture[i] = PIXI.Texture.fromImage(slider[i]);
 		texture__clear[i] = PIXI.Texture.fromImage(slider[i]);
-		console.log(texture[i]);
-
 	  }
 
 	  var sprite = new PIXI.Sprite(texture[activeImg]);
-		
+
+	  for(i = 0; i < slider.length; i++){
+		sprite.texture = texture[i];
+		}
+
+		sprite.texture = texture[activeImg];
+
 	  var sprite__clear = new PIXI.Sprite(texture__clear[activeImg]);
-		  
+
+	   for(i = 0; i < slider.length; i++){
+		sprite__clear.texture = texture[i];
+		}
+
+		sprite__clear.texture = texture[activeImg];
+
 	  var blurFilter = new PIXI.filters.BlurFilter();
 		  
 	  sprite.filters = [blurFilter];
@@ -246,14 +252,23 @@ async function loaded(appContainer){
 	if(activeImg < (slider.length - 1)){
 		activeImg += 1;
   	}else{
-		  activeImg = 0;
-	  }
-	  imgSize = await imgpromise(slider[activeImg]);
-	  sprite.texture = texture[activeImg];
-	  sprite__clear.texture = texture[activeImg];
-	  setAppSize(app, width, height);
-	  setImgSize(sprite, width, height, size);
-  	  setImgSize(sprite__clear, width, height, size);
+		activeImg = 0;
+	}
+	imgSize = await imgpromise(slider[activeImg]);
+
+	tween = TweenMax.to(sprite ,0.6, {alpha:0})
+	tween2 = TweenMax.to(sprite__clear ,0.6, {alpha:0})
+	
+	window.setTimeout( function swap(){
+		sprite.texture = texture[activeImg];
+		sprite__clear.texture = texture[activeImg];
+		setAppSize(app, width, height);
+		setImgSize(sprite, width, height, size);
+		setImgSize(sprite__clear, width, height, size);
+		tween3 = TweenMax.to(sprite ,0.6, {alpha:1}).delay(0.6);
+	  	tween4 = TweenMax.to(sprite__clear ,0.6, {alpha:1}).delay(0.6);
+
+	}, 600);
   }
   
 
@@ -312,7 +327,7 @@ async function loaded(appContainer){
 	window.setInterval(function(){
 	/// call your function here
 		changeImage();
-	}, 7500)
+	}, 10000)
   , 3000);
 }
 
