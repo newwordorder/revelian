@@ -17487,7 +17487,7 @@ canvas {
     .zoomimg:hover > .background-image-holder,
     .zoomimg:hover > img:only-child {
       background-position: 25% 25% !important;
-      transition: 2s ease;
+      transition: 1.2s ease;
       transform: scale(2.2); }
     .zoomimg:hover .overlay {
       position: absolute;
@@ -17497,12 +17497,12 @@ canvas {
       background-color: #000;
       opacity: 0.6;
       pointer-events: none;
-      transition: 2s ease;
+      transition: 1.2s ease;
       z-index: 1 !important; }
   .zoomimg > .background-image-holder,
   .zoomimg > img:only-child {
     background-position: 25% 25% !important;
-    transition: 2s ease;
+    transition: 1.2s ease;
     transform: scale(2); }
   .zoomimg .overlay {
     position: absolute;
@@ -17512,7 +17512,7 @@ canvas {
     background-color: #000;
     opacity: 0.4;
     pointer-events: none;
-    transition: 2s ease;
+    transition: 1.2s ease;
     z-index: 1 !important; }
 
 .text * {

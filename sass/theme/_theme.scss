@@ -697,7 +697,7 @@ canvas{
     & > .background-image-holder,
     & > img:only-child {
       background-position: 25% 25% !important;
-      transition: 2s ease;
+      transition: 1.2s ease;
       transform: scale(2.2);
     }
     .overlay{
@@ -708,7 +708,7 @@ canvas{
       background-color:#000;
       opacity:0.6;
       pointer-events: none;
-      transition: 2s ease;
+      transition: 1.2s ease;
       z-index:1 !important;
     }
   }
@@ -717,7 +717,7 @@ canvas{
   & > .background-image-holder,
     & > img:only-child {
       background-position: 25% 25% !important;
-      transition: 2s ease;
+      transition: 1.2s ease;
       transform: scale(2);
     }
     .overlay{
@@ -728,7 +728,7 @@ canvas{
       background-color:#000;
       opacity:0.4;
       pointer-events: none;
-      transition: 2s ease;
+      transition: 1.2s ease;
       z-index:1 !important;
 
     } 
