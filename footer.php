@@ -48,6 +48,7 @@ function setAppSize(app, width, height){
 
 function setImgSize(sprite, width, height, imgSize){
 
+
 	let aspectRatio = (width / height);
 	let imageRatio = (imgSize.width / imgSize.height);
 	let scaleFactor;
@@ -57,7 +58,7 @@ function setImgSize(sprite, width, height, imgSize){
 	if(aspectRatio > imageRatio){
 		sprite.width = width;
 		scaleFactor = width / imgSize.width;
-		sprite.height = scaleFactor * imgSize.height;
+		sprite.height = (scaleFactor * imgSize.height);
 		offsetY = (sprite.height - height) / 2;
 		sprite.y = 0 - offsetY;
 		sprite.x = 0;
@@ -178,24 +179,15 @@ async function loaded(appContainer){
 	  }
 
 	  var sprite = new PIXI.Sprite(texture[activeImg]);
-
-	  for(i = 0; i < slider.length; i++){
-		sprite.texture = texture[i];
-		}
-
-		sprite.texture = texture[activeImg];
+	  var sprite__2 = new PIXI.Sprite(texture[(activeImg + 1)]);
 
 	  var sprite__clear = new PIXI.Sprite(texture__clear[activeImg]);
-
-	   for(i = 0; i < slider.length; i++){
-		sprite__clear.texture = texture[i];
-		}
-
-		sprite__clear.texture = texture[activeImg];
+	  var sprite__2__clear = new PIXI.Sprite(texture__clear[(activeImg + 1)]);
 
 	  var blurFilter = new PIXI.filters.BlurFilter();
 		  
 	  sprite.filters = [blurFilter];
+	  sprite__2.filters = [blurFilter];
 
   }else{
 	var texture = PIXI.Texture.fromImage('<?php echo $url_; ?>');
@@ -239,14 +231,36 @@ async function loaded(appContainer){
   var imgHeight = sprite.height;
   var imgWidth = sprite.width;
 
+
+ 
+
+
   //Add the Sprite to the Stage
+
+ app.stage.addChild(sprite__2);
+  app.stage.addChild(sprite__2__clear);
+
 
   app.stage.addChild(sprite);
   app.stage.addChild(sprite__clear);
+ 
+
+   sprite.zOrder = 1;
+  sprite__clear.zOrder = 1;
+
+     sprite__2.zOrder = 20;
+  	sprite__2__clear.zOrder = 20;
+
+  sprite__2.alpha = 1;
+  sprite__2__clear.alpha = 1;
 
 
   setImgSize(sprite, width, height, size);
   setImgSize(sprite__clear, width, height, size);
+
+  setImgSize(sprite__2, width, height, size);
+  setImgSize(sprite__2__clear, width, height, size);
+
 
   async function changeImage(){
 	if(activeImg < (slider.length - 1)){
@@ -254,21 +268,32 @@ async function loaded(appContainer){
   	}else{
 		activeImg = 0;
 	}
-	imgSize = await imgpromise(slider[activeImg]);
 
-	tween = TweenMax.to(sprite ,0.6, {alpha:0})
-	tween2 = TweenMax.to(sprite__clear ,0.6, {alpha:0})
+	imgSize = await imgpromise(slider[activeImg]);
+	sprite__2.texture = texture[activeImg];
+	sprite__2__clear.texture = texture[activeImg];
+	setImgSize(sprite__2, width, height, size);
+ 	setImgSize(sprite__2__clear, width, height, size);	
+
+	tween = TweenMax.to(sprite ,1.2, {alpha:0})
+	tween2 = TweenMax.to(sprite__clear ,1.2, {alpha:0})
 	
-	window.setTimeout( function swap(){
+	tween3 = TweenMax.to(sprite__2 ,1.2, {alpha:1});
+	tween4 = TweenMax.to(sprite__2__clear ,1.2, {alpha:1});
+
+	setTimeout(async()=> {
 		sprite.texture = texture[activeImg];
 		sprite__clear.texture = texture[activeImg];
-		setAppSize(app, width, height);
+		imgSize = await imgpromise(slider[activeImg]);
 		setImgSize(sprite, width, height, size);
-		setImgSize(sprite__clear, width, height, size);
-		tween3 = TweenMax.to(sprite ,0.6, {alpha:1}).delay(0.6);
-	  	tween4 = TweenMax.to(sprite__clear ,0.6, {alpha:1}).delay(0.6);
+ 		setImgSize(sprite__clear, width, height, size);	
+		sprite.alpha = 1;
+		sprite__clear. alpha = 1;
+		sprite__2.alpha = 0;
+		sprite__2__clear.alpha = 0;
 
-	}, 600);
+	},1600);
+	
   }
   
 
@@ -286,10 +311,14 @@ async function loaded(appContainer){
 
   app.stage.addChild(circle);
   sprite__clear.mask = circle;
+  sprite__2__clear.mask = circle;
+
 
   window.addEventListener('resize', function(){
 	  onResize(app, appContainer, sprite, width, height, size);
 	  onResize(app, appContainer, sprite__clear, width, height, size);
+	  onResize(app, appContainer, sprite__2, width, height, size);
+	  onResize(app, appContainer, sprite__2__clear, width, height, size);
 
   }, true);
 
