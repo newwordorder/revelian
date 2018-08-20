@@ -127,7 +127,7 @@ async function loaded(appContainer){
   
   let app = new PIXI.Application();
   var slider = [];
-
+  var activeImg = 0;
 
   app.renderer.backgroundColor = 0x061639;
 
@@ -170,25 +170,48 @@ async function loaded(appContainer){
 			endif;
   ?>
 
+
   console.log(slider);
 
-  var texture = PIXI.Texture.fromImage('<?php echo $url_; ?>');
+  if(slider.length > 0){
+	  var texture = [];
+	  var texture__clear = [];
+	  for(i = 0; i < slider.length; i++){
+		texture[i] = PIXI.Texture.fromImage(slider[i]);
+		texture__clear[i] = PIXI.Texture.fromImage(slider[i]);
+		console.log(texture[i]);
 
-  var sprite = new PIXI.Sprite(texture);
+	  }
+
+	  var sprite = new PIXI.Sprite(texture[activeImg]);
 		
-  var texture__clear = PIXI.Texture.fromImage('<?php echo $url_; ?>');
+	  var sprite__clear = new PIXI.Sprite(texture__clear[activeImg]);
+		  
+	  var blurFilter = new PIXI.filters.BlurFilter();
+		  
+	  sprite.filters = [blurFilter];
 
-  var sprite__clear = new PIXI.Sprite(texture__clear);
+  }else{
+	var texture = PIXI.Texture.fromImage('<?php echo $url_; ?>');
+	var texture__clear = PIXI.Texture.fromImage('<?php echo $url_; ?>');
 
-  var blurFilter = new PIXI.filters.BlurFilter();
+	var sprite = new PIXI.Sprite(texture);
+		
+	var sprite__clear = new PIXI.Sprite(texture__clear);
+	  
+	var blurFilter = new PIXI.filters.BlurFilter();
+	  
+	sprite.filters = [blurFilter];
+	  
 
-  sprite.filters = [blurFilter];
+  }
 
   var size = {'width':0,'height':0};
 
-  var imgpromise = new Promise( async function(resolve,reject) {
+  var imgpromise = function (url) {
+  	return new Promise( async function(resolve,reject) {
 	  var newimage = new Image();
-	  newimage.src = '<?php echo $url_; ?>'; 
+	  newimage.src = url; 
 	  newimage.onload = async function(){
 		  let promise = new Promise((resolve, reject) => {
 			  size.width = this.naturalWidth;
@@ -199,9 +222,13 @@ async function loaded(appContainer){
 		  resolve();
 		  }
 	  });
+  }
 
-  var imgSize = await imgpromise;
-
+  if(slider.length > 0){
+		var imgSize = await imgpromise(slider[activeImg]);
+  }else{
+	  var imgSize = await imgpromise('<?php echo $url_; ?>');
+  }
 
   var imgHeight = sprite.height;
   var imgWidth = sprite.width;
@@ -215,6 +242,19 @@ async function loaded(appContainer){
   setImgSize(sprite, width, height, size);
   setImgSize(sprite__clear, width, height, size);
 
+  async function changeImage(){
+	if(activeImg < (slider.length - 1)){
+		activeImg += 1;
+  	}else{
+		  activeImg = 0;
+	  }
+	  imgSize = await imgpromise(slider[activeImg]);
+	  sprite.texture = texture[activeImg];
+	  sprite__clear.texture = texture[activeImg];
+	  setAppSize(app, width, height);
+	  setImgSize(sprite, width, height, size);
+  	  setImgSize(sprite__clear, width, height, size);
+  }
   
 
   var circle = new PIXI.Graphics();
@@ -230,8 +270,7 @@ async function loaded(appContainer){
 
 
   app.stage.addChild(circle);
- sprite__clear.mask = circle;
-	//sprite.mask = circle;
+  sprite__clear.mask = circle;
 
   window.addEventListener('resize', function(){
 	  onResize(app, appContainer, sprite, width, height, size);
@@ -269,7 +308,15 @@ async function loaded(appContainer){
   
   appContainer.appendChild(app.view);
 
+  window.setTimeout(
+	window.setInterval(function(){
+	/// call your function here
+		changeImage();
+	}, 7500)
+  , 3000);
 }
+
+
 
   
 </script>
