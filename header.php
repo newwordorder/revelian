@@ -44,8 +44,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 						</a>
 
 						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-							<a class="dropdown-item" href="#">I am an employer</a>
-							<a class="dropdown-item" href="#">I am an employee</a>
+							<a class="dropdown-item" href="<?php echo network_home_url(); ?>/employer/">I am an employer</a>
+							<a class="dropdown-item" href="<?php echo network_home_url(); ?>/jobseeker/">I am a jobseeker</a>
 						</div>
 					</div>
 
@@ -66,7 +66,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<div class="container navbar--container" >
 				<div class="navbar__inner">
 					<div class="navbar__inner--after"></div>
-				<a href="<?php echo get_home_url(); ?>" id="site-logo" class="navbar-brand">
+				<a href="<?php echo network_home_url(); ?>" id="site-logo" class="navbar-brand">
 					Revelian
 				</a>
 
