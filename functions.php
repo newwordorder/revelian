@@ -69,3 +69,5 @@ require get_template_directory() . '/inc/woocommerce.php';
  * Load Editor functions.
  */
 require get_template_directory() . '/inc/editor.php';
+
+require get_template_directory() . '/inc/acf-options.php';

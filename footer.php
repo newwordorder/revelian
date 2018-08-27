@@ -359,14 +359,21 @@ async function loaded(appContainer){
 	}, 10000)
   , 3000);
 }
-
-
-
   
 </script>
 <?php endif; ?>
 
 <script>
+
+		console.log('yo')
+	var menuItems = document.getElementsByClassName('menu-item');
+	
+	for(i = 0; i < menuItems.length; i++){
+		menuItems[i].addEventListener("click", () => {
+			document.getElementById('dropdown').toggleClass('active');
+		});
+	};
+
 	AOS.init();
 
 	var toggler = document.querySelector('[data-toggle="menu"]');

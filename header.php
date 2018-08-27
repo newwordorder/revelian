@@ -65,7 +65,63 @@ $container = get_theme_mod( 'understrap_container_type' );
 			</div>
 			<div class="container navbar--container" >
 				<div class="navbar__inner">
-					<div class="navbar__inner--after"></div>
+				  <div class="navbar__inner--after"></div>
+				  <section class='navbar__mega space--md' id="dropdown">
+					  <div class="navbar__mega--inner container">
+						  <div class="row">
+						  <div class="col-md-5 offset-md-1">
+							  <?php echo the_field('test', 'header'); ?>
+						  </div>
+						  <div class="col-md-5">
+							  <div class="row">
+						  <?php
+
+							// check if the repeater field has rows of data
+							if( have_rows('menus', 'header') ):
+								$number_of_menus = get_field('number_of_menus','header');
+								if($number_of_menus){
+								$colsize = 12 /  $number_of_menus;
+								}
+								// loop through the rows of data
+								while ( have_rows('menus', 'header') ) : the_row();
+								?>
+								<div class="col-md-<?php echo $colsize; ?>">
+								<?php if(have_rows('sub_menu', 'header')):
+
+									while( have_rows('sub_menu', 'header')): the_row();
+									
+									$link = get_sub_field('link');
+									if(get_sub_field('menu_title')):
+									?>
+									<li><a href="<?php echo $link['url']; ?>" class="mega_menu_title small"><?php echo $link['title']; ?></a></li>
+									<?
+									else:
+									?>
+									<li><a href="<?php echo $link['url']; ?>" class="mega_menu_link small"><?php echo $link['title']; ?></a></li>
+									<?
+									endif;
+									endwhile;
+
+								endif; 
+								?>
+								</div>
+								<?	
+								endwhile;
+
+							else :
+
+								// no rows found
+
+							endif;
+
+							?>
+							</div>
+						  </div>
+				</div>
+					  </div>
+				</section>
+				    
+			
 				<a href="<?php echo network_home_url(); ?>" id="site-logo" class="navbar-brand">
 					Revelian
 				</a>
@@ -82,6 +138,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							'walker'          => new understrap_WP_Bootstrap_Navwalker(),
 						)
 					); ?>
+
 					<div class="toggler-container">
 						<button class="navbar-toggler" data-toggle="menu">
 						<a href="#" class="burger-click">

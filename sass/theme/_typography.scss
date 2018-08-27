@@ -111,13 +111,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, li {
   margin-bottom: 1rem;
   color: $heading-color;
   font-family: $isidora-light;
 }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, li {
   font-family: $isidora-bold;
   text-transform: none;
 }
