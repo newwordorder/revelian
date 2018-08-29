@@ -16986,7 +16986,7 @@ header {
   background-color: #fff;
   top: calc(100% - 1px);
   overflow: hidden;
-  height: 2px;
+  height: 0px;
   padding: 0 !important; }
   .navbar__mega.active--inner {
     position: relative; }
