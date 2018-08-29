@@ -360,19 +360,103 @@ async function loaded(appContainer){
   , 3000);
 }
   
-</script>
 <?php endif; ?>
+</script>
 
 <script>
+	var tl = new TimelineLite();
 
-		console.log('yo')
 	var menuItems = document.getElementsByClassName('menu-item');
 	
 	for(i = 0; i < menuItems.length; i++){
-		menuItems[i].addEventListener("click", () => {
-			document.getElementById('dropdown').toggleClass('active');
+		menuItems[i].addEventListener("click", (e) => {
+			e.preventDefault();
+			var mega_menu = document.querySelectorAll('.mega_menu');
+			for(i=0; i < mega_menu.length; i++){
+				//mega_menu[i].classList.remove('active');
+				tl.to(mega_menu[i], 0.3, { 
+						top:20,
+						opacity:0,
+						zIndex:'-1',
+						display:'',
+						width:'100%',
+						height:'100%',
+						padding:50,
+
+				});
+			}
+
+			//document.getElementById('dropdown').classList.add('active');
+			var menu = document.querySelector('[data-menu=' + e.target.title + ']');
+			var line = document.querySelector('.navbar__mega--line');
+
+			tl.to(line, 0.3, {
+				width:'100%',
+				left:0,
+				x:'0:'
+			}, '-=0.3');
+
+			if(e.target.title != null){
+				if(menu != null){
+					tl.to(menu, 0.3, { 
+						top:0,
+						opacity:1,
+						zIndex:2,
+						display:'flex',
+						width:'100%',
+						padding:50,
+						height:'100%'
+						},'-=0.2');
+				}
+			}
+			tl.add(() => {
+			tl.to(document.getElementById('dropdown'), 0.3, {
+				height: menu.offsetHeight,
+    			borderTop:'2px solid #fff',
+    			webkitBoxShadow:' 0px 0px 33px 1px rgba(0,0,0,0.2)',
+    			mozBoxShadow: '0px 0px 33px 1px rgba(0,0,0,0.2)',
+    			boxShadow:'0px 0px 33px 1px rgba(0,0,0,0.2)',
+			},'-=0.1')
+		})
+			
+
 		});
+
 	};
+
+	document.addEventListener("click",(e) => {
+		if(e.target.classList.contains('nav-link') || document.getElementById('dropdown').contains(e.target)){
+
+		}else{
+			//document.getElementById('dropdown').classList.remove('active');
+		
+			var menu = document.querySelectorAll('.mega_menu');
+			console.log(menu);
+			for(i=0; i < menu.length; i++){
+				tl.to(menu[i], 0.3, { 
+						top:20,
+						opacity:0,
+						display:'none',
+						zIndex:-2,
+						width:'100%'
+						});
+			}
+
+				tl.to(document.getElementById('dropdown'), 0.3, {
+				height:0,
+    			borderTop:'0px solid #fff',
+    			webkitBoxShadow:' none',
+    			mozBoxShadow: 'none',
+    			boxShadow:'none',
+				},'-=0.3')
+
+				tl.to(document.querySelector('.navbar__mega--line'), 0.3, {
+				width:'0%',
+				left:'50%',
+				x:'0%'
+			},'-=0.2');
+		}
+	});
 
 	AOS.init();
 

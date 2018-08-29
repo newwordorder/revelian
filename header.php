@@ -68,14 +68,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 				  <div class="navbar__inner--after"></div>
 				  <section class='navbar__mega space--md' id="dropdown">
 					  <div class="navbar__mega--inner container">
-						  <div class="row">
+						  <?php if( have_rows('mega_menus', 'header') ):
+								while ( have_rows('mega_menus', 'header') ) : the_row(); ?>
+							<div class="row mega_menu" data-menu="<?php echo get_sub_field('parent'); ?>">
+
+
 						  <div class="col-md-5 offset-md-1">
-							  <?php echo the_field('test', 'header'); ?>
+							  <?php echo get_sub_field('content', 'header'); ?>
 						  </div>
 						  <div class="col-md-5">
 							  <div class="row">
 						  <?php
-
 							// check if the repeater field has rows of data
 							if( have_rows('menus', 'header') ):
 								$number_of_menus = get_field('number_of_menus','header');
@@ -117,9 +120,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 							?>
 							</div>
 						  </div>
-				</div>
+						  </div>
+
+						<?php endwhile;
+						endif; ?>
 					  </div>
 				</section>
+				<div class="navbar__mega--line"></div>
 				    
 			
 				<a href="<?php echo network_home_url(); ?>" id="site-logo" class="navbar-brand">
