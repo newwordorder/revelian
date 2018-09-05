@@ -231,10 +231,6 @@ async function loaded(appContainer){
   var imgHeight = sprite.height;
   var imgWidth = sprite.width;
 
-
- 
-
-
   //Add the Sprite to the Stage
 
  app.stage.addChild(sprite__2);
@@ -467,12 +463,17 @@ async function loaded(appContainer){
 		var classList = document.getElementById('expanding-nav').classList;
 		if(classList.contains('active-menu')){
 			classList.remove('active-menu')
+			document.querySelector('#page').style.display = 'block';
+
 			$('.burger__container').toggleClass('active');
 		}else{
 			classList.add('active-menu');
+			document.querySelector('#page').style.display ='none';
 			$('.burger__container').toggleClass('active');
 		}
 	}
+
+
 		
 </script>
 

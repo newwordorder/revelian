@@ -16756,7 +16756,7 @@ blockquote {
       color: rgba(255, 255, 255, 0.7); }
   @media (max-width: 767.98px) {
     .navbar {
-      position: fixed;
+      position: relative;
       background-color: #101010;
       height: 60px; } }
 
@@ -16789,6 +16789,9 @@ blockquote {
     display: block;
     position: absolute;
     bottom: 0; }
+    @media (max-width: 767.98px) {
+      .navbar__inner--after {
+        height: 0px; } }
 
 .navbar__navigation {
   display: flex;
@@ -16895,9 +16898,11 @@ blockquote {
       display: block; } }
 
 .mobile-nav {
-  display: none; }
+  display: none;
+  transition: 300ms ease-in-out; }
   @media (max-width: 768px) {
     .mobile-nav {
+      display: block;
       position: absolute;
       top: 0;
       left: 0;
@@ -16905,14 +16910,15 @@ blockquote {
       bottom: 0;
       background-color: #000;
       z-index: 1000;
-      height: 100%;
+      height: 0%;
       opacity: 0; } }
 
 .active-menu {
   height: 100%;
   transform: translateX(0%);
   opacity: 1;
-  position: fixed; }
+  position: fixed;
+  display: block; }
 
 header {
   font-size: 5rem;
@@ -16960,8 +16966,10 @@ header {
       .navbar--container .navbar-toggler .burger {
         padding: 0 10px; }
     .navbar--container a {
-      line-height: 50px;
-      height: 60px; } }
+      text-decoration: none; }
+      .navbar--container a#site-logo {
+        line-height: 50px;
+        height: 60px; } }
 
 #mobile {
   position: absolute;
