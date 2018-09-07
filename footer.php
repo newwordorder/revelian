@@ -474,7 +474,9 @@ async function loaded(appContainer){
 	}
 
 
-		
+		window.FontAwesomeConfig = {
+    searchPseudoElements: true
+  }
 </script>
 
 </body>
