@@ -362,7 +362,7 @@ async function loaded(appContainer){
 <script>
 	var tl = new TimelineLite();
 
-	var menuItems = document.getElementsByClassName('menu-item');
+	var menuItems = document.querySelector('#main-menu').children;
 	
 	for(i = 0; i < menuItems.length; i++){
 		menuItems[i].addEventListener("click", (e) => {

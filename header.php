@@ -112,9 +112,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 								endwhile;
 
 							else :
-
 								// no rows found
-
 							endif;
 
 							?>
