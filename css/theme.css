@@ -16744,6 +16744,14 @@ li.p1 {
     content: '\2022';
     padding: 0px 15px; }
 
+blockquote {
+  border-left: 4px solid #ef0d33;
+  padding-left: 15px; }
+  blockquote strong {
+    font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif !important;
+    font-size: 1rem !important;
+    color: black !important; }
+
 .navbar {
   position: absolute;
   background: transparent;
