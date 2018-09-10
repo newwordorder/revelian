@@ -16736,6 +16736,14 @@ blockquote {
 #main-menu * {
   font-size: 0.875rem; }
 
+li.p1 {
+  font-family: "Isidora Sans Light", "Helvetica Neue", Helvetica, sans-serif;
+  list-style-type: none;
+  line-height: 1rem; }
+  li.p1:before {
+    content: '\2022';
+    padding: 0px 15px; }
+
 .navbar {
   position: absolute;
   background: transparent;
@@ -17703,6 +17711,9 @@ canvas {
   stroke-dasharray: 900;
   stroke-dashoffset: 900;
   opacity: 0; }
+
+.leftborder {
+  border-left: 4px solid #ef0d33; }
 
 /*
 * Use existing Bootstrap 4 classes and

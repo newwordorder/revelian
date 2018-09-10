@@ -427,7 +427,6 @@ async function loaded(appContainer){
 			//document.getElementById('dropdown').classList.remove('active');
 		
 			var menu = document.querySelectorAll('.mega_menu');
-			console.log(menu);
 			for(i=0; i < menu.length; i++){
 				tl.to(menu[i], 0.3, { 
 						top:20,
