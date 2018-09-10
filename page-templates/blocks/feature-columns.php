@@ -41,7 +41,7 @@ if( get_row_layout() == 'feature_columns' ):
                   $height = $image['sizes'][ $size . '-height' ];
 
                   ?>
-                  <img class="rounded feature-column__image" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                  <img class="feature-column__image" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
                   <?php if( $boxed == 'yes' ): ?><div class="feature-column--boxed__inner"><?php endif; ?>
                 <?php endif; ?>
               <?php endif; ?>
@@ -89,7 +89,7 @@ if( get_row_layout() == 'feature_columns' ):
                   $height = $image['sizes'][ $size . '-height' ];
 
                   ?>
-                  <img class="rounded feature-column__image" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                  <img class="feature-column__image" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
                   <?php if( $boxed == 'yes' ): ?><div class="feature-column--boxed__inner"><?php endif; ?>
                 <?php endif; ?>
               <?php endif; ?>

@@ -37,7 +37,7 @@ $highlightLine = get_sub_field('highlight_line');
                 $alt = $image['alt'];
 
                ?>
-                <img class="rounded" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                <img class="" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
               <?php endif; //end $image ?>
 
             <?php endif; //end $media ?>
@@ -48,8 +48,8 @@ $highlightLine = get_sub_field('highlight_line');
 
             <?php if( $media == 'video' ): ?>
 
-              <div class="video-cover rounded">
-              	<div class="background-image-holder rounded">
+              <div class="video-cover ">
+              	<div class="background-image-holder ">
                   <?php if( !empty($videoCoverImage) ):
 
                     // vars
@@ -57,11 +57,11 @@ $highlightLine = get_sub_field('highlight_line');
                     $alt = $videoCoverImage['alt'];
 
                    ?>
-                    <img class="rounded" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                    <img class="" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
                   <?php endif; //end $image ?>
               	</div>
               	<div class="video-play-icon video-play-icon--sm"></div>
-                <div class="embed-container rounded">
+                <div class="embed-container ">
               	   <?php echo $videoEmbedCode; ?>
                 </div>
               </div><!--end video cover-->
