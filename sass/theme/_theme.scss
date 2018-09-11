@@ -841,3 +841,15 @@ canvas{
   width:auto;
   display:block;
 }
+
+.feature-column__image{
+  @media (max-width: 768px) {
+    width:100%;
+  }
+}
+
+.col-sm-4{
+  @media(max-width:768px){
+    padding:15px;
+  }
+}

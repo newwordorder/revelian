@@ -17727,6 +17727,14 @@ canvas {
   width: auto;
   display: block; }
 
+@media (max-width: 768px) {
+  .feature-column__image {
+    width: 100%; } }
+
+@media (max-width: 768px) {
+  .col-sm-4 {
+    padding: 15px; } }
+
 /*
 * Use existing Bootstrap 4 classes and
 * variables to extend - override CF7 style

@@ -1,26 +1,64 @@
 <?php
 /**
- * The template for displaying all single posts.
- *
- * @package understrap
- */
+* Template Name: Other pages
+*
+*
+* @package understrap
+*/
 
 get_header();
+
+$image = get_field('background_image');
+$imageOverlay = get_field('image_overlay');
+
 $backgroundImage = get_field('background_image');
 
-$image = $backgroundImage['background_image'];
-$imageOverlay = $backgroundImage['image_overlay'];
-$backgroundEffect = $backgroundImage['background_effect'];
-$invertColours = $backgroundImage['invert_colours'];
+  $image = $backgroundImage['background_image'];
+  $secondaryimage = $backgroundImage['secondary_image'];
+  $imageOverlay = $backgroundImage['image_overlay'];
+  $backgroundEffect = $backgroundImage['background_effect'];
+  $invertColours = $backgroundImage['invert_colours'];
+  $headingtext = get_field('headingtext');
+
 ?>
-<?php while ( have_posts() ) : the_post(); ?>
+
 <section
 
-class="page-header page-header--work bg-effect--<?php echo $backgroundEffect ?> imagebg <?php if( $invertColours == 'yes' ): echo 'image--light'; endif; ?>"
-data-overlay="<?php echo $imageOverlay ?>"
+  class="page-header bg-effect--<?php echo $backgroundEffect ?> imagebg <?php if( $invertColours == 'yes' ): echo 'image--light'; endif; ?>"
+    data-overlay="<?php echo $imageOverlay ?>"
+    id="header"
 >
+<?php if($backgroundEffect != 'reveal' ):?>
 
-<?php
+  <?php
+
+  if( !empty($image) ):
+
+  	// vars
+  	$url = $image['url'];
+  	$alt = $image['alt'];
+
+   ?>
+  <div class="background-image-holder">
+  		<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+  </div>
+  <?php endif; ?>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-md-10">
+
+          <h1><?php the_title(); ?></h1>
+          <hr></hr>
+          <p class="headingtext"><?php echo $headingtext; ?></p>
+
+      </div>
+    </div>
+  </div>
+
+<?php else: ?>
+
+  <?php
 
 if( !empty($image) ):
 
@@ -28,84 +66,91 @@ if( !empty($image) ):
   $url = $image['url'];
   $alt = $image['alt'];
 
-  ?>
-  <div class="background-image-holder">
-    <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
-  </div>
+ ?>
+
 <?php endif; ?>
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-6 col-md-8">
+    <div class="col-lg-10 col-md-10">
 
-      <h1 class="page-title"><?php the_title(); ?></h1>
-
+        <h1><?php the_title(); ?></h1>
+        <hr></hr>
+        <p class="headingtext"><?php echo $headingtext; ?></p>
 
     </div>
   </div>
 </div>
 
 
+<?php endif;?>
 
 </section>
 
-<section id="single-wrapper">
-
-	<div class="container" id="content" tabindex="-1">
+<?php get_template_part( 'page-templates/blocks' ); ?>
 
 
+<script>
+  function animateIn(){
 
-			<main id="main">
+    let masterTimeline = new TimelineMax();
 
+    const t1 = new TimelineMax();
 
+    t1Setup(t1);
 
-					<?php the_content();
+    masterTimeline.add(t1);
 
-          // check if the flexible content field has rows of data
-          if( have_rows('posts_blocks') ):
+  };
 
-            // loop through the rows of data
-            while ( have_rows('posts_blocks') ) : the_row();
+  function t1Setup(t1){
 
+    t1
 
+    .set('.navbar__navigation',{
+      opacity:0,
+    })
 
-            if( get_row_layout() == 'text_block' ): ?>
-
-            <div class="row justify-content-center">
-              <div class="col-md-8">
-
-                <?php  the_sub_field('text_block'); ?>
-
-              </div>
-            </div>
-
-          <?php  endif;
+    .set('.page-header',{
+      backgroundColor:'#000'
+    })
 
 
-            endwhile;
+    .set('.dropdown',{
+      opacity:0,
+    })
 
-          endif;
+    .set('#site-logo',{
+      opacity:0,
+    })
 
-          ?>
+    .to('.navbar__inner--after',0.6,{
+      width:'100%',
+      ease: Power1.easeInOut
 
+    })
 
+    .to('#site-logo',0.6,{
+      opacity:1,
+    },)
 
+    .to('.navbar__navigation',0.6,{
+      opacity:1,
+    },'-=0.6')
 
+    .to('.navbar__upper', 0.6,{
+      opacity:1,
+    }, '-=0.6')
 
-			</main><!-- #main -->
+    .to('.dropdown',0.6,{
+      opacity:1,
+    },'-=0.6')
 
+  }
 
+  jQuery(document).ready(() => {
+    animateIn();
+  });
 
-
-</div><!-- Container end -->
-
-</section><!-- Wrapper end -->
-
-<section class="related-posts">
-
-
-</section>
-
-<?php endwhile; // end of the loop. ?>
-
+</script>
 <?php get_footer(); ?>
