@@ -17723,6 +17723,10 @@ canvas {
 .leftborder {
   border-left: 4px solid #ef0d33; }
 
+.modal-instance {
+  width: auto;
+  display: block; }
+
 /*
 * Use existing Bootstrap 4 classes and
 * variables to extend - override CF7 style

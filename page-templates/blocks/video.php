@@ -1,41 +1,92 @@
-<?php // VIDEO
+<?php // VIDEO BLOCK
 
 if( get_row_layout() == 'video' ):
 
-  $textBlock = get_sub_field('video_text_block');
-  $spaceBelow = get_sub_field('video_space_below');
-  $video = get_sub_field('video_video');
+  $type = get_sub_field('video_type');
+  $videoCoverImage = get_sub_field('video_cover_image');
+  $videoEmbedCode = get_sub_field('video_embed_code');
+  $text = get_sub_field('text');
+  $width = get_sub_field('width');
+  $spaceBelow = get_sub_field('space_below');
+
   ?>
 
+  <?php if( $type == 'inline' ): ?>
 
+    <?php if( $width == 'full' ): ?>
 
-<div class="container flex space-below--<?php echo $spaceBelow ?>">
-  <div class="row">
-    <div class="col-4 col-md-5">
+      <div class="video-cover rounded">
         <div class="background-image-holder">
-            <img alt="image" src="img/landing-3.jpg" />
+          <?php if( !empty($videoCoverImage) ):
+
+            // vars
+            $url = $videoCoverImage['url'];
+            $alt = $videoCoverImage['alt'];
+
+            ?>
+            <img class="rounded" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+          <?php endif; //end $image ?>
         </div>
-        <div class="modal-instance d-flex">
-            <div class="video-play-icon modal-trigger"></div>
+        <div class="video-play-icon video-play-icon--sm"></div>
+        <div class="embed-container rounded">
+          <?php echo $videoEmbedCode; ?>
+        </div>
+      </div><!--end video cover-->
+
+    <?php else: // end full ?>
+
+
+      <div class="container space-below--<?php echo $spaceBelow ?>">
+        <div class="row justify-content-center">
+          <div class="col-md-<?php echo $width; ?>">
+
+            <div class="video-cover rounded">
+              <div class="background-image-holder rounded">
+                <?php if( !empty($videoCoverImage) ):
+
+                  // vars
+                  $url = $videoCoverImage['url'];
+                  $alt = $videoCoverImage['alt'];
+
+                  ?>
+                  <img class="rounded" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                <?php endif; //end $image ?>
+              </div>
+              <div class="video-play-icon video-play-icon--sm"></div>
+              <div class="embed-container rounded">
+                <?php echo $videoEmbedCode; ?>
+              </div>
+            </div><!--end video cover-->
+
+          </div>
+        </div>
+      </div>
+    <?php endif; // end $width ?>
+  <?php endif; // end inline ?>
+  <?php if( $type == 'modal' ): ?>
+    <div class="container video video-1">
+      <div class="row justify-content-center">
+        <div class="col-sm-8 modal-video d-flex justify-content-center">
+          <div class="modal-instance">
+            <div class="video-play-icon video-play-icon--sm modal-trigger box-shadow"></div>
             <div class="modal-container">
-                <div class="modal-content bg-dark" data-width="60%" data-height="60%">
-                    <iframe data-src="<?php echo $video; ?>" allowfullscreen="allowfullscreen"></iframe>
+              <div class="modal-content bg-dark" data-width="60%">
+                <div class="embed-container rounded">
+                  <?php echo $videoEmbedCode; ?>
                 </div>
-                <!--end of modal-content-->
+              </div>
+              <!--end of modal-content-->
             </div>
             <!--end of modal-container-->
+          </div>
+          <!--end of modal instance-->
+          <div class="modal-video__text">
+            <?php echo $text; ?>
+          </div>
         </div>
-        <!--end of modal instance-->
-    </div>
-    <div class="col-8 col-md-7  d-flex flex-column justify-content-center">
-        <?php echo $textBlock; ?>
-        <!--end of modal instance-->
+      </div>
+      <!--end of row-->
     </div>
     <!--end of container-->
-  </div>
-</div>
-
-
-<?php endif;
-
-?>
+  <?php endif; // end modal ?>
+<?php endif; // end video ?>
