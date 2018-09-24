@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Other pages
+* Template Name: Solution Template
 *
 *
 * @package understrap
@@ -74,7 +74,7 @@ if( !empty($image) ):
   <div class="row">
     <div class="col-lg-10 col-md-10">
 
-       <h1><?php the_title(); ?></h1>
+        <h1><?php the_title(); ?></h1>
         <hr></hr>
         <p class="headingtext"><?php echo $headingtext; ?></p>
 
@@ -86,7 +86,9 @@ if( !empty($image) ):
 <?php endif;?>
 
 </section>
-<?php get_template_part( 'page-templates/post-blocks' ); ?>
+
+<?php get_template_part( 'page-templates/blocks' ); ?>
+
 
 <script>
   function animateIn(){

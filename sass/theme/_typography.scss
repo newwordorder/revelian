@@ -207,13 +207,15 @@ li{
 
 }
 
-blockquote{
-  border-left:4px solid $primary;
-  padding-left:15px;
-  strong{
-    font-family:$isidora-bold !important;
-    font-size: 1rem !important;
-    color:black !important;
+.flippable_text{
+  blockquote{
+    border-left:4px solid $primary;
+    padding-left:15px;
+    strong{
+      font-family:$isidora-bold !important;
+      font-size: 1rem !important;
+      color:black !important;
 
+    }
   }
 }

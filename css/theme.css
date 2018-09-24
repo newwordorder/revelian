@@ -45,7 +45,7 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 @-ms-viewport {
   width: device-width; }
@@ -8525,17 +8525,17 @@ img {
   content: '';
   width: 100%;
   height: 80%;
-  background: -moz-linear-gradient(top, transparent 0%, #252525 100%);
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #252525 100%);
   /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, #252525));
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, #252525));
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, transparent 0%, #252525 100%);
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #252525 100%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, transparent 0%, #252525 100%);
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #252525 100%);
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, transparent 0%, #252525 100%);
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #252525 100%);
   /* IE10+ */
-  background: linear-gradient(to bottom, transparent 0%, #252525 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #252525 100%);
   bottom: 0;
   left: 0;
   z-index: 1;
@@ -8596,17 +8596,17 @@ img {
   content: '';
   width: 100%;
   height: 80%;
-  background: -moz-linear-gradient(bottom, #252525 0%, transparent 100%);
+  background: -moz-linear-gradient(bottom, #252525 0%, rgba(0, 0, 0, 0) 100%);
   /* FF3.6+ */
-  background: -webkit-gradient(linear, left bottom, left bottom, color-stop(0%, #252525), color-stop(100%, transparent));
+  background: -webkit-gradient(linear, left bottom, left bottom, color-stop(0%, #252525), color-stop(100%, rgba(0, 0, 0, 0)));
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(bottom, #252525 0%, transparent 100%);
+  background: -webkit-linear-gradient(bottom, #252525 0%, rgba(0, 0, 0, 0) 100%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(bottom, #252525 0%, transparent 100%);
+  background: -o-linear-gradient(bottom, #252525 0%, rgba(0, 0, 0, 0) 100%);
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(bottom, #252525 0%, transparent 100%);
+  background: -ms-linear-gradient(bottom, #252525 0%, rgba(0, 0, 0, 0) 100%);
   /* IE10+ */
-  background: linear-gradient(to bottom, #252525 0%, transparent 100%);
+  background: linear-gradient(to bottom, #252525 0%, rgba(0, 0, 0, 0) 100%);
   top: 0;
   left: 0;
   z-index: 1; }
@@ -9243,7 +9243,7 @@ button[type="submit"].btn--loading {
   position: relative;
   overflow: hidden;
   pointer-events: none;
-  color: transparent; }
+  color: rgba(0, 0, 0, 0); }
 
 button[type="submit"].btn--loading * {
   opacity: 0; }
@@ -10279,15 +10279,6 @@ a[data-notification-link]:hover {
     opacity: 0; } }
 
 /**! 25. Video **/
-iframe {
-  width: 100%;
-  min-height: 350px;
-  border: none; }
-
-@media all and (max-width: 767px) {
-  iframe {
-    min-height: 220px; } }
-
 .videobg {
   background: #252525;
   position: relative;
@@ -12758,7 +12749,7 @@ body.dropdowns--hover .nav-sidebar-column .dropdown:hover > .dropdown__container
   .nav-sidebar-column {
     transition: all .3s ease;
     left: -20.42857143em;
-    box-shadow: 2px 0px 4px transparent; }
+    box-shadow: 2px 0px 4px rgba(0, 0, 0, 0); }
   .nav-sidebar-column.active {
     left: 0;
     box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.1); }
@@ -13786,7 +13777,7 @@ a.block:hover > .feature {
 
 .accordion-2 li.active .accordion__title {
   background: none;
-  border-bottom: 1px solid transparent; }
+  border-bottom: 1px solid rgba(0, 0, 0, 0); }
 
 .bg--dark .accordion-2 li .accordion__title,
 .imagebg:not(.image--light) .accordion-2 li .accordion__title,
@@ -13952,7 +13943,7 @@ a.block:hover > .feature {
   border-bottom: none; }
 
 .tabs--folder .tabs > li {
-  border-top: 3px solid transparent; }
+  border-top: 3px solid rgba(0, 0, 0, 0); }
 
 .tabs--folder .tabs > li.active {
   border-top: 3px solid #4a90e2; }
@@ -16744,10 +16735,10 @@ li.p1 {
     content: '\2022';
     padding: 0px 15px; }
 
-blockquote {
+.flippable_text blockquote {
   border-left: 4px solid #ef0d33;
   padding-left: 15px; }
-  blockquote strong {
+  .flippable_text blockquote strong {
     font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif !important;
     font-size: 1rem !important;
     color: black !important; }
@@ -17734,6 +17725,20 @@ canvas {
 @media (max-width: 768px) {
   .col-sm-4 {
     padding: 15px; } }
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%; }
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
 
 /*
 * Use existing Bootstrap 4 classes and

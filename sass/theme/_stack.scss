@@ -2476,16 +2476,7 @@ a[data-notification-link]:hover {
   }
 }
 /**! 25. Video **/
-iframe {
-  width: 100%;
-  min-height: 350px;
-  border: none;
-}
-@media all and (max-width: 767px) {
-  iframe {
-    min-height: 220px;
-  }
-}
+
 .videobg {
   background: #252525;
   position: relative;

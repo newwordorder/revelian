@@ -4,15 +4,13 @@ if( get_row_layout() == 'image' ):
 
   $image = get_sub_field('image_image');
   $spaceBelow = get_sub_field('image_space_below');
+  $width = get_sub_field('image_width');
 
   ?>
 
+  <?php if ($width): ?>
 
-
-<div class="container space-below--<?php echo $spaceBelow ?>">
-  <div class="row justify-content-center">
-    <div class="col-md-10">
-
+    <?php if( $width == 'full' ): ?>
       <?php
 
       if( !empty($image) ):
@@ -21,13 +19,58 @@ if( get_row_layout() == 'image' ):
         $url = $image['url'];
         $alt = $image['alt'];
 
-       ?>
-      <img class="rounded" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+      ?>
+      <img class="" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
       <?php endif; ?>
 
-    </div>
-  </div>
-</div>
+          <?php else: // end full ?>
+
+
+          <div class="container space-below--<?php echo $spaceBelow ?>">
+            <div class="row justify-content-center">
+            <div class="col-md-<?php echo $width; ?>">
+
+                <?php
+
+                if( !empty($image) ):
+
+                  // vars
+                  $url = $image['url'];
+                  $alt = $image['alt'];
+
+                ?>
+                <img class="" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                <?php endif; ?>
+
+              </div>
+            </div>
+          </div>
+
+          <?php endif; ?>
+
+  <?php else: // end full ?>
+  
+
+          <div class="container space-below--md">
+            <div class="row justify-content-center">
+            <div class="col-md-10">
+
+                <?php
+
+                if( !empty($image) ):
+
+                  // vars
+                  $url = $image['url'];
+                  $alt = $image['alt'];
+
+                ?>
+                <img class="" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                <?php endif; ?>
+
+              </div>
+            </div>
+          </div>
+          <?php endif; ?>
 
 
 <?php endif;

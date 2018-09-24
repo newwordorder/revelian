@@ -7,7 +7,7 @@ if( get_row_layout() == 'text_block' ):
 
   ?>
 
-
+<?php if($spaceBelow): ?>
 
 <div class="container space-below--<?php echo $spaceBelow ?>">
   <div class="row justify-content-center">
@@ -19,6 +19,19 @@ if( get_row_layout() == 'text_block' ):
   </div>
 </div>
 
+<?php else: ?>
+
+<div class="container space-below--md">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+
+        <?php echo $textBlock ?>
+
+    </div>
+  </div>
+</div>
+
+<?php endif; ?>
 
 <?php endif;
 

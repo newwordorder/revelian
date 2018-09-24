@@ -13,6 +13,8 @@ if( get_row_layout() == 'video' ):
 
   <?php if( $type == 'inline' ): ?>
 
+  <?php if( $width): ?>
+
     <?php if( $width == 'full' ): ?>
 
       <div class="video-cover rounded">
@@ -24,11 +26,11 @@ if( get_row_layout() == 'video' ):
             $alt = $videoCoverImage['alt'];
 
             ?>
-            <img class="rounded" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+            <img class="" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
           <?php endif; //end $image ?>
         </div>
         <div class="video-play-icon video-play-icon--sm"></div>
-        <div class="embed-container rounded">
+        <div class="embed-container ">
           <?php echo $videoEmbedCode; ?>
         </div>
       </div><!--end video cover-->
@@ -41,7 +43,7 @@ if( get_row_layout() == 'video' ):
           <div class="col-md-<?php echo $width; ?>">
 
             <div class="video-cover rounded">
-              <div class="background-image-holder rounded">
+              <div class="background-image-holder ">
                 <?php if( !empty($videoCoverImage) ):
 
                   // vars
@@ -53,7 +55,7 @@ if( get_row_layout() == 'video' ):
                 <?php endif; //end $image ?>
               </div>
               <div class="video-play-icon video-play-icon--sm"></div>
-              <div class="embed-container rounded">
+              <div class="embed-container ">
                 <?php echo $videoEmbedCode; ?>
               </div>
             </div><!--end video cover-->
@@ -62,6 +64,35 @@ if( get_row_layout() == 'video' ):
         </div>
       </div>
     <?php endif; // end $width ?>
+      <?php else: ?>
+      <div class="container space-below--md">
+        <div class="row justify-content-center">
+          <div class="col-md-10">
+
+            <div class="video-cover rounded">
+              <div class="background-image-holder ">
+                <?php if( !empty($videoCoverImage) ):
+
+                  // vars
+                  $url = $videoCoverImage['url'];
+                  $alt = $videoCoverImage['alt'];
+
+                  ?>
+                  <img class="rounded" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                <?php endif; //end $image ?>
+              </div>
+              <div class="video-play-icon video-play-icon--sm"></div>
+              <div class="embed-container ">
+                <?php echo $videoEmbedCode; ?>
+              </div>
+            </div><!--end video cover-->
+
+          </div>
+        </div>
+      </div>
+
+       <?php endif; ?>
+
   <?php endif; // end inline ?>
   <?php if( $type == 'modal' ): ?>
     <div class="container video video-1">
@@ -71,7 +102,7 @@ if( get_row_layout() == 'video' ):
             <div class="video-play-icon video-play-icon--sm modal-trigger box-shadow"></div>
             <div class="modal-container">
               <div class="modal-content bg-dark" data-width="60%">
-                <div class="embed-container rounded">
+                <div class="embed-container ">
                   <?php echo $videoEmbedCode; ?>
                 </div>
               </div>
