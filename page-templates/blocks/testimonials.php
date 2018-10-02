@@ -12,7 +12,8 @@ if( get_row_layout() == 'testimonials' ):
                     <ul class="slides">
                     <?php while( have_rows('testimonials_slides') ): the_row();
 
-                    $text = get_sub_field('text');
+                    $text = get_sub_field('text');                    
+                    $author = get_sub_field('author');
                     $image = get_sub_field('image');
                     ?>    
                         <li>
@@ -36,6 +37,9 @@ if( get_row_layout() == 'testimonials' ):
                                 <blockquote>
                                    <?php echo $text; ?>
                                 </blockquote>
+                                <p class="testimony-author">
+                                   <?php echo $author; ?>
+                                </p>
                             </div>
                         </li>
                     <?php endwhile; ?>

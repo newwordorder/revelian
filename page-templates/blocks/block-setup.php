@@ -13,6 +13,9 @@ $blockSetup = get_sub_field('block_setup');
   $backgroundEffect = $backgroundImage['background_effect'];
   $invertColours = $backgroundImage['invert_colours'];
 
+  $blockid = $blockSetup['id'];
+  $hideBlock = $blockSetup['hide_block'];
+
 ?>
 
 <section
@@ -20,6 +23,12 @@ $blockSetup = get_sub_field('block_setup');
   class="bg--<?php echo $background ?> space--<?php echo $space ?> bg-effect--<?php echo $backgroundEffect ?> <?php if( $background == 'image' ): echo 'imagebg'; endif; ?> <?php if( $invertColours == 'yes' ): echo 'image--light'; endif; ?>"
   <?php if( $background == 'image' ): ?>
     data-overlay="<?php echo $imageOverlay ?>"
+  <?php endif; ?>
+  <?php if( $blockid ): ?>
+    id="<?php echo $blockid ?>"
+  <?php endif; ?>
+  <?php if( $hideBlock ): ?>
+    style="display:none;"
   <?php endif; ?>
 >
 

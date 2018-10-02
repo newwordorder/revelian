@@ -12,10 +12,52 @@ $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
 <footer id="footer">
-		<div class="container">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5">
+				<a href="<?php echo network_home_url(); ?>" id="site-logo" class="navbar-brand footer-brand">
+						Revelian
+				</a>
+				<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+				</p>
+				<p>&nbsp;</p>
+				<p>
+				© 2018 Revelian <span style="margin-left: 1em;">Terms & Conditions</span> <span style="margin-left:1em;"> Privacy Policy</span>
+				</p>
 
-				
+			</div>
+			<div class="col-md-2 offset-md-1">
+				<p class="footer-title">Explore</p>
+			<?php wp_nav_menu(
+						array(
+							'theme_location'  => 'primary',
+							'container_class' => 'navbar__navigation',
+							'container_id'    => 'navbarNavDropdown',
+							'menu_class'      => 'navbar-nav',
+							'fallback_cb'     => '',
+							'menu_id'         => 'main-menu',
+							'walker'          => new understrap_WP_Bootstrap_Navwalker(),
+						)
+					); ?>
+			</div>
+			<div class="col-md-3 offset-md-1 ">
+			<p class="footer-title">Connect with Revelian</p>
 
+			<?php wp_nav_menu(
+						array(
+							'theme_location'  => 'top',
+							'container_class' => 'navbar__navigation',
+							'container_id'    => 'navbarNavDropdown',
+							'menu_class'      => 'navbar-nav',
+							'fallback_cb'     => '',
+							'menu_id'         => 'secondary-menu',
+							'walker'          => new understrap_WP_Bootstrap_Navwalker(),
+						)
+					); ?>
+			</div>
+		</div>		
+	</div>
 </footer>
 
 
@@ -126,7 +168,8 @@ async function loaded(appContainer){
 
   var speed = 0.8;
   
-  let app = new PIXI.Application();
+  let app = new PIXI.Application({forceFXAA: true, roundPixels:true});
+  app.renderer = new PIXI.WebGLRenderer();
   var slider = [];
   var activeImg = 0;
 
@@ -409,9 +452,7 @@ async function loaded(appContainer){
 			tl.to(document.getElementById('dropdown'), 0.3, {
 				height: menu.offsetHeight,
     			borderTop:'2px solid #fff',
-    			webkitBoxShadow:' 0px 0px 33px 1px rgba(0,0,0,0.2)',
-    			mozBoxShadow: '0px 0px 33px 1px rgba(0,0,0,0.2)',
-    			boxShadow:'0px 0px 33px 1px rgba(0,0,0,0.2)',
+  
 			},'-=0.1')
 		})
 			
@@ -440,9 +481,7 @@ async function loaded(appContainer){
 				tl.to(document.getElementById('dropdown'), 0.3, {
 				height:0,
     			borderTop:'0px solid #fff',
-    			webkitBoxShadow:' none',
-    			mozBoxShadow: 'none',
-    			boxShadow:'none',
+  
 				},'-=0.3')
 
 				tl.to(document.querySelector('.navbar__mega--line'), 0.3, {

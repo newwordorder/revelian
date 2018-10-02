@@ -16743,6 +16743,9 @@ li.p1 {
     font-size: 1rem !important;
     color: black !important; }
 
+.testimony-author {
+  font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif; }
+
 .navbar {
   position: absolute;
   background: transparent;
@@ -17103,7 +17106,7 @@ header {
 #footer {
   background: #101010;
   font-size: 0.875em;
-  padding: 100px 0; }
+  padding: 4em 0; }
   #footer .row {
     margin-bottom: 30px; }
   #footer .col-* {
@@ -17112,12 +17115,43 @@ header {
     color: #fff;
     margin-bottom: 0; }
   #footer a, #footer a:visited {
-    color: #fff;
-    text-decoration: underline;
     opacity: 1;
     transition: 0.2s; }
   #footer a:hover, #footer a:active {
     opacity: 0.6; }
+  #footer .row {
+    margin-bottom: 0; }
+  #footer .footer-brand {
+    color: #ef0d33;
+    text-decoration: none;
+    margin-bottom: 1em; }
+  #footer .footer-title {
+    color: #ef0d33;
+    text-transform: uppercase;
+    font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif;
+    margin-bottom: 1em; }
+  #footer .navbar__navigation {
+    justify-content: flex-start; }
+  #footer #main-menu li {
+    margin-bottom: 0;
+    line-height: 1em !important; }
+    #footer #main-menu li a {
+      color: #fff; }
+  #footer #main-menu .menu-item-91 {
+    display: none; }
+  #footer #secondary-menu {
+    flex-direction: row; }
+    #footer #secondary-menu li {
+      margin-right: 0.6em;
+      margin-bottom: 0;
+      font-size: 2em;
+      line-height: 1em !important; }
+      #footer #secondary-menu li a {
+        color: #fff; }
+    #footer #secondary-menu .menu-item-92 {
+      display: none; }
+    #footer #secondary-menu .menu-item-93 {
+      display: none; }
 
 body {
   background: #101010; }
@@ -17739,6 +17773,20 @@ canvas {
   left: 0;
   width: 100%;
   height: 100%; }
+
+.mb-0 {
+  text-align: left;
+  padding: 0 0.5em; }
+
+.image {
+  width: 100%;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  height: 12em;
+  position: relative; }
+  .image * {
+    margin: 0; }
 
 /*
 * Use existing Bootstrap 4 classes and
