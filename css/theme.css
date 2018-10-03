@@ -16647,7 +16647,8 @@ h6, .h6 {
 
 p {
   font-size: 1rem;
-  line-height: 1.625rem; }
+  line-height: 1.625rem;
+  margin-bottom: 0.5rem; }
 
 .small {
   font-size: 0.875rem;
@@ -16685,7 +16686,7 @@ p {
   line-height: 1em; }
 
 p:last-of-type {
-  margin-bottom: 0; }
+  margin-bottom: 1rem; }
 
 .page-title {
   margin-bottom: 0; }
@@ -16727,13 +16728,17 @@ blockquote {
 #main-menu * {
   font-size: 0.875rem; }
 
-li.p1 {
+.container li {
   font-family: "Isidora Sans Light", "Helvetica Neue", Helvetica, sans-serif;
   list-style-type: none;
   line-height: 1rem; }
-  li.p1:before {
+  .container li:before {
     content: '\2022';
     padding: 0px 15px; }
+
+.navbar li:before, .slider li:before {
+  content: '';
+  padding: none; }
 
 .flippable_text blockquote {
   border-left: 4px solid #ef0d33;
@@ -17545,7 +17550,7 @@ li {
 .flickity-page-dots {
   position: absolute;
   width: 100%;
-  bottom: 0px !important;
+  bottom: -1em !important;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -17752,12 +17757,20 @@ canvas {
   width: auto;
   display: block; }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .feature-column__image {
     width: 100%; } }
 
-@media (max-width: 768px) {
-  .col-sm-4 {
+@media (max-width: 992px) {
+  .col-lg-3 {
+    padding: 15px; } }
+
+@media (max-width: 992px) {
+  .col-lg-4 {
+    padding: 15px; } }
+
+@media (max-width: 992px) {
+  .col-lg-6 {
     padding: 15px; } }
 
 .embed-container {
@@ -17787,6 +17800,9 @@ canvas {
   position: relative; }
   .image * {
     margin: 0; }
+
+p:last-of-type {
+  margin-bottom: 1em; }
 
 /*
 * Use existing Bootstrap 4 classes and

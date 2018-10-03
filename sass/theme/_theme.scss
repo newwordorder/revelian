@@ -283,11 +283,6 @@ section {
   }
 }
 
-
-
-
-
-
 .buttons {
   margin-top: 20px;
 }
@@ -578,7 +573,7 @@ li{
 .flickity-page-dots{
   position: absolute;
   width: 100%;
-  bottom: 0px !important;
+  bottom: -1em !important;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -843,13 +838,25 @@ canvas{
 }
 
 .feature-column__image{
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     width:100%;
   }
 }
 
-.col-sm-4{
-  @media(max-width:768px){
+.col-lg-3{
+  @media(max-width:992px){
+    padding:15px;
+  }
+}
+
+.col-lg-4{
+  @media(max-width:992px){
+    padding:15px;
+  }
+}
+
+.col-lg-6{
+  @media(max-width:992px){
     padding:15px;
   }
 }
@@ -887,3 +894,8 @@ canvas{
     margin:0;
   }
 }
+
+p:last-of-type{
+  margin-bottom:1em;
+}
+

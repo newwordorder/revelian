@@ -88,6 +88,7 @@ h6, .h6 {
 p{
   font-size:1rem;
   line-height:1.625rem;
+  margin-bottom:0.5rem;
 }
 
 .small{
@@ -137,7 +138,7 @@ p {
 }
 
 p:last-of-type {
-  margin-bottom: 0;
+  margin-bottom: 1rem;
 }
 
 .page-title {
@@ -193,18 +194,28 @@ blockquote{
   }
 }
 
-li{
-  &.p1{
-    font-family:$isidora-light;
-    list-style-type: none;
-    line-height:1rem;
+
+.container{
+  li{
+      font-family:$isidora-light;
+      list-style-type:none;
+      line-height:1rem;
+      &:before{
+        content:'\2022';
+        padding: 0px 15px;
+        //content:'\25cf ';
+      }
+  }
+}
+
+.navbar, .slider{
+  li{
     &:before{
-      content:'\2022';
-      padding: 0px 15px;
+      content:'';
+      padding: none;
       //content:'\25cf ';
     }
   }
-
 }
 
 .flippable_text{
