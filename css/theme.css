@@ -17806,6 +17806,31 @@ canvas {
     padding-left: 0;
     padding-right: 0; }
 
+.product-controls {
+  margin-bottom: 50px; }
+  .product-controls button {
+    font-size: 0.825em;
+    line-height: 1;
+    font-weight: 700;
+    font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: #ef0d33;
+    padding: 0.8em 1.6em;
+    border-radius: 0;
+    background: transparent;
+    color: #ef0d33;
+    border: 1px solid #ef0d33;
+    transition: 0.2s; }
+    .product-controls button:hover {
+      background: #ef0d33;
+      color: #fff; }
+    .product-controls button.mixitup-control-active {
+      background: #ef0d33;
+      color: #fff; }
+      .product-controls button.mixitup-control-active:hover {
+        background: #bf0a29;
+        color: #fff; }
+
 /*
 * Use existing Bootstrap 4 classes and
 * variables to extend - override CF7 style

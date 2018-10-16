@@ -914,3 +914,37 @@ canvas{
 
 
 }  
+
+
+.product-controls {
+  margin-bottom: 50px;
+
+  button {
+    font-size: 0.825em;
+    line-height: 1;
+    font-weight: 700;
+    font-family: $isidora-bold;
+    text-transform: uppercase;
+    color: $primary;
+    padding: 0.8em 1.6em;
+    border-radius:0;
+    background: transparent;
+    color: $primary;
+    border: 1px solid $primary;
+    transition: 0.2s;
+
+    &:hover {
+      background: $primary;
+      color: $white;
+    }
+
+    &.mixitup-control-active {
+      background: $primary;
+      color: $white;
+      &:hover {
+        background: darken($primary,10%);
+        color: $white;
+      }
+    }
+  }
+}

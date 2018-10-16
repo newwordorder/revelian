@@ -74,8 +74,18 @@ $container = get_theme_mod( 'understrap_container_type' );
 <script src="<?php echo get_template_directory_uri(); ?>/js/typed.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/smooth-scroll.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/aos.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/mixitup.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/scripts.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.7.1/pixi.min.js"></script>
+
+<script>
+	var mixer = mixitup('.mixer', {
+         controls: {
+          scope: 'local'
+         }
+			});
+</script>
+
 
 <?php if(get_the_title() == "Home"): ?>
 <script type="text/javascript">
