@@ -17788,6 +17788,24 @@ canvas {
   .image * {
     margin: 0; }
 
+.project-tile {
+  margin: 1em 0;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  height: calc( 100% - 2em);
+  display: flex;
+  flex-direction: column; }
+  .project-tile__image {
+    padding-bottom: 66%;
+    position: relative; }
+  .project-tile__content {
+    padding: 1.5em; }
+  .project-tile .btn,
+  .project-tile .wpcf7 input[type=submit], .wpcf7 .project-tile input[type=submit] {
+    margin-top: auto;
+    padding-left: 0;
+    padding-right: 0; }
+
 /*
 * Use existing Bootstrap 4 classes and
 * variables to extend - override CF7 style

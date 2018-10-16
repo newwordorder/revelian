@@ -887,3 +887,30 @@ canvas{
     margin:0;
   }
 }
+
+.project-tile {
+
+  margin: 1em 0;
+  background: $white;
+  box-shadow:0 10px 20px rgba(0, 0, 0, 0.05);
+  height: calc( 100% - 2em );
+  display: flex;
+  flex-direction: column;
+
+  &__image {
+    padding-bottom:66%;  
+    position: relative; 
+  }
+
+  &__content {
+    padding:1.5em;
+  }
+
+  & .btn {
+    margin-top: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+
+}  
