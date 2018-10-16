@@ -32,6 +32,7 @@ if( have_rows('blocks') ) {
          get_template_part('page-templates/blocks/code-block');
          get_template_part('page-templates/blocks/pricing-table');
          get_template_part('page-templates/blocks/text-code-block');
+         get_template_part('page-templates/blocks/client-logos');
 
 
       }
