@@ -50,12 +50,6 @@ if( get_row_layout() == 'feature_cards' ):
     </div>
   <?php endif; ?>
 
-
-
-
-
-
-
   <?php endif;
 
   ?>

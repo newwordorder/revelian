@@ -9,23 +9,15 @@
 
 $the_theme = wp_get_theme();
 $container = get_theme_mod( 'understrap_container_type' );
+
+$footer_blurb = get_field('footer_blurb', 'footer');
 ?>
 
 <footer id="footer">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5">
-				<a href="<?php echo network_home_url(); ?>" id="site-logo" class="navbar-brand footer-brand">
-						Revelian
-				</a>
-				<p>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-				</p>
-				<p>&nbsp;</p>
-				<p>
-				© 2018 Revelian <span style="margin-left: 1em;">Terms & Conditions</span> <span style="margin-left:1em;"> Privacy Policy</span>
-				</p>
-
+				<?php echo $footer_blurb; ?>
 			</div>
 			<div class="col-md-2 offset-md-1">
 				<p class="footer-title">Explore</p>
@@ -75,11 +67,16 @@ $container = get_theme_mod( 'understrap_container_type' );
 <script src="<?php echo get_template_directory_uri(); ?>/js/smooth-scroll.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/aos.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/scripts.js"></script>
+
+<script src="<?php echo get_template_directory_uri(); ?>/js/owl.carousel.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.7.1/pixi.min.js"></script>
+
 
 <?php if(get_the_title() == "Home"): ?>
 	<script type="text/javascript">
-		
+
+				
 		let appContainer = document.getElementById('header');
 
 		window.onload = loaded(appContainer);
@@ -518,7 +515,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 </script>
 
 <script>
+		$(document).ready(function(){
+			$(".owl-carousel").owlCarousel({items:1, loop:true, nav:true, dots:false, navText:['<i class="fal fa-chevron-left"></i>','<i class="fal fa-chevron-right"></i>']});
+		});
+
 	var headingNode = document.querySelector('.headingtext');
+	if(headingNode.firstChild != null){
 	var text = headingNode.firstChild.nodeValue;
 	
 	if(typeof text !== "undefined"){
@@ -534,6 +536,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 	}
 
 	headingNode.firstChild.nodeValue = newString;
+
+	}
 
 </script>
 

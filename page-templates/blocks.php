@@ -29,6 +29,8 @@ if( have_rows('blocks') ) {
          get_template_part( 'page-templates/blocks/video' );
          get_template_part('page-templates/blocks/image-split');
          get_template_part('page-templates/blocks/postSection');
+         get_template_part('page-templates/blocks/code-block');
+         get_template_part('page-templates/blocks/pricing-table');
 
 
       }

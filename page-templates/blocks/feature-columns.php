@@ -25,7 +25,7 @@ if( get_row_layout() == 'feature_columns' ):
         ?>
 
         <?php if($sideIcon): ?>
-          <div class="col-md-<?php echo $columns; ?> feature-column space-below--<?php echo $spaceBelow ?>">
+          <div class="col-md-<?php echo $columns; ?> feature-column sideIcon space-below--<?php echo $spaceBelow ?>">
 
             <div class=" row <?php if( $boxed == 'yes' ): ?>feature-column--boxed<?php endif; ?> <?php if( $centered == 'yes' ): ?>text-center<?php endif; ?>">
 

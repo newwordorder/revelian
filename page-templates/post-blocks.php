@@ -12,7 +12,7 @@ if( have_rows('posts_blocks') ) {
          get_template_part( 'page-templates/blocks/text-block' );
          get_template_part( 'page-templates/blocks/50-50' );
          get_template_part( 'page-templates/blocks/text-image' );
-         get_template_part( 'page-templates/blocks/cta' );
+         get_template_part( 'page-templates/blocks/post-cta' );
          get_template_part( 'page-templates/blocks/image' );
          get_template_part( 'page-templates/blocks/feature-columns' );
          get_template_part( 'page-templates/blocks/feature-cards' );
@@ -22,6 +22,9 @@ if( have_rows('posts_blocks') ) {
          get_template_part( 'page-templates/blocks/testimonials' );
          get_template_part( 'page-templates/blocks/video' );
          get_template_part('page-templates/blocks/image-split');
+         get_template_part('page-templates/blocks/code-block');
+         get_template_part('page-templates/blocks/slider');
+         get_template_part('page-templates/blocks/author');
 
   }
 

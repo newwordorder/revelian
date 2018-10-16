@@ -4,6 +4,8 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+@import url(owl.carousel.min.css);
+@import url(owl.theme.default.min.css);
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -25,7 +27,7 @@
   --warning: #ffc107;
   --danger: #dc3545;
   --light: #f8f9fa;
-  --dark: #101010;
+  --dark: #000;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -59,7 +61,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #444;
+  color: #000;
   text-align: left;
   background-color: #fff; }
 
@@ -1155,13 +1157,13 @@ pre {
 .table-dark,
 .table-dark > th,
 .table-dark > td {
-  background-color: #bcbcbc; }
+  background-color: #b8b8b8; }
 
 .table-hover .table-dark:hover {
-  background-color: #afafaf; }
+  background-color: #ababab; }
   .table-hover .table-dark:hover > td,
   .table-hover .table-dark:hover > th {
-    background-color: #afafaf; }
+    background-color: #ababab; }
 
 .table-active,
 .table-active > th,
@@ -2247,18 +2249,18 @@ fieldset:disabled a.btn {
 
 .btn-dark {
   color: #fff;
-  background-color: #101010;
-  border-color: #101010; }
+  background-color: #000;
+  border-color: #000; }
   .btn-dark:hover {
     color: #fff;
     background-color: black;
     border-color: black; }
   .btn-dark:focus, .btn-dark.focus {
-    box-shadow: 0 0 0 0.2rem rgba(16, 16, 16, 0.5); }
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5); }
   .btn-dark.disabled, .btn-dark:disabled {
     color: #fff;
-    background-color: #101010;
-    border-color: #101010; }
+    background-color: #000;
+    border-color: #000; }
   .btn-dark:not(:disabled):not(.disabled):active, .btn-dark:not(:disabled):not(.disabled).active,
   .show > .btn-dark.dropdown-toggle {
     color: #fff;
@@ -2266,7 +2268,7 @@ fieldset:disabled a.btn {
     border-color: black; }
     .btn-dark:not(:disabled):not(.disabled):active:focus, .btn-dark:not(:disabled):not(.disabled).active:focus,
     .show > .btn-dark.dropdown-toggle:focus {
-      box-shadow: 0 0 0 0.2rem rgba(16, 16, 16, 0.5); }
+      box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5); }
 
 .btn-outline-primary,
 .wpcf7 input[type=submit] {
@@ -2435,27 +2437,27 @@ fieldset:disabled a.btn {
       box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5); }
 
 .btn-outline-dark {
-  color: #101010;
+  color: #000;
   background-color: transparent;
   background-image: none;
-  border-color: #101010; }
+  border-color: #000; }
   .btn-outline-dark:hover {
     color: #fff;
-    background-color: #101010;
-    border-color: #101010; }
+    background-color: #000;
+    border-color: #000; }
   .btn-outline-dark:focus, .btn-outline-dark.focus {
-    box-shadow: 0 0 0 0.2rem rgba(16, 16, 16, 0.5); }
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5); }
   .btn-outline-dark.disabled, .btn-outline-dark:disabled {
-    color: #101010;
+    color: #000;
     background-color: transparent; }
   .btn-outline-dark:not(:disabled):not(.disabled):active, .btn-outline-dark:not(:disabled):not(.disabled).active,
   .show > .btn-outline-dark.dropdown-toggle {
     color: #fff;
-    background-color: #101010;
-    border-color: #101010; }
+    background-color: #000;
+    border-color: #000; }
     .btn-outline-dark:not(:disabled):not(.disabled):active:focus, .btn-outline-dark:not(:disabled):not(.disabled).active:focus,
     .show > .btn-outline-dark.dropdown-toggle:focus {
-      box-shadow: 0 0 0 0.2rem rgba(16, 16, 16, 0.5); }
+      box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5); }
 
 .btn-link {
   font-weight: 400;
@@ -2551,7 +2553,7 @@ tbody.collapse.show {
   padding: 0.5rem 0;
   margin: 0.125rem 0 0;
   font-size: 1rem;
-  color: #444;
+  color: #000;
   text-align: left;
   list-style: none;
   background-color: #fff;
@@ -4294,7 +4296,7 @@ tbody.collapse.show {
 
 .badge-dark {
   color: #fff;
-  background-color: #101010; }
+  background-color: #000; }
   .badge-dark[href]:hover, .badge-dark[href]:focus {
     color: #fff;
     text-decoration: none;
@@ -4400,11 +4402,11 @@ tbody.collapse.show {
     color: #686868; }
 
 .alert-dark {
-  color: #080808;
-  background-color: #cfcfcf;
-  border-color: #bcbcbc; }
+  color: black;
+  background-color: #cccccc;
+  border-color: #b8b8b8; }
   .alert-dark hr {
-    border-top-color: #afafaf; }
+    border-top-color: #ababab; }
   .alert-dark .alert-link {
     color: black; }
 
@@ -4460,7 +4462,7 @@ tbody.collapse.show {
     text-decoration: none;
     background-color: #f8f9fa; }
   .list-group-item-action:active {
-    color: #444;
+    color: #000;
     background-color: #e9ecef; }
 
 .list-group-item {
@@ -4578,15 +4580,15 @@ tbody.collapse.show {
     border-color: #818182; }
 
 .list-group-item-dark {
-  color: #080808;
-  background-color: #bcbcbc; }
+  color: black;
+  background-color: #b8b8b8; }
   .list-group-item-dark.list-group-item-action:hover, .list-group-item-dark.list-group-item-action:focus {
-    color: #080808;
-    background-color: #afafaf; }
+    color: black;
+    background-color: #ababab; }
   .list-group-item-dark.list-group-item-action.active {
     color: #fff;
-    background-color: #080808;
-    border-color: #080808; }
+    background-color: black;
+    border-color: black; }
 
 .close {
   float: right;
@@ -4939,7 +4941,7 @@ button.close {
 
 .popover-body {
   padding: 0.5rem 0.75rem;
-  color: #444; }
+  color: #000; }
 
 .carousel {
   position: relative; }
@@ -5158,7 +5160,7 @@ button.bg-light:focus {
   background-color: #dae0e5 !important; }
 
 .bg-dark {
-  background-color: #101010 !important; }
+  background-color: #000 !important; }
 
 a.bg-dark:hover, a.bg-dark:focus,
 button.bg-dark:hover,
@@ -5223,7 +5225,7 @@ button.bg-dark:focus {
   border-color: #f8f9fa !important; }
 
 .border-dark {
-  border-color: #101010 !important; }
+  border-color: #000 !important; }
 
 .border-white {
   border-color: #fff !important; }
@@ -7724,7 +7726,7 @@ a.text-light:hover, a.text-light:focus {
   color: #dae0e5 !important; }
 
 .text-dark {
-  color: #101010 !important; }
+  color: #000 !important; }
 
 a.text-dark:hover, a.text-dark:focus {
   color: black !important; }
@@ -16639,13 +16641,14 @@ h5, .h5 {
 
 h6, .h6 {
   font-size: 1rem;
-  line-height: 1.25rem; }
+  line-height: 1.25rem;
+  text-transform: uppercase; }
 
 .lead {
   font-size: 1.25rem;
   line-height: 1.875rem; }
 
-p {
+p, li {
   font-size: 1rem;
   line-height: 1.625rem;
   margin-bottom: 0.5rem; }
@@ -16657,6 +16660,9 @@ p {
 html {
   font-size: 1rem; }
 
+b {
+  font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif; }
+
 @media (min-width: 992px) {
   html {
     font-size: 1.2rem; } }
@@ -16667,7 +16673,7 @@ body {
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, li {
   margin-bottom: 1rem;
-  color: #111;
+  color: #000;
   font-family: "Isidora Sans Light", "Helvetica Neue", Helvetica, sans-serif; }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, li {
@@ -16675,11 +16681,11 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, li {
   text-transform: none; }
 
 p {
-  color: #444;
+  color: #000;
   font-family: "Isidora Sans Regular", "Helvetica Neue", Helvetica, sans-serif; }
 
 .lead {
-  color: #111; }
+  color: #000; }
 
 .page-title {
   font-size: 5em;
@@ -16730,15 +16736,19 @@ blockquote {
 
 .container li {
   font-family: "Isidora Sans Light", "Helvetica Neue", Helvetica, sans-serif;
-  list-style-type: none;
-  line-height: 1rem; }
-  .container li:before {
-    content: '\2022';
-    padding: 0px 15px; }
+  margin-left: 1em;
+  list-style-type: disc; }
 
-.navbar li:before, .slider li:before {
-  content: '';
-  padding: none; }
+.page-header * {
+  list-style-type: none;
+  margin-left: none; }
+
+.navbar li, .slider li {
+  list-style-type: none;
+  margin-left: none; }
+  .navbar li:before, .slider li:before {
+    content: '';
+    padding: none; }
 
 .flippable_text blockquote {
   border-left: 4px solid #ef0d33;
@@ -16750,6 +16760,9 @@ blockquote {
 
 .testimony-author {
   font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif; }
+
+.fa-check {
+  color: #ef0d33; }
 
 .navbar {
   position: absolute;
@@ -16777,7 +16790,7 @@ blockquote {
   @media (max-width: 767.98px) {
     .navbar {
       position: relative;
-      background-color: #101010;
+      background-color: #000;
       height: 60px; } }
 
 .site-logo {
@@ -17033,7 +17046,8 @@ header {
   z-index: 5; }
 
 .mega_menu_title {
-  color: #ef0d33; }
+  color: #ef0d33;
+  font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif; }
   .mega_menu_title:hover {
     color: #000; }
 
@@ -17109,7 +17123,7 @@ header {
     color: #ef0d33; }
 
 #footer {
-  background: #101010;
+  background: #000;
   font-size: 0.875em;
   padding: 4em 0; }
   #footer .row {
@@ -17159,7 +17173,7 @@ header {
       display: none; }
 
 body {
-  background: #101010; }
+  background: #000; }
 
 #page {
   background: #fff; }
@@ -17185,12 +17199,12 @@ section.bg--light {
     background: #ef0d33; }
 
 section.bg--dark {
-  background-color: #101010; }
+  background-color: #000; }
   section.bg--dark ::-moz-selection {
-    color: #101010;
+    color: #000;
     background: #ef0d33; }
   section.bg--dark ::selection {
-    color: #101010;
+    color: #000;
     background: #ef0d33; }
   section.bg--dark * {
     color: #fff; }
@@ -17214,11 +17228,11 @@ section.bg--primary {
 
 section.imagebg ::-moz-selection {
   color: #ef0d33;
-  background: #444; }
+  background: #000; }
 
 section.imagebg ::selection {
   color: #ef0d33;
-  background: #444; }
+  background: #000; }
 
 section.imagebg .btn--solid {
   background: #fff;
@@ -17301,6 +17315,15 @@ section.bg-effect--ken-burns {
     height: 70px;
     margin: auto;
     margin-bottom: 20px; }
+
+.sideIcon .feature-column__icon {
+  width: 100%;
+  position: relative;
+  transform: translateY(0%); }
+  .sideIcon .feature-column__icon--container {
+    position: relative;
+    height: 100%;
+    margin: 0; }
 
 .feature-card {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
@@ -17386,7 +17409,7 @@ section.bg-effect--ken-burns {
 
 .page-header {
   padding: 200px 0 100px;
-  background-color: #101010; }
+  background-color: #000; }
   .page-header--home {
     padding: 150px 0 150px; }
   @media (max-width: 767.98px) {
@@ -17803,6 +17826,76 @@ canvas {
 
 p:last-of-type {
   margin-bottom: 1em; }
+
+.owl-stage-outer {
+  height: 36em; }
+  @media (max-width: 1199.98px) {
+    .owl-stage-outer {
+      height: 24em; } }
+  @media (max-width: 767.98px) {
+    .owl-stage-outer {
+      height: 12em; } }
+
+.owl-nav {
+  position: absolute;
+  bottom: 0;
+  right: 0; }
+  .owl-nav button {
+    width: 3em;
+    height: 3em;
+    background-color: #ef0d33 !important; }
+    .owl-nav button svg {
+      color: #fff; }
+
+.author {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  padding: 2em; }
+  .author__introblurb p {
+    text-transform: uppercase;
+    font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif; }
+  .author__image {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%; }
+    .author__image img {
+      display: inline;
+      margin: 0 auto;
+      height: 100%;
+      width: auto; }
+  .author__link {
+    text-transform: uppercase;
+    font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif;
+    color: #ef0d33 !important; }
+    .author__link svg {
+      font-size: 1.6em;
+      margin-right: 0.5em; }
+    .author__link:hover {
+      color: #ef0d33 !important; }
+
+.owl-carousel .owl-item img {
+  display: block;
+  max-width: 110%;
+  width: 110%; }
+
+hr {
+  border-top: 1px solid black; }
+
+.pricing_table--large {
+  display: block; }
+  @media (max-width: 767.98px) {
+    .pricing_table--large {
+      display: none; } }
+
+.pricing_table--small {
+  display: none; }
+  @media (max-width: 767.98px) {
+    .pricing_table--small {
+      display: block; } }
+
+.collapse.show {
+  display: flex; }
 
 /*
 * Use existing Bootstrap 4 classes and

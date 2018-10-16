@@ -53,7 +53,7 @@ if( get_row_layout() == 'image' ):
 
           <div class="container space-below--md">
             <div class="row justify-content-center">
-            <div class="col-md-10">
+            <div class="col-md-10 justify-content-center">
 
                 <?php
 
