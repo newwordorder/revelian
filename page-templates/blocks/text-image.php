@@ -35,9 +35,11 @@ $highlightLine = get_sub_field('highlight_line');
                 // vars
                 $url = $image['url'];
                 $alt = $image['alt'];
+                $caption = $image['caption'];
 
                ?>
                 <img class="" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                <p class="small text-center"><?php echo $caption; ?></p>
               <?php endif; //end $image ?>
 
             <?php endif; //end $media ?>
@@ -55,6 +57,7 @@ $highlightLine = get_sub_field('highlight_line');
                     // vars
                     $url = $videoCoverImage['url'];
                     $alt = $videoCoverImage['alt'];
+                    
 
                    ?>
                     <img class="" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
