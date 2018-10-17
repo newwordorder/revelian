@@ -37,9 +37,11 @@ if( get_row_layout() == 'image' ):
                   // vars
                   $url = $image['url'];
                   $alt = $image['alt'];
+                  $caption = $image['caption'];
 
                 ?>
                 <img class="" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                <p class="small text-center"><?php echo $caption; ?></p>
                 <?php endif; ?>
 
               </div>
@@ -62,9 +64,11 @@ if( get_row_layout() == 'image' ):
                   // vars
                   $url = $image['url'];
                   $alt = $image['alt'];
+                  $caption = $image['caption'];
 
                 ?>
                 <img class="" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                <p class="small text-center"><?php echo $caption; ?></p>
                 <?php endif; ?>
 
               </div>
