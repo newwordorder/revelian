@@ -71,3 +71,7 @@ require get_template_directory() . '/inc/woocommerce.php';
 require get_template_directory() . '/inc/editor.php';
 
 require get_template_directory() . '/inc/acf-options.php';
+
+require get_template_directory() . '/inc/accordian-shortcode.php';
+
+

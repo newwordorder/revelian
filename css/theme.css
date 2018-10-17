@@ -17316,29 +17316,12 @@ section.bg-effect--ken-burns {
     margin: auto;
     margin-bottom: 20px; }
 
-.sideIcon .feature-column__icon {
-  width: 100%;
-  position: relative;
-  transform: translateY(0%); }
-  .sideIcon .feature-column__icon--container {
-    position: relative;
-    height: 100%;
-    margin: 0; }
-
 .feature-card {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-  padding-top: 2em;
-  padding-bottom: 2em;
-  padding-left: 0em;
-  padding-right: 0em;
+  padding: 1.5em;
   background-color: #fff;
-  height: 100%; }
-  .feature-card * {
-    margin-left: 10px;
-    margin-right: 10px; }
-  @media (max-width: 767.98px) {
-    .feature-card {
-      margin-bottom: 30px; } }
+  height: 100%;
+  margin: 15px 0; }
   .feature-card__image, .feature-card__icon {
     margin-bottom: 30px; }
   .feature-card__icon {
@@ -17362,6 +17345,9 @@ section.bg-effect--ken-burns {
     display: flex;
     flex-direction: column;
     justify-content: center; }
+
+.bg--dark .feature-card {
+  background-color: rgba(255, 255, 255, 0.1); }
 
 .buttons {
   margin-top: 20px; }
@@ -17525,7 +17511,7 @@ section.bg-effect--ken-burns {
   filter: blur(10px); }
 
 .circle-follow::before {
-  content: " ";
+  content: ' ';
   height: 100%;
   width: 100%;
   position: absolute;
@@ -17536,16 +17522,13 @@ section.bg-effect--ken-burns {
   opacity: 1; }
 
 /* hack to detect ie11 and above - blend mode not supported */
-_:-ms-fullscreen,
-:root .letter-mask {
+_:-ms-fullscreen, :root .letter-mask {
   background-color: transparent; }
 
-_:-ms-fullscreen,
-:root .animated-bg {
+_:-ms-fullscreen, :root .animated-bg {
   opacity: 0.2; }
 
-_:-ms-fullscreen,
-:root .circle-follow {
+_:-ms-fullscreen, :root .circle-follow {
   background-color: #ffffff;
   opacity: 0.2; }
 
@@ -17576,7 +17559,7 @@ li {
 .flickity-page-dots {
   position: absolute;
   width: 100%;
-  bottom: -1em !important;
+  bottom: 0px !important;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -17783,20 +17766,12 @@ canvas {
   width: auto;
   display: block; }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .feature-column__image {
     width: 100%; } }
 
-@media (max-width: 992px) {
-  .col-lg-3 {
-    padding: 15px; } }
-
-@media (max-width: 992px) {
-  .col-lg-4 {
-    padding: 15px; } }
-
-@media (max-width: 992px) {
-  .col-lg-6 {
+@media (max-width: 768px) {
+  .col-sm-4 {
     padding: 15px; } }
 
 .embed-container {
@@ -17806,9 +17781,7 @@ canvas {
   overflow: hidden;
   max-width: 100%; }
 
-.embed-container iframe,
-.embed-container object,
-.embed-container embed {
+.embed-container iframe, .embed-container object, .embed-container embed {
   position: absolute;
   top: 0;
   left: 0;
@@ -17829,117 +17802,70 @@ canvas {
   .image * {
     margin: 0; }
 
-p:last-of-type {
-  margin-bottom: 1em; }
-
-.owl-stage-outer {
-  height: 36em; }
-  @media (max-width: 1199.98px) {
-    .owl-stage-outer {
-      height: 24em; } }
-  @media (max-width: 767.98px) {
-    .owl-stage-outer {
-      height: 12em; } }
-
-.owl-nav {
-  position: absolute;
-  bottom: 0;
-  right: 0; }
-  .owl-nav button {
-    width: 3em;
-    height: 3em;
-    background-color: #ef0d33 !important; }
-    .owl-nav button svg {
-      color: #fff; }
-
-.author {
+.project-tile {
+  margin: 1em 0;
+  background: #fff;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-  padding: 2em; }
-  .author__introblurb p {
-    text-transform: uppercase;
-    font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif; }
-  .author__image {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 50%; }
-    .author__image img {
-      display: inline;
-      margin: 0 auto; }
-  .author__link {
-    text-transform: uppercase;
+  height: calc( 100% - 2em);
+  display: flex;
+  flex-direction: column; }
+  .project-tile__image {
+    padding-bottom: 66%;
+    position: relative; }
+  .project-tile__content {
+    padding: 1.5em; }
+  .project-tile .btn,
+  .project-tile .wpcf7 input[type=submit], .wpcf7 .project-tile input[type=submit] {
+    margin-top: auto;
+    padding-left: 0;
+    padding-right: 0; }
+
+.product-controls {
+  margin-bottom: 50px; }
+  .product-controls button {
+    font-size: 0.825em;
+    line-height: 1;
+    font-weight: 700;
     font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif;
-    color: #ef0d33 !important; }
-    .author__link svg {
-      font-size: 1.6em;
-      margin-right: 0.5em; }
-    .author__link:hover {
-      color: #ef0d33 !important; }
-
-.owl-carousel .owl-item img {
-  display: block;
-  max-width: 110%;
-  width: 110%; }
-
-hr {
-  border-top: 1px solid black; }
-
-.pricing_table--large {
-  display: block; }
-  @media (max-width: 767.98px) {
-    .pricing_table--large {
-      display: none; } }
-
-.pricing_table--small {
-  display: none; }
-  @media (max-width: 767.98px) {
-    .pricing_table--small {
-      display: block; } }
-
-.collapse.show {
-  display: flex; }
-  .collapse.show .project-tile {
-    margin: 1em 0;
-    background: #fff;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-    height: calc(100% - 2em);
-    display: flex;
-    flex-direction: column; }
-    .collapse.show .project-tile__image {
-      padding-bottom: 66%;
-      position: relative; }
-    .collapse.show .project-tile__content {
-      padding: 1.5em; }
-    .collapse.show .project-tile .btn,
-    .collapse.show .project-tile .wpcf7 input[type=submit], .wpcf7 .collapse.show .project-tile input[type=submit] {
-      margin-top: auto;
-      padding-left: 0;
-      padding-right: 0; }
-  .collapse.show .product-controls {
-    margin-bottom: 50px; }
-    .collapse.show .product-controls button {
-      font-size: 0.825em;
-      line-height: 1;
-      font-weight: 700;
-      font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif;
-      text-transform: uppercase;
-      color: #ef0d33;
-      padding: 0.8em 1.6em;
-      border-radius: 0;
-      background: transparent;
-      color: #ef0d33;
-      border: 1px solid #ef0d33;
-      transition: 0.2s; }
-      .collapse.show .product-controls button:hover {
-        background: #ef0d33;
+    text-transform: uppercase;
+    color: #ef0d33;
+    padding: 0.8em 1.6em;
+    border-radius: 0;
+    background: transparent;
+    color: #ef0d33;
+    border: 1px solid #ef0d33;
+    transition: 0.2s; }
+    .product-controls button:hover {
+      background: #ef0d33;
+      color: #fff; }
+    .product-controls button.mixitup-control-active {
+      background: #ef0d33;
+      color: #fff; }
+      .product-controls button.mixitup-control-active:hover {
+        background: #bf0a29;
         color: #fff; }
-      .collapse.show .product-controls button.mixitup-control-active {
-        background: #ef0d33;
-        color: #fff; }
-        .collapse.show .product-controls button.mixitup-control-active:hover {
-          background: #bf0a29;
-          color: #fff; }
+
+.panel {
+  border-top: 1px solid #e9ecef;
+  padding: 10px 10px 0; }
+  .panel:last-of-type {
+    border-bottom: 1px solid #e9ecef; }
+  .panel .panel-title a {
+    color: #ef0d33;
+    transition: 0.2s;
+    display: block;
+    position: relative; }
+    .panel .panel-title a:hover {
+      color: #bf0a29; }
+    .panel .panel-title a svg {
+      position: absolute;
+      right: 0; }
+
+.collapsed svg {
+  transform: rotate(45deg); }
+
+[aria-expanded="false"] svg {
+  transform: rotate(0deg); }
 
 /*
 * Use existing Bootstrap 4 classes and
