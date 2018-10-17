@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Product Template
+* Product Template
 *
 *
 * @package understrap
@@ -49,9 +49,9 @@ $backgroundImage = get_field('background_image');
       <div class="col-lg-10 col-md-10">
 
           <h1><?php the_title(); ?></h1>
-          <hr></hr>
-          <p class="headingtext"><?php echo $headingtext; ?></p>
-
+          <?php if ($headingtext): ?>
+            <p class="headingtext"><?php echo $headingtext; ?></p>
+          <?php endif; ?>
       </div>
     </div>
   </div>
@@ -75,9 +75,9 @@ if( !empty($image) ):
     <div class="col-lg-10 col-md-10">
 
         <h1><?php the_title(); ?></h1>
-        <hr></hr>
-        <p class="headingtext"><?php echo $headingtext; ?></p>
-
+        <?php if ($headingtext): ?>
+          <p class="headingtext"><?php echo $headingtext; ?></p>
+        <?php endif; ?>
     </div>
   </div>
 </div>

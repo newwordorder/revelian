@@ -25,6 +25,7 @@ if( have_rows('posts_blocks') ) {
          get_template_part('page-templates/blocks/code-block');
          get_template_part('page-templates/blocks/slider');
          get_template_part('page-templates/blocks/author');
+         get_template_part('page-templates/blocks/text-code-block');
 
   }
 

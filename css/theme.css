@@ -17525,7 +17525,7 @@ section.bg-effect--ken-burns {
   filter: blur(10px); }
 
 .circle-follow::before {
-  content: ' ';
+  content: " ";
   height: 100%;
   width: 100%;
   position: absolute;
@@ -17536,13 +17536,16 @@ section.bg-effect--ken-burns {
   opacity: 1; }
 
 /* hack to detect ie11 and above - blend mode not supported */
-_:-ms-fullscreen, :root .letter-mask {
+_:-ms-fullscreen,
+:root .letter-mask {
   background-color: transparent; }
 
-_:-ms-fullscreen, :root .animated-bg {
+_:-ms-fullscreen,
+:root .animated-bg {
   opacity: 0.2; }
 
-_:-ms-fullscreen, :root .circle-follow {
+_:-ms-fullscreen,
+:root .circle-follow {
   background-color: #ffffff;
   opacity: 0.2; }
 
@@ -17803,7 +17806,9 @@ canvas {
   overflow: hidden;
   max-width: 100%; }
 
-.embed-container iframe, .embed-container object, .embed-container embed {
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
   position: absolute;
   top: 0;
   left: 0;
@@ -17861,9 +17866,7 @@ p:last-of-type {
     border-radius: 50%; }
     .author__image img {
       display: inline;
-      margin: 0 auto;
-      height: 100%;
-      width: auto; }
+      margin: 0 auto; }
   .author__link {
     text-transform: uppercase;
     font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif;
@@ -17896,6 +17899,47 @@ hr {
 
 .collapse.show {
   display: flex; }
+  .collapse.show .project-tile {
+    margin: 1em 0;
+    background: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    height: calc(100% - 2em);
+    display: flex;
+    flex-direction: column; }
+    .collapse.show .project-tile__image {
+      padding-bottom: 66%;
+      position: relative; }
+    .collapse.show .project-tile__content {
+      padding: 1.5em; }
+    .collapse.show .project-tile .btn,
+    .collapse.show .project-tile .wpcf7 input[type=submit], .wpcf7 .collapse.show .project-tile input[type=submit] {
+      margin-top: auto;
+      padding-left: 0;
+      padding-right: 0; }
+  .collapse.show .product-controls {
+    margin-bottom: 50px; }
+    .collapse.show .product-controls button {
+      font-size: 0.825em;
+      line-height: 1;
+      font-weight: 700;
+      font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif;
+      text-transform: uppercase;
+      color: #ef0d33;
+      padding: 0.8em 1.6em;
+      border-radius: 0;
+      background: transparent;
+      color: #ef0d33;
+      border: 1px solid #ef0d33;
+      transition: 0.2s; }
+      .collapse.show .product-controls button:hover {
+        background: #ef0d33;
+        color: #fff; }
+      .collapse.show .product-controls button.mixitup-control-active {
+        background: #ef0d33;
+        color: #fff; }
+        .collapse.show .product-controls button.mixitup-control-active:hover {
+          background: #bf0a29;
+          color: #fff; }
 
 /*
 * Use existing Bootstrap 4 classes and

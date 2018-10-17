@@ -48,7 +48,7 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 						)
 					); ?>
 			</div>
-		</div>		
+		</div>
 	</div>
 </footer>
 
@@ -66,17 +66,26 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 <script src="<?php echo get_template_directory_uri(); ?>/js/typed.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/smooth-scroll.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/aos.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/mixitup.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/scripts.js"></script>
 
 <script src="<?php echo get_template_directory_uri(); ?>/js/owl.carousel.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.7.1/pixi.min.js"></script>
 
+<script>
+	var mixer = mixitup('.mixer', {
+         controls: {
+          scope: 'local'
+         }
+			});
+</script>
+
 
 <?php if(get_the_title() == "Home"): ?>
 	<script type="text/javascript">
 
-				
+
 		let appContainer = document.getElementById('header');
 
 		window.onload = loaded(appContainer);
@@ -116,7 +125,7 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 			width = appContainer.offsetWidth;
 			height = appContainer.offsetHeight;
 			setAppSize(app, width, height);
-			setImgSize(sprite, width, height, imgSize); 
+			setImgSize(sprite, width, height, imgSize);
 		}
 
 		function followMouse(app, delta, speed, xp, yp, name){
@@ -129,16 +138,16 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 			let position = name.position;
 			const target = app.renderer.plugins.interaction.mouse.global;
 
-		
+
 			xp += ((target.x - xp)/6);
 			yp += ((target.y - yp)/6);
 
 			position.x = xp;
-			position.y = yp;	
+			position.y = yp;
 		}
 
 		function makeGraphics(name){
-			
+
 			var name = new PIXI.Graphics();
 
 			// Set the fill color
@@ -156,7 +165,7 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 		}
 
 		async function loaded(appContainer){
-		
+
 			let height = appContainer.offsetHeight;
 			let width = appContainer.offsetWidth;
 
@@ -164,7 +173,7 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 			let yp = 0;
 
 			var speed = 0.8;
-			
+
 			let app = new PIXI.Application({forceFXAA: true, roundPixels:true});
 			app.renderer = new PIXI.WebGLRenderer();
 			var slider = [];
@@ -174,7 +183,7 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 
 			setAppSize(app, width, height);
 
-			<?php 
+			<?php
 					$backgroundImage_ = get_field('background_image');
 					$image_ = $backgroundImage_['background_image'];
 					$url_ = $image_['url'];
@@ -183,27 +192,27 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 					$slider = get_field('background_image_bg_slider');
 
 						if($isSlider):
-							?> 
+							?>
 							<?
 
 							if( have_rows('background_image_bg_slider') ):
-							
+
 								// loop through the rows of data
 							while ( have_rows('background_image_bg_slider') ) : the_row();
-						
+
 								// display a sub field value
 								$img = get_sub_field('slider_img');
 								?>
 									slider.push('<?php echo $img['url']; ?>');
 
-								<?php 
-						
+								<?php
+
 							endwhile;
-						
+
 						else :
-						
+
 							// no rows found
-						
+
 						endif;
 
 						endif;
@@ -225,7 +234,7 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 				var sprite__2__clear = new PIXI.Sprite(texture__clear[(activeImg + 1)]);
 
 				var blurFilter = new PIXI.filters.BlurFilter();
-					
+
 				sprite.filters = [blurFilter];
 				sprite__2.filters = [blurFilter];
 
@@ -234,13 +243,13 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 				var texture__clear = PIXI.Texture.fromImage('<?php echo $url_; ?>');
 
 				var sprite = new PIXI.Sprite(texture);
-					
+
 				var sprite__clear = new PIXI.Sprite(texture__clear);
-				
+
 				var blurFilter = new PIXI.filters.BlurFilter();
-				
+
 				sprite.filters = [blurFilter];
-				
+
 
 			}
 
@@ -249,7 +258,7 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 			var imgpromise = function (url) {
 				return new Promise( async function(resolve,reject) {
 				var newimage = new Image();
-				newimage.src = url; 
+				newimage.src = url;
 				newimage.onload = async function(){
 					let promise = new Promise((resolve, reject) => {
 						size.width = this.naturalWidth;
@@ -279,7 +288,7 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 
 			app.stage.addChild(sprite);
 			app.stage.addChild(sprite__clear);
-			
+
 
 			sprite.zOrder = 1;
 			sprite__clear.zOrder = 1;
@@ -309,11 +318,11 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 				sprite__2.texture = texture[activeImg];
 				sprite__2__clear.texture = texture[activeImg];
 				setImgSize(sprite__2, width, height, size);
-				setImgSize(sprite__2__clear, width, height, size);	
+				setImgSize(sprite__2__clear, width, height, size);
 
 				tween = TweenMax.to(sprite ,1.2, {alpha:0})
 				tween2 = TweenMax.to(sprite__clear ,1.2, {alpha:0})
-				
+
 				tween3 = TweenMax.to(sprite__2 ,1.2, {alpha:1});
 				tween4 = TweenMax.to(sprite__2__clear ,1.2, {alpha:1});
 
@@ -322,16 +331,16 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 					sprite__clear.texture = texture[activeImg];
 					imgSize = await imgpromise(slider[activeImg]);
 					setImgSize(sprite, width, height, size);
-					setImgSize(sprite__clear, width, height, size);	
+					setImgSize(sprite__clear, width, height, size);
 					sprite.alpha = 1;
 					sprite__clear. alpha = 1;
 					sprite__2.alpha = 0;
 					sprite__2__clear.alpha = 0;
 
 				},1600);
-				
+
 			}
-			
+
 
 			var circle = new PIXI.Graphics();
 
@@ -370,22 +379,22 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 
 						let position = circle.position;
 						const target = app.renderer.plugins.interaction.mouse.global;
-						
+
 						xp += ((target.x - xp)/6);
 						yp += ((target.y - yp)/6);
 
 						position.x = xp;
-						position.y = yp;	
+						position.y = yp;
 
-						
+
 					});
 					resolve();
 				},100);
 
 				});
-				
+
 				var wait2 = delay;
-			
+
 			appContainer.appendChild(app.view);
 
 			window.setTimeout(
@@ -403,14 +412,14 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 	var tl = new TimelineLite();
 
 	var menuItems = document.querySelector('#main-menu').children;
-	
+
 	for(i = 0; i < menuItems.length; i++){
 		menuItems[i].addEventListener("click", (e) => {
 			e.preventDefault();
 			var mega_menu = document.querySelectorAll('.mega_menu');
 			for(i=0; i < mega_menu.length; i++){
 				//mega_menu[i].classList.remove('active');
-				tl.to(mega_menu[i], 0.3, { 
+				tl.to(mega_menu[i], 0.3, {
 						top:20,
 						opacity:0,
 						zIndex:'-1',
@@ -434,7 +443,7 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 
 			if(e.target.title != null){
 				if(menu != null){
-					tl.to(menu, 0.3, { 
+					tl.to(menu, 0.3, {
 						top:0,
 						opacity:1,
 						zIndex:2,
@@ -449,10 +458,10 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 			tl.to(document.getElementById('dropdown'), 0.3, {
 				height: menu.offsetHeight,
     			borderTop:'2px solid #fff',
-  
+
 			},'-=0.1')
 		})
-			
+
 
 		});
 
@@ -463,10 +472,10 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 
 		}else{
 			//document.getElementById('dropdown').classList.remove('active');
-		
+
 			var menu = document.querySelectorAll('.mega_menu');
 			for(i=0; i < menu.length; i++){
-				tl.to(menu[i], 0.3, { 
+				tl.to(menu[i], 0.3, {
 						top:20,
 						opacity:0,
 						display:'none',
@@ -478,7 +487,7 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 				tl.to(document.getElementById('dropdown'), 0.3, {
 				height:0,
     			borderTop:'0px solid #fff',
-  
+
 				},'-=0.3')
 
 				tl.to(document.querySelector('.navbar__mega--line'), 0.3, {
@@ -522,7 +531,7 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 	var headingNode = document.querySelector('.headingtext');
 	if(headingNode.firstChild != null){
 	var text = headingNode.firstChild.nodeValue;
-	
+
 	if(typeof text !== "undefined"){
 		textArray = text.split(" ");
 		var newString = "";
