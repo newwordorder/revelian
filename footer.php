@@ -74,18 +74,18 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.7.1/pixi.min.js"></script>
 
 <script>
-	var mixer = mixitup('.mixer', {
-         controls: {
-          scope: 'local'
-         }
-			});
+	var mix = document.querySelector('.mixer');
+	if(mix){
+		var mixer = mixitup('.mixer', {
+			controls: {
+			scope: 'local'
+			}
+		});
+	}
 </script>
-
 
 <?php if(get_the_title() == "Home"): ?>
 	<script type="text/javascript">
-
-
 		let appContainer = document.getElementById('header');
 
 		window.onload = loaded(appContainer);
