@@ -69,22 +69,28 @@ $container = get_theme_mod( 'understrap_container_type' );
 				  <section class='navbar__mega space--md' id="dropdown">
 					  <div class="navbar__mega--inner container">
 						  <?php if( have_rows('mega_menus', 'header') ):
-								while ( have_rows('mega_menus', 'header') ) : the_row(); ?>
+								while ( have_rows('mega_menus', 'header') ) : the_row(); 
+								$number_of_menus = get_sub_field('number_of_menus','header');
+
+								if($number_of_menus){
+									$colsize = 12 / $number_of_menus;
+								}
+								
+								?>
 							<div class="row mega_menu" data-menu="<?php echo get_sub_field('parent'); ?>">
 
 
-						  <div class="col-md-5 offset-md-1">
+						  <div class="col-md-4">
 							  <?php echo get_sub_field('content', 'header'); ?>
 						  </div>
-						  <div class="col-md-5">
+						  <div class="col-md-8">
 							  <div class="row">
+								  
 						  <?php
 							// check if the repeater field has rows of data
 							if( have_rows('menus', 'header') ):
-								$number_of_menus = get_field('number_of_menus','header');
-								if($number_of_menus){
-								$colsize = 12 /  $number_of_menus;
-								}
+
+
 								// loop through the rows of data
 								while ( have_rows('menus', 'header') ) : the_row();
 								?>
@@ -108,19 +114,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 								endif; 
 								?>
 								</div>
-								<?	
-								endwhile;
+							<?	
+							endwhile;
 
-							else :
+							else:
 								// no rows found
 							endif;
-
 							?>
 							</div>
 						  </div>
 						  </div>
 
-						<?php endwhile;
+						<?php 
+						endwhile;
 						endif; ?>
 					  </div>
 				</section>

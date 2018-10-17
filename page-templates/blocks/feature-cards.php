@@ -4,6 +4,7 @@ if( get_row_layout() == 'feature_cards' ):
 
   $spaceBelow = get_sub_field('feature_cards_space_below');
   $type = get_sub_field('feature_cards_type');
+  
   ?>
 
 
@@ -48,12 +49,6 @@ if( get_row_layout() == 'feature_cards' ):
       </div>
     </div>
   <?php endif; ?>
-
-
-
-
-
-
 
   <?php endif;
 

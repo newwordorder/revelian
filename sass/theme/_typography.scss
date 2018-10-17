@@ -78,6 +78,7 @@ h5, .h5 {
 h6, .h6 {
   font-size:1rem;
   line-height:1.25rem;
+  text-transform:uppercase;
 }
 
 .lead{
@@ -85,9 +86,10 @@ h6, .h6 {
   line-height:1.875rem;
 }
 
-p{
+p, li{
   font-size:1rem;
   line-height:1.625rem;
+  margin-bottom:0.5rem;
 }
 
 .small{
@@ -97,7 +99,10 @@ p{
 
 html {
   font-size: 1rem;
+}
 
+b{
+  font-family:$isidora-bold;
 }
 
 @include media-breakpoint-up(lg) {
@@ -137,7 +142,7 @@ p {
 }
 
 p:last-of-type {
-  margin-bottom: 0;
+  margin-bottom: 1rem;
 }
 
 .page-title {
@@ -193,18 +198,32 @@ blockquote{
   }
 }
 
-li{
-  &.p1{
-    font-family:$isidora-light;
-    list-style-type: none;
-    line-height:1rem;
+
+.container{
+  li{
+      font-family:$isidora-light;
+      margin-left:1em;
+      list-style-type:disc;
+  }
+}
+
+.page-header{
+  *{
+    list-style-type:none;
+    margin-left:none;
+  }
+}
+
+.navbar, .slider{
+  li{
+    list-style-type:none;
+    margin-left:none;
     &:before{
-      content:'\2022';
-      padding: 0px 15px;
+      content:'';
+      padding: none;
       //content:'\25cf ';
     }
   }
-
 }
 
 .flippable_text{
@@ -222,4 +241,8 @@ li{
 
 .testimony-author{
   font-family:$isidora-bold;
+}
+
+.fa-check{
+  color:$primary;
 }

@@ -7,7 +7,7 @@ if( get_row_layout() == 'testimonials' ):
 
    <div class="container text-center space-below--<?php echo $spaceBelow ?>">
         <div class="row justify-content-center">
-            <div class="col-md-8 col-sm-10 align-self-center">
+            <div class="col-sm-10 align-self-center">
                 <div class="slider" data-paging="true">
                     <ul class="slides">
                     <?php while( have_rows('testimonials_slides') ): the_row();
