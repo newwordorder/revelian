@@ -17318,10 +17318,18 @@ section.bg-effect--ken-burns {
 
 .feature-card {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-  padding: 1.5em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  padding-left: 0em;
+  padding-right: 0em;
   background-color: #fff;
-  height: 100%;
-  margin: 15px 0; }
+  height: 100%; }
+  .feature-card * {
+    margin-left: 10px;
+    margin-right: 10px; }
+  @media (max-width: 767.98px) {
+    .feature-card {
+      margin-bottom: 30px; } }
   .feature-card__image, .feature-card__icon {
     margin-bottom: 30px; }
   .feature-card__icon {
@@ -17345,9 +17353,6 @@ section.bg-effect--ken-burns {
     display: flex;
     flex-direction: column;
     justify-content: center; }
-
-.bg--dark .feature-card {
-  background-color: rgba(255, 255, 255, 0.1); }
 
 .buttons {
   margin-top: 20px; }
@@ -17788,81 +17793,64 @@ canvas {
   width: 100%;
   height: 100%; }
 
-.mb-0 {
-  text-align: left;
-  padding: 0 0.5em; }
+.owl-dots {
+  position: absolute;
+  bottom: 1em;
+  left: 2em;
+  z-index: 4 !important; }
+  .owl-dots .owl-dot {
+    width: 3em;
+    height: 0.1em;
+    background-color: #fff !important;
+    margin: 0.5em; }
+    .owl-dots .owl-dot.active {
+      background-color: #ef0d33 !important; }
 
-.image {
-  width: 100%;
-  margin-bottom: 1em;
-  margin-left: 0;
-  margin-right: 0;
-  height: 12em;
-  position: relative; }
-  .image * {
-    margin: 0; }
+.owl-stage-outer {
+  min-height: 100%; }
 
-.project-tile {
-  margin: 1em 0;
-  background: #fff;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-  height: calc( 100% - 2em);
-  display: flex;
-  flex-direction: column; }
-  .project-tile__image {
-    padding-bottom: 66%;
-    position: relative; }
-  .project-tile__content {
-    padding: 1.5em; }
-  .project-tile .btn,
-  .project-tile .wpcf7 input[type=submit], .wpcf7 .project-tile input[type=submit] {
-    margin-top: auto;
-    padding-left: 0;
-    padding-right: 0; }
+.owl-nav {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 4 !important; }
+  .owl-nav button {
+    background-color: #ef0d33 !important;
+    width: 3rem;
+    height: 3rem;
+    color: #fff !important; }
 
-.product-controls {
-  margin-bottom: 50px; }
-  .product-controls button {
-    font-size: 0.825em;
-    line-height: 1;
-    font-weight: 700;
-    font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif;
-    text-transform: uppercase;
-    color: #ef0d33;
-    padding: 0.8em 1.6em;
-    border-radius: 0;
-    background: transparent;
-    color: #ef0d33;
-    border: 1px solid #ef0d33;
-    transition: 0.2s; }
-    .product-controls button:hover {
-      background: #ef0d33;
-      color: #fff; }
-    .product-controls button.mixitup-control-active {
-      background: #ef0d33;
-      color: #fff; }
-      .product-controls button.mixitup-control-active:hover {
-        background: #bf0a29;
-        color: #fff; }
+.owl-carousel {
+  position: relative;
+  height: 100%; }
+  .owl-carousel .owl-item .background-image-holder {
+    width: 100%; }
+    .owl-carousel .owl-item .background-image-holder img {
+      display: none; }
 
-.panel {
-  border-top: 1px solid #e9ecef;
-  padding: 10px 10px 0; }
-  .panel:last-of-type {
-    border-bottom: 1px solid #e9ecef; }
-  .panel .panel-title a {
-    color: #ef0d33;
-    transition: 0.2s;
-    display: block;
-    position: relative; }
-    .panel .panel-title a:hover {
-      color: #bf0a29; }
-    .panel .panel-title a svg {
-      position: absolute;
-      right: 0; }
+.page-header::before {
+  z-index: 3; }
 
-.collapsed svg {
-  transform: rotate(45deg); }
+._container {
+  position: relative;
+  z-index: 4 !important; }
+
+@media (min-width: 1200px) {
+  ._container {
+    max-width: 1140px;
+    margin: auto; } }
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  ._container {
+    max-width: 960px; } }
+
+@media (min-width: 768px) and (max-width: 992px) {
+  ._container {
+    max-width: 720px; } }
+
+@media (min-width: 576px) and (max-width: 768px) {
+  ._container {
+    max-width: 540px; } }
 
 [aria-expanded="false"] svg {
   transform: rotate(0deg); }

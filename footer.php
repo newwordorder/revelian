@@ -523,10 +523,32 @@ $footer_blurb = get_field('footer_blurb', 'footer');
   }
 </script>
 
-<script>
+<?php
+	$page_title = get_the_title( get_option('page_for_posts', true) );
+
+if($page_title == "Blog"): ?>
+	<script>
+		$(document).ready(function(){
+			$(".owl-carousel").owlCarousel({
+				loop:true,
+				nav:true,
+				dots:true,
+				items:1,
+				singleItem:true,
+				autoHeight:true,
+				navText:['<i class="fal fa-chevron-left"></i>','<i class="fal fa-chevron-right"></i>']});
+		});
+	</script>
+<?php else: ?>
+	<script>
 		$(document).ready(function(){
 			$(".owl-carousel").owlCarousel({items:1, loop:true, nav:true, dots:false, navText:['<i class="fal fa-chevron-left"></i>','<i class="fal fa-chevron-right"></i>']});
 		});
+	</script>
+<?php endif; ?>
+
+
+<script>
 
 	var headingNode = document.querySelector('.headingtext');
 	if(headingNode.firstChild != null){
@@ -537,12 +559,14 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 		var newString = "";
 
 		newString += textArray[0];
-		for(var i = 1; i < textArray.length - 1; i++){
-			newString += ' ' + textArray[i];
+		if(textArray.length > 1){
+			for(var i = 1; i < textArray.length - 1; i++){
+				newString += ' ' + textArray[i];
+			}
+			newString += '\xA0' + textArray[textArray.length - 1];
+		else{
+			newStrng += textArray[0];
 		}
-		newString += '\xA0' + textArray[textArray.length - 1];
-
-	}
 
 	headingNode.firstChild.nodeValue = newString;
 
