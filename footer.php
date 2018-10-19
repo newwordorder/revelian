@@ -549,8 +549,8 @@ if($page_title == "Blog"): ?>
 
 
 <script>
-
 	var headingNode = document.querySelector('.headingtext');
+	if(headingNode){
 	if(headingNode.firstChild != null){
 	var text = headingNode.firstChild.nodeValue;
 
@@ -564,12 +564,15 @@ if($page_title == "Blog"): ?>
 				newString += ' ' + textArray[i];
 			}
 			newString += '\xA0' + textArray[textArray.length - 1];
-		else{
+
+		}else{
 			newStrng += textArray[0];
 		}
+	}
 
 	headingNode.firstChild.nodeValue = newString;
 
+	}
 	}
 
 </script>

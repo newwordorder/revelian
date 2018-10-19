@@ -17872,6 +17872,10 @@ canvas {
     .team__link:hover {
       color: #bf0a29; }
 
+.feature-column__icon--center {
+  transform: translateY(-50%) translateX(-50%);
+  left: 50%; }
+
 /*
 * Use existing Bootstrap 4 classes and
 * variables to extend - override CF7 style

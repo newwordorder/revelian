@@ -42,7 +42,7 @@ if( get_row_layout() == 'feature_columns' ):
                   $height = $image['sizes'][ $size . '-height' ];
 
                   ?>
-                  <img class="feature-column__image" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                  <img class="feature-column__image  <?php if( $centered == 'yes' ): ?>align-items-center<?php endif; ?>" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
                   <?php if( $boxed == 'yes' ): ?><div class="feature-column--boxed__inner"><?php endif; ?>
                 <?php endif; ?>
               <?php endif; ?>
@@ -56,7 +56,7 @@ if( get_row_layout() == 'feature_columns' ):
                 ?>
                 <?php if( $boxed == 'yes' ): ?><div class="feature-column--boxed__inner"><?php endif; ?>
                 <div class="col-md-2 feature-column__icon--container">
-                  <img class="feature-column__icon" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                  <img class="feature-column__icon <?php if( $centered == 'yes' ): ?>feature-column__icon--center<?php endif; ?>" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
                 </div>
                   <?php endif; ?>
               <?php endif; ?>
@@ -137,7 +137,7 @@ if( get_row_layout() == 'feature_columns' ):
                         $height = $image['sizes'][ $size . '-height' ];
 
                         ?>
-                        <img class="feature-column__image" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                        <img class="feature-column__image <?php if( $centered == 'yes' ): ?>align-items-center<?php endif; ?>" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
                         <?php if( $boxed == 'yes' ): ?><div class="feature-column--boxed__inner"><?php endif; ?>
                       <?php endif; ?>
                     <?php endif; ?>
@@ -151,7 +151,7 @@ if( get_row_layout() == 'feature_columns' ):
                       ?>
                       <?php if( $boxed == 'yes' ): ?><div class="feature-column--boxed__inner"><?php endif; ?>
                       <div class="feature-column__icon--container">
-                        <img class="feature-column__icon" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                        <img class="feature-column__icon <?php if( $centered == 'yes' ): ?>feature-column__icon--center<?php endif; ?>" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
                       </div>
                         <?php endif; ?>
                     <?php endif; ?>
@@ -166,7 +166,7 @@ if( get_row_layout() == 'feature_columns' ):
 
                     </div>
                   </div>
-            
+
               <?php endif;?>
 
           <?php endif;?>

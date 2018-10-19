@@ -980,3 +980,8 @@ canvas{
     }
   }
 }
+
+.feature-column__icon--center{
+  transform: translateY(-50%) translateX(-50%);
+  left: 50%;
+}
