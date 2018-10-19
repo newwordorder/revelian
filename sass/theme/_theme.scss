@@ -22,7 +22,7 @@ section {
         background: $primary;
         padding:10px;
        }
-      ::selection { 
+      ::selection {
         color:$white;
         background: $primary;
         padding:10px;
@@ -32,11 +32,11 @@ section {
 
     &--light {
       background-color: $light;
-      ::-moz-selection { 
+      ::-moz-selection {
         color:$light;
         background: $primary;
        }
-      ::selection { 
+      ::selection {
         color:$light;
         background: $primary;
        }
@@ -44,11 +44,11 @@ section {
 
     &--dark {
       background-color: $dark;
-      ::-moz-selection { 
+      ::-moz-selection {
         color:$dark;
         background: $primary;
       }
-      ::selection { 
+      ::selection {
         color:$dark;
         background: $primary;
        }
@@ -59,19 +59,19 @@ section {
 
     &--primary {
       background-color: $primary;
-      ::-moz-selection { 
+      ::-moz-selection {
         color:$primary;
         background: $white;
        }
-      ::selection { 
+      ::selection {
         color:$primary;
-        background: $white; 
+        background: $white;
       }
       .btn{
         &--solid {
           background: $white;
           color: $primary;
-      
+
           &:hover {
             background: darken($white, 10%);
             color: $primary;
@@ -83,16 +83,16 @@ section {
       }
     }
 
-    
+
   }
 
   &.imagebg{
 
-    ::-moz-selection { 
+    ::-moz-selection {
       color:$primary;
       background: $body-color;
      }
-    ::selection { 
+    ::selection {
       color:$primary;
       background: $body-color;
      }
@@ -101,7 +101,7 @@ section {
         &--solid {
           background: $white;
           color: $primary;
-      
+
           &:hover {
             background: darken($white, 10%);
             color: $primary;
@@ -231,16 +231,25 @@ section {
       height:70px;
       margin:auto;
       margin-bottom:20px;
-    } 
+    }
   }
 }
 
 .feature-card {
   box-shadow:0 10px 20px rgba(0, 0, 0, 0.05);
-  padding:1.5em;
+  padding-top:2em;
+  padding-bottom:2em;
+  padding-left:0em;
+  padding-right:0em;
   background-color:$white;
   height:100%;
-  margin: 15px 0;
+  *{
+    margin-left:10px;
+    margin-right:10px;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 30px;
+  }
 
 
   &__image, &__icon {
@@ -264,7 +273,7 @@ section {
     flex-direction:column;
     justify-content: center;
     align-items:flex-start;
-   } 
+   }
   }
 
   .buttons{
@@ -274,9 +283,8 @@ section {
   }
 }
 
-.bg--dark .feature-card {
-  background-color: rgba($white,0.1);
-}
+
+
 
 
 
@@ -459,11 +467,11 @@ section {
   background: $light;
 }
 
-.full-size { 
+.full-size {
   right:0;
   bottom:0;
-	position: absolute; 
-	top : 0; 
+	position: absolute;
+	top : 0;
 	left : 0;
 }
 .blend-multiply {
@@ -482,7 +490,7 @@ section {
 }
 
 .animated-bg {
-	background-position:center;  
+	background-position:center;
 	-moz-background-size:cover;
 	-o-background-size:cover;
 	-webkit-background-size:cover;
@@ -505,24 +513,24 @@ section {
 	position :absolute;
 	overflow : hidden;
 	background-color: #000000;
-	width :240px; 
+	width :240px;
 	height: 240px;
-    top:0; 
-    left:0; 
-    -webkit-border-radius: 120px; 
-    border-radius: 120px;  
-    -webkit-transition: opacity 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);  
-    transition: opacity 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);  
-    opacity : 0; 
+    top:0;
+    left:0;
+    -webkit-border-radius: 120px;
+    border-radius: 120px;
+    -webkit-transition: opacity 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
+    transition: opacity 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
+    opacity : 0;
     filter:blur(10px);
 }
 .circle-follow::before  {
-	content : ' ';  
-	height : 100%; 
-	width : 100%; 
-	position: absolute; 
-	top : 0; 
-	left : 0; 
+	content : ' ';
+	height : 100%;
+	width : 100%;
+	position: absolute;
+	top : 0;
+	left : 0;
 }
 
 .circle-follow.moving {
@@ -597,16 +605,15 @@ li{
 }
 
 .flickity-enabled{
- &.is-draggable {
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
-  -webkit-tap-highlight-color: transparent;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  outline:0;
-
-}
+  &.is-draggable {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline:0;
+  }
 }
 
 .feature{
@@ -704,7 +711,7 @@ canvas{
       z-index:1 !important;
     }
   }
-  overflow: hidden; 
+  overflow: hidden;
 
   & > .background-image-holder,
     & > img:only-child {
@@ -723,7 +730,7 @@ canvas{
       transition: 1.2s ease;
       z-index:1 !important;
 
-    } 
+    }
 }
 
 .text{
@@ -749,7 +756,7 @@ canvas{
       &:before{
         content:"";
         left:0%;
-        width:100%; 
+        width:100%;
       }
     }
   }
@@ -764,10 +771,10 @@ canvas{
   width: 100%;
   height: 100%;
   position: fixed;
-  top: 0; 
+  top: 0;
   bottom: 0;
   background: rgba(0,0,0,1);
-  z-index : 10; 
+  z-index : 10;
 }
 
 .percentage {
@@ -826,7 +833,7 @@ canvas{
 
 .leftborder{
   border-left:4px solid $primary;
-  
+
 }
 
 .modal-instance{
@@ -862,114 +869,88 @@ canvas{
   height: 100%;
 }
 
-.mb-0{
-  text-align:left;
-  padding: 0 0.5em;
-
-}
-
-.image{
-  width:100%;
-  margin-bottom: 1em;
-  margin-left:0;
-  margin-right:0;
-  height:12em;
-  position:relative;
-  *{
-    margin:0;
-  }
-}
-
-.project-tile {
-
-  margin: 1em 0;
-  background: $white;
-  box-shadow:0 10px 20px rgba(0, 0, 0, 0.05);
-  height: calc( 100% - 2em );
-  display: flex;
-  flex-direction: column;
-
-  &__image {
-    padding-bottom:66%;  
-    position: relative; 
-  }
-
-  &__content {
-    padding:1.5em;
-  }
-
-  & .btn {
-    margin-top: auto;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-
-}  
-
-.product-controls {
-  margin-bottom: 50px;
-
-  button {
-    font-size: 0.825em;
-    line-height: 1;
-    font-weight: 700;
-    font-family: $isidora-bold;
-    text-transform: uppercase;
-    color: $primary;
-    padding: 0.8em 1.6em;
-    border-radius:0;
-    background: transparent;
-    color: $primary;
-    border: 1px solid $primary;
-    transition: 0.2s;
-
-    &:hover {
-      background: $primary;
-      color: $white;
+.owl-dots{
+  position:absolute;
+  bottom:1em;
+  left:2em;
+  z-index:4 !important;
+  .owl-dot{
+    width:3em;
+    height:0.1em;
+    background-color:#fff !important;
+    margin: 0.5em;
+    &.active{
+      background-color:$primary !important;
     }
+  }
+}
 
-    &.mixitup-control-active {
-      background: $primary;
-      color: $white;
-      &:hover {
-        background: darken($primary,10%);
-        color: $white;
+.owl-stage-outer{
+  min-height:100%;
+}
+
+.owl-nav{
+  position:absolute;
+  right:0;
+  bottom:0;
+  z-index:4 !important;
+  button{
+    background-color:$primary !important;
+    width:3rem;
+    height:3rem;
+    color:#fff !important;
+  }
+}
+
+.owl-carousel {
+  position: relative;
+  height: 100%;
+
+  .owl-stage{
+  }
+
+  .owl-item {
+    .background-image-holder{
+      width:100%;
+    img {
+      display:none;
       }
     }
   }
 }
 
-
-.panel {
-  border-top: 1px solid $gray_200;
-  
-  padding: 10px 10px 0;
-
-  &:last-of-type {
-    border-bottom: 1px solid $gray_200;
+.page-header{
+  &::before{
+    z-index:3;
   }
-
-  .panel-title a {
-    color: $primary;
-    transition: 0.2s;
-    display: block;
-    position: relative;
-    &:hover {
-      color: darken($primary,10%);
-    }
-
-    svg {
-      position: absolute;
-      right: 0;
-    }
-
-    
-  }
-  
 }
-.collapsed svg {
-  transform: rotate(45deg);
+
+._container{
+  position: relative;
+  z-index:4 !important;
+}
+
+@media (min-width: 1200px){
+  ._container {
+      max-width: 1140px;
+      margin:auto;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px){
+  ._container {
+      max-width: 960px;
+  }
+}
+
+@media (min-width: 768px) and (max-width:992px){
+  ._container {
+      max-width: 720px;
+  }
+}
+@media (min-width: 576px) and (max-width:768px){
+  ._container {
+      max-width: 540px;
+  }
 }
 
 [aria-expanded="false"] svg {
