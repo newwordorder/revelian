@@ -1,0 +1,43 @@
+[
+    {
+        "key": "group_5bbd46fb6268f",
+        "title": "Code Block",
+        "fields": [
+            {
+                "key": "field_5bbd470328026",
+                "label": "Code Block",
+                "name": "code_block",
+                "type": "acf_code_field",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "mode": "htmlmixed",
+                "theme": "monokai"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 0,
+        "description": ""
+    }
+]
