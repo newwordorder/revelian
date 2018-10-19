@@ -21,6 +21,7 @@ if( get_row_layout() == 'feature_columns' ):
           $text = get_sub_field('text_block');
           $image = get_sub_field('image');
           $icon = get_sub_field('icon');
+          $faicon = get_sub_field('fontawesome_icon');
 
         ?>
 
@@ -45,6 +46,10 @@ if( get_row_layout() == 'feature_columns' ):
                   <img class="feature-column__image" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
                   <?php if( $boxed == 'yes' ): ?><div class="feature-column--boxed__inner"><?php endif; ?>
                 <?php endif; ?>
+              <?php endif; ?>
+
+              <?php if( $type == 'fa' ):?>
+                <?php echo $faicon; ?>
               <?php endif; ?>
 
               <?php if( $type == 'icon' ):if( !empty($icon) ):
@@ -94,6 +99,10 @@ if( get_row_layout() == 'feature_columns' ):
                 <?php endif; ?>
               <?php endif; ?>
 
+              <?php if( $type == 'fa' ):?>
+                <?php echo $faicon; ?>
+              <?php endif; ?>
+
               <?php if( $type == 'icon' ):if( !empty($icon) ):
 
                 // vars
@@ -140,6 +149,12 @@ if( get_row_layout() == 'feature_columns' ):
                         <img class="feature-column__image" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
                         <?php if( $boxed == 'yes' ): ?><div class="feature-column--boxed__inner"><?php endif; ?>
                       <?php endif; ?>
+                    <?php endif; ?>
+
+                    <?php if( $type == 'fa' ):?>
+                    <div class="feature-column__fa-icon">
+                      <?php echo $faicon; ?>
+                      </div>
                     <?php endif; ?>
 
                     <?php if( $type == 'icon' ):if( !empty($icon) ):
