@@ -559,12 +559,14 @@ if($page_title == "Blog"): ?>
 		var newString = "";
 
 		newString += textArray[0];
-		for(var i = 1; i < textArray.length - 1; i++){
-			newString += ' ' + textArray[i];
+		if(textArray.length > 1){
+			for(var i = 1; i < textArray.length - 1; i++){
+				newString += ' ' + textArray[i];
+			}
+			newString += '\xA0' + textArray[textArray.length - 1];
+		else{
+			newStrng += textArray[0];
 		}
-		newString += '\xA0' + textArray[textArray.length - 1];
-
-	}
 
 	headingNode.firstChild.nodeValue = newString;
 
