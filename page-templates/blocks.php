@@ -21,19 +21,17 @@ if( have_rows('blocks') ) {
          get_template_part( 'page-templates/blocks/cta' );
          get_template_part( 'page-templates/blocks/image' );
          get_template_part( 'page-templates/blocks/feature-columns' );
-         get_template_part( 'page-templates/blocks/feature-cards' );
          get_template_part( 'page-templates/blocks/line-break' );
-         get_template_part( 'page-templates/blocks/projects' );
          get_template_part( 'page-templates/blocks/feature' );
          get_template_part( 'page-templates/blocks/testimonials' );
          get_template_part( 'page-templates/blocks/video' );
          get_template_part('page-templates/blocks/image-split');
-         get_template_part('page-templates/blocks/postSection');
          get_template_part('page-templates/blocks/code-block');
          get_template_part('page-templates/blocks/pricing-table');
          get_template_part('page-templates/blocks/text-code-block');
          get_template_part('page-templates/blocks/client-logos');
          get_template_part('page-templates/blocks/products');
+         get_template_part('page-templates/blocks/team-block');
 
 
       }
