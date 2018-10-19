@@ -25,7 +25,7 @@ if( get_row_layout() == 'feature_columns' ):
         ?>
 
         <?php if($sideIcon): ?>
-          <div class="col-md-<?php echo $columns; ?> feature-column sideIcon space-below--<?php echo $spaceBelow ?>">
+          <div class="col-md<?php if($columns=='fit'):echo""; else: echo "-" . $columns; endif; ?> feature-column sideIcon space-below--<?php echo $spaceBelow ?>">
 
             <div class=" row <?php if( $boxed == 'yes' ): ?>feature-column--boxed<?php endif; ?> <?php if( $centered == 'yes' ): ?>text-center<?php endif; ?>">
 
@@ -74,7 +74,7 @@ if( get_row_layout() == 'feature_columns' ):
 
         <?php else: ?> 
           <?php if($card): ?>
-          <div class="col-lg-<?php echo $columns; ?>  space-below--<?php echo $spaceBelow ?>">
+          <div class="col-lg<?php if($columns=='fit'):echo""; else: echo "-" . $columns; endif; ?> space-below--<?php echo $spaceBelow ?>">
             <div class="feature-card"> 
               <?php if( $type == 'image' ):
                 if( !empty($image) ):
@@ -120,7 +120,7 @@ if( get_row_layout() == 'feature_columns' ):
               </div>
 
               <?php else: ?>
-                <div class="col-md-<?php echo $columns; ?> feature-column space-below--<?php echo $spaceBelow ?>">
+                <div class="col-md<?php if($columns=='fit'):echo""; else: echo "-" . $columns; endif; ?> feature-column space-below--<?php echo $spaceBelow ?>">
 
                   <div class="<?php if( $boxed == 'yes' ): ?>feature-column--boxed<?php endif; ?> <?php if( $centered == 'yes' ): ?>text-center<?php endif; ?>">
 
