@@ -19,6 +19,7 @@
                 "choices": {
                     "icon": "Icon",
                     "image": "Image",
+                    "fa": "FontAwesome",
                     "none": "None"
                 },
                 "default_value": [],
@@ -151,6 +152,25 @@
                         "layout": "block",
                         "prefix_label": 0,
                         "prefix_name": 0
+                    },
+                    {
+                        "key": "field_5bc965841dbf9",
+                        "label": "FontAwesome icon",
+                        "name": "fontawesome_icon",
+                        "type": "text",
+                        "instructions": "Paste the FA code eg. <i class=\"fab fa-linkedin\"><\/i>",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
                     }
                 ]
             },
