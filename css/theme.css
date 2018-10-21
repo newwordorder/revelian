@@ -17318,8 +17318,11 @@ section.bg-effect--ken-burns {
 
 .feature-column__fa-icon {
   color: #ef0d33;
-  font-size: 3.4em;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  width: 50px; }
+  .feature-column__fa-icon svg {
+    width: 100% !important;
+    height: auto; }
 
 .feature-card {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
