@@ -12,13 +12,18 @@
     }
   
     &__icon {
-      width: 70px;
-      position:absolute;
-      top:50%;
-      transform:translateY(-50%);
+        width: 70px;
+        
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+ 
+    
       &--container{
         position:relative;
         height:70px;
+        width: 70px;
         margin-bottom:20px;
       }
     }
@@ -46,7 +51,7 @@
 
     &--centered {
         text-align: center;
-        .feature-column__fa-icon, .feature-column__icon {
+        .feature-column__fa-icon, .feature-column__icon, .feature-column__icon--container {
             margin-left: auto;
             margin-right: auto;
         }

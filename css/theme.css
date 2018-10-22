@@ -17183,10 +17183,12 @@ header {
     width: 70px;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%); }
+    left: 50%;
+    transform: translate(-50%, -50%); }
     .feature-column__icon--container {
       position: relative;
       height: 70px;
+      width: 70px;
       margin-bottom: 20px; }
   .feature-column__fa-icon {
     color: #ef0d33;
@@ -17203,7 +17205,7 @@ header {
       padding-left: 70px; }
   .feature-column--centered {
     text-align: center; }
-    .feature-column--centered .feature-column__fa-icon, .feature-column--centered .feature-column__icon {
+    .feature-column--centered .feature-column__fa-icon, .feature-column--centered .feature-column__icon, .feature-column--centered .feature-column__icon--container {
       margin-left: auto;
       margin-right: auto; }
 

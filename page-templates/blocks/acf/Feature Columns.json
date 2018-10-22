@@ -4,6 +4,89 @@
         "title": "Feature columns",
         "fields": [
             {
+                "key": "field_5bb417e4b6499",
+                "label": "Card",
+                "name": "card",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "ui": 1,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            },
+            {
+                "key": "field_5b6a861eec5fd",
+                "label": "Columns per row",
+                "name": "size",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "3": "4",
+                    "4": "3",
+                    "6": "2"
+                },
+                "default_value": [],
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "ajax": 0,
+                "return_format": "value",
+                "placeholder": ""
+            },
+            {
+                "key": "field_5b95e86f408d8",
+                "label": "Icon on left",
+                "name": "sideicon",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "ui": 1,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            },
+            {
+                "key": "field_5bcd11b08bd18",
+                "label": "Centered",
+                "name": "centered",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "ui": 1,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            },
+            {
                 "key": "field_5b49828216a66",
                 "label": "Type",
                 "name": "type",
@@ -114,6 +197,25 @@
                         "mime_types": ""
                     },
                     {
+                        "key": "field_5bc965841dbf9",
+                        "label": "FontAwesome icon",
+                        "name": "fontawesome_icon",
+                        "type": "text",
+                        "instructions": "Paste the FA code eg. <i class=\"fab fa-linkedin\"><\/i>",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
                         "key": "field_5b4982fcc2543",
                         "label": "Text block",
                         "name": "text_block",
@@ -152,25 +254,6 @@
                         "layout": "block",
                         "prefix_label": 0,
                         "prefix_name": 0
-                    },
-                    {
-                        "key": "field_5bc965841dbf9",
-                        "label": "FontAwesome icon",
-                        "name": "fontawesome_icon",
-                        "type": "text",
-                        "instructions": "Paste the FA code eg. <i class=\"fab fa-linkedin\"><\/i>",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "",
-                        "placeholder": "",
-                        "prepend": "",
-                        "append": "",
-                        "maxlength": ""
                     }
                 ]
             },
@@ -194,70 +277,6 @@
                 "layout": "block",
                 "prefix_label": 0,
                 "prefix_name": 0
-            },
-            {
-                "key": "field_5b6a861eec5fd",
-                "label": "Columns per row",
-                "name": "size",
-                "type": "select",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "33",
-                    "class": "",
-                    "id": ""
-                },
-                "choices": {
-                    "3": "4",
-                    "4": "3",
-                    "6": "2"
-                },
-                "default_value": [],
-                "allow_null": 0,
-                "multiple": 0,
-                "ui": 0,
-                "ajax": 0,
-                "return_format": "value",
-                "placeholder": ""
-            },
-            {
-                "key": "field_5b95e86f408d8",
-                "label": "sideIcon",
-                "name": "sideicon",
-                "type": "true_false",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "33",
-                    "class": "",
-                    "id": ""
-                },
-                "message": "",
-                "default_value": 0,
-                "ui": 0,
-                "ui_on_text": "",
-                "ui_off_text": ""
-            },
-            {
-                "key": "field_5bb417e4b6499",
-                "label": "Card",
-                "name": "card",
-                "type": "true_false",
-                "instructions": "IMPORTANT: Remember to center the text when this is selected",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "33",
-                    "class": "",
-                    "id": ""
-                },
-                "message": "",
-                "default_value": 0,
-                "ui": 0,
-                "ui_on_text": "",
-                "ui_off_text": ""
             }
         ],
         "location": [
@@ -275,7 +294,7 @@
         "label_placement": "top",
         "instruction_placement": "label",
         "hide_on_screen": "",
-        "active": 0,
+        "active": 1,
         "description": ""
     }
 ]
