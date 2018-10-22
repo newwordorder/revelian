@@ -417,17 +417,17 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 		menuItems[i].addEventListener("click", (e) => {
 			e.preventDefault();
 			var mega_menu = document.querySelectorAll('.mega_menu');
+			if(e.target)
 			for(i=0; i < mega_menu.length; i++){
 				//mega_menu[i].classList.remove('active');
 				tl.to(mega_menu[i], 0.3, {
-						top:20,
-						opacity:0,
-						zIndex:'-1',
-						display:'',
-						width:'100%',
-						height:'100%',
-						padding:50,
-
+					top:20,
+					opacity:0,
+					zIndex:'-1',
+					display:'',
+					width:'100%',
+					height:'100%',
+					padding:50,
 				});
 			}
 
@@ -451,17 +451,17 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 						width:'100%',
 						padding:50,
 						height:'100%'
-						},'-=0.2');
+					},'-=0.2');
+				}else{
+					window.location.href=e.target;
 				}
 			}
 			tl.add(() => {
 			tl.to(document.getElementById('dropdown'), 0.3, {
 				height: menu.offsetHeight,
     			borderTop:'2px solid #fff',
-
 			},'-=0.1')
 		})
-
 
 		});
 
@@ -476,21 +476,20 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 			var menu = document.querySelectorAll('.mega_menu');
 			for(i=0; i < menu.length; i++){
 				tl.to(menu[i], 0.3, {
-						top:20,
-						opacity:0,
-						display:'none',
-						zIndex:-2,
-						width:'100%'
-						});
+					top:20,
+					opacity:0,
+					display:'none',
+					zIndex:-2,
+					width:'100%'
+				});
 			}
 
-				tl.to(document.getElementById('dropdown'), 0.3, {
-				height:0,
-    			borderTop:'0px solid #fff',
+			tl.to(document.getElementById('dropdown'), 0.3, {
+			height:0,
+			borderTop:'0px solid #fff',
+			},'-=0.3')
 
-				},'-=0.3')
-
-				tl.to(document.querySelector('.navbar__mega--line'), 0.3, {
+			tl.to(document.querySelector('.navbar__mega--line'), 0.3, {
 				width:'0%',
 				left:'50%',
 				x:'0%'
@@ -517,10 +516,10 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 		}
 	}
 
+	window.FontAwesomeConfig = {
+		searchPseudoElements: true
+	}
 
-		window.FontAwesomeConfig = {
-    searchPseudoElements: true
-  }
 </script>
 
 <?php
