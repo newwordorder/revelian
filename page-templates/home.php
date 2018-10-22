@@ -93,7 +93,6 @@ if( !empty($image) ):
     <div class="col-lg-10 col-md-10">
 
         <h1><?php the_title(); ?></h1>
-        <hr></hr>
         <p class="headingtext"><?php echo $headingtext; ?></p>
 
     </div>

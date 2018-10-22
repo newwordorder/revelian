@@ -526,6 +526,7 @@ li{
     cursor: -webkit-grabbing;
     cursor: grabbing;
   }
+  
 }
 
 .flickity-enabled{
@@ -537,6 +538,12 @@ li{
     -ms-user-select: none;
     user-select: none;
     outline:0;
+  }
+  &:focus {
+    outline-style:none;
+    box-shadow:none;
+    border-color:transparent;
+    outline: none!important;
   }
 }
 

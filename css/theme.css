@@ -17180,7 +17180,8 @@ header {
   .feature-column__image, .feature-column__icon {
     margin-bottom: 30px; }
   .feature-column__icon {
-    width: 70px;
+    max-width: 70px;
+    max-height: 70px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -17611,6 +17612,12 @@ li {
   -ms-user-select: none;
   user-select: none;
   outline: 0; }
+
+.flickity-enabled:focus {
+  outline-style: none;
+  box-shadow: none;
+  border-color: transparent;
+  outline: none !important; }
 
 .feature {
   padding: 20px;

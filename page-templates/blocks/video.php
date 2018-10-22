@@ -42,7 +42,7 @@ if( get_row_layout() == 'video' ):
         <div class="row justify-content-center">
           <div class="col-md-<?php echo $width; ?>">
 
-            <div class="video-cover rounded">
+            <div class="video-cover">
               <div class="background-image-holder ">
                 <?php if( !empty($videoCoverImage) ):
 
@@ -69,7 +69,7 @@ if( get_row_layout() == 'video' ):
         <div class="row justify-content-center">
           <div class="col-md-10">
 
-            <div class="video-cover rounded">
+            <div class="video-cover">
               <div class="background-image-holder ">
                 <?php if( !empty($videoCoverImage) ):
 
