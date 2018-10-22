@@ -17187,7 +17187,6 @@ header {
     .feature-column__icon--container {
       position: relative;
       height: 70px;
-      margin: auto;
       margin-bottom: 20px; }
   .feature-column__fa-icon {
     color: #ef0d33;
@@ -17202,6 +17201,11 @@ header {
       position: absolute; }
     .feature-column--side-icon .feature-column__text {
       padding-left: 70px; }
+  .feature-column--centered {
+    text-align: center; }
+    .feature-column--centered .feature-column__fa-icon, .feature-column--centered .feature-column__icon {
+      margin-left: auto;
+      margin-right: auto; }
 
 .feature-card {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
@@ -17230,10 +17234,6 @@ header {
       flex-direction: column;
       justify-content: center;
       align-items: flex-start; }
-  .feature-card .buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; }
 
 .bg--dark .feature-card {
   background-color: rgba(255, 255, 255, 0.1); }

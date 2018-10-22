@@ -19,7 +19,6 @@
       &--container{
         position:relative;
         height:70px;
-        margin:auto;
         margin-bottom:20px;
       }
     }
@@ -42,6 +41,14 @@
         }
         .feature-column__text {
             padding-left: 70px;
+        }
+    }
+
+    &--centered {
+        text-align: center;
+        .feature-column__fa-icon, .feature-column__icon {
+            margin-left: auto;
+            margin-right: auto;
         }
     }
   }
@@ -81,11 +88,7 @@
         }
     }
   
-    .buttons{
-      display:flex;
-    flex-direction:column;
-    justify-content: center;
-    }
+   
   }
   
   
