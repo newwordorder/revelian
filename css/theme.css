@@ -17194,22 +17194,22 @@ header {
   .feature-column__fa-icon {
     color: #ef0d33;
     margin-bottom: 20px;
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     position: relative; }
     .feature-column__fa-icon svg {
       height: auto;
-      font-size: 3em;
+      font-size: 3.5em;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%); }
   .feature-column--side-icon {
     position: relative; }
-    .feature-column--side-icon .feature-column__icon, .feature-column--side-icon .feature-column__fa-icon {
+    .feature-column--side-icon .feature-column__icon, .feature-column--side-icon .feature-column__icon--container, .feature-column--side-icon .feature-column__fa-icon {
       position: absolute; }
     .feature-column--side-icon .feature-column__text {
-      padding-left: 70px; }
+      padding-left: 90px; }
   .feature-column--centered {
     text-align: center; }
     .feature-column--centered .feature-column__fa-icon, .feature-column--centered .feature-column__icon, .feature-column--centered .feature-column__icon--container {
