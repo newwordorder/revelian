@@ -11,6 +11,28 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 ?>
 
+	<?php if ( have_posts() ) : ?>
+
+<section
+
+class="page-header imagebg <?php if( $invertColours == 'yes' ): echo 'image--light'; endif; ?>"
+  id="header"
+>
+<div class="container">
+    <div class="row">
+    	<div class="col-lg-10 col-md-10">
+			<h1><?php printf(
+			/* translators:*/
+			esc_html__( 'Search Results for: %s', 'understrap' ),
+			'<span><span style="color:#ef0d33">&#8220;</span>' . get_search_query() . '<span style="color:#ef0d33">&#8221;</span></span>' ); ?></h1>
+			</div>
+		</div>
+		</div>
+
+</section><!-- .page-header -->
+
+<?php endif; ?>
+
 <div class="wrapper" id="search-wrapper">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
@@ -18,20 +40,10 @@ $container   = get_theme_mod( 'understrap_container_type' );
 		<div class="row">
 
 			<!-- Do the left sidebar check and opens the primary div -->
-			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
 
-			<main class="site-main" id="main">
+			<main class="site-main" id="main" style="width:100%;">
 
 				<?php if ( have_posts() ) : ?>
-
-					<header class="page-header">
-						
-							<h1 class="page-title"><?php printf(
-							/* translators:*/
-							 esc_html__( 'Search Results for: %s', 'understrap' ),
-								'<span>' . get_search_query() . '</span>' ); ?></h1>
-
-					</header><!-- .page-header -->
 
 					<?php /* Start the Loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>
@@ -61,7 +73,6 @@ $container   = get_theme_mod( 'understrap_container_type' );
 		</div><!-- #primary -->
 
 		<!-- Do the right sidebar check -->
-		<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
 
 	</div><!-- .row -->
 
@@ -69,4 +80,67 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 </div><!-- Wrapper end -->
 
+<script>
+  function animateIn(){
+
+    let masterTimeline = new TimelineMax();
+
+    const t1 = new TimelineMax();
+
+    t1Setup(t1);
+
+    masterTimeline.add(t1);
+
+  };
+
+  function t1Setup(t1){
+
+    t1
+
+    .set('.navbar__navigation',{
+      opacity:0,
+    })
+
+    .set('.page-header',{
+      backgroundColor:'#000'
+    })
+
+
+    .set('.dropdown',{
+      opacity:0,
+    })
+
+    .set('#site-logo',{
+      opacity:0,
+    })
+
+    .to('.navbar__inner--after',0.6,{
+      width:'100%',
+      ease: Power1.easeInOut
+
+    })
+
+    .to('#site-logo',0.6,{
+      opacity:1,
+    },)
+
+    .to('.navbar__navigation',0.6,{
+      opacity:1,
+    },'-=0.6')
+
+    .to('.navbar__upper', 0.6,{
+      opacity:1,
+    }, '-=0.6')
+
+    .to('.dropdown',0.6,{
+      opacity:1,
+    },'-=0.6')
+
+  }
+
+  jQuery(document).ready(() => {
+    animateIn();
+  });
+
+</script>
 <?php get_footer(); ?>

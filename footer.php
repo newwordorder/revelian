@@ -17,6 +17,9 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5">
+			<a id="site-logo" class="navbar-brand footer-brand" href="<?php echo network_home_url(); ?>">
+				Revelian
+			</a>
 				<?php echo $footer_blurb; ?>
 			</div>
 			<div class="col-md-2 offset-md-1">
