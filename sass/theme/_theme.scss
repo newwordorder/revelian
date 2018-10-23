@@ -210,82 +210,6 @@ section {
   }
 }
 
-.feature-column {
-
-  @include media-breakpoint-down(sm) {
-    margin-bottom: 30px;
-  }
-
-
-  &__image, &__icon {
-    margin-bottom: 30px;
-  }
-
-  &__icon {
-    width: 70px;
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    &--container{
-      position:relative;
-      height:70px;
-      margin:auto;
-      margin-bottom:20px;
-    }
-  }
-}
-
-.feature-card {
-  box-shadow:0 10px 20px rgba(0, 0, 0, 0.05);
-  padding-top:2em;
-  padding-bottom:2em;
-  padding-left:0em;
-  padding-right:0em;
-  background-color:$white;
-  height:100%;
-  *{
-    margin-left:10px;
-    margin-right:10px;
-  }
-  @include media-breakpoint-down(sm) {
-    margin-bottom: 30px;
-  }
-
-
-  &__image, &__icon {
-    margin-bottom: 30px;
-  }
-
-  &__icon {
-    max-height: 70px;
-    max-width:70px;
-    margin:0em auto;
-    position:absolute;
-    top:50%;
-    transform:translate(-50%, -50%);
-    left:50%;
-   &--container{
-    position:relative;
-     margin:auto;
-     margin-bottom:30px;
-     display:flex;
-     height:70px;
-    flex-direction:column;
-    justify-content: center;
-    align-items:flex-start;
-   }
-  }
-
-  .buttons{
-    display:flex;
-  flex-direction:column;
-  justify-content: center;
-  }
-}
-
-
-
-
 
 
 .buttons {
@@ -602,6 +526,7 @@ li{
     cursor: -webkit-grabbing;
     cursor: grabbing;
   }
+  
 }
 
 .flickity-enabled{
@@ -613,6 +538,12 @@ li{
     -ms-user-select: none;
     user-select: none;
     outline:0;
+  }
+  &:focus {
+    outline-style:none;
+    box-shadow:none;
+    border-color:transparent;
+    outline: none!important;
   }
 }
 
@@ -953,9 +884,71 @@ canvas{
   }
 }
 
+.project-tile {
+  margin: 1em 0;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  height: calc( 100% - 2em);
+  display: flex;
+  flex-direction: column; }
+  .project-tile__image {
+    padding-bottom: 66%;
+    position: relative; }
+  .project-tile__content {
+    padding: 1.5em; }
+  .project-tile .btn,
+  .project-tile .wpcf7 input[type=submit], .wpcf7 .project-tile input[type=submit] {
+    margin-top: auto;
+    padding-left: 0;
+    padding-right: 0; }
+
+.product-controls {
+  margin-bottom: 50px; }
+  .product-controls button {
+    font-size: 0.825em;
+    line-height: 1;
+    font-weight: 700;
+    font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: #ef0d33;
+    padding: 0.8em 1.6em;
+    border-radius: 0;
+    background: transparent;
+    color: #ef0d33;
+    border: 1px solid #ef0d33;
+    transition: 0.2s; }
+    .product-controls button:hover {
+      background: #ef0d33;
+      color: #fff; }
+    .product-controls button.mixitup-control-active {
+      background: #ef0d33;
+      color: #fff; }
+      .product-controls button.mixitup-control-active:hover {
+        background: #bf0a29;
+        color: #fff; }
+
+.panel {
+  border-top: 1px solid #e9ecef;
+  padding: 10px 10px 0; }
+  .panel:last-of-type {
+    border-bottom: 1px solid #e9ecef; }
+  .panel .panel-title a {
+    color: #ef0d33;
+    transition: 0.2s;
+    display: block;
+    position: relative; }
+    .panel .panel-title a:hover {
+      color: #bf0a29; }
+    .panel .panel-title a svg {
+      position: absolute;
+      right: 0; }
+
+.collapsed svg {
+  transform: rotate(45deg); }
+
 [aria-expanded="false"] svg {
-  transform: rotate(0deg);
-}
+  transform: rotate(0deg); }
+
 
 .team {
 
