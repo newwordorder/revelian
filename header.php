@@ -79,107 +79,111 @@ $container = get_theme_mod( 'understrap_container_type' );
 			</div>
 			<div class="container navbar--container" >
 				<div class="navbar__inner">
-				  <div class="navbar__inner--after"></div>
-				  <section class='navbar__mega space--md' id="dropdown">
-					  <div class="navbar__mega--inner container">
-						  <?php if( have_rows('mega_menus', 'header') ):
-								while ( have_rows('mega_menus', 'header') ) : the_row(); 
-								$number_of_menus = get_sub_field('number_of_menus','header');
+					<div class="navbar__inner--after"></div>
+						<section class='navbar__mega space--md' id="dropdown">
+							<div class="navbar__mega--inner container">
+								<?php if( have_rows('mega_menus', 'header') ):
+									while ( have_rows('mega_menus', 'header') ) : the_row();
+									$number_of_menus = get_sub_field('number_of_menus','header');
 
-								if($number_of_menus){
-									$colsize = 12 / $number_of_menus;
-								}
-								
+									if($number_of_menus){
+										$colsize = 12 / $number_of_menus;
+									}
+
 								?>
-							<div class="row mega_menu" data-menu="<?php echo get_sub_field('parent'); ?>">
 
+								<div class="row mega_menu" data-menu="<?php echo get_sub_field('parent'); ?>">
 
-						  <div class="col-md-4">
-							  <?php echo get_sub_field('content', 'header'); ?>
-						  </div>
-						  <div class="col-md-8">
-							  <div class="row">
-								  
-						  <?php
-							// check if the repeater field has rows of data
-							if( have_rows('menus', 'header') ):
+									<div class="col-md-4">
+										<?php echo get_sub_field('content', 'header'); ?>
+									</div>
 
+									<div class="col-md-8">
+										<div class="row">
+										<?php
+											// check if the repeater field has rows of data
+											if( have_rows('menus', 'header') ):
 
-								// loop through the rows of data
-								while ( have_rows('menus', 'header') ) : the_row();
-								?>
-								<div class="col-md-<?php echo $colsize; ?>">
-								<?php if(have_rows('sub_menu', 'header')):
+											// loop through the rows of data
+											while ( have_rows('menus', 'header') ) : the_row();
+										?>
+											<div class="col-md-<?php echo $colsize; ?>">
+												<?php if(have_rows('sub_menu', 'header')):
 
-									while( have_rows('sub_menu', 'header')): the_row();
-									
-									$link = get_sub_field('link');
-									if(get_sub_field('menu_title')):
-									?>
-									<li><a href="<?php echo $link['url']; ?>" class="mega_menu_title small"><?php echo $link['title']; ?></a></li>
-									<?
-									else:
-									?>
-									<li><a href="<?php echo $link['url']; ?>" class="mega_menu_link small"><?php echo $link['title']; ?></a></li>
-									<?
-									endif;
-									endwhile;
+													while( have_rows('sub_menu', 'header')): the_row();
 
-								endif; 
-								?>
+													$link = get_sub_field('link');
+
+													if(get_sub_field('menu_title')):
+												?>
+
+												<li><a href="<?php echo $link['url']; ?>" class="mega_menu_title small"><?php echo $link['title']; ?></a></li>
+												<?
+												else:
+												?>
+												<li><a href="<?php echo $link['url']; ?>" class="mega_menu_link small"><?php echo $link['title']; ?></a></li>
+											<?
+												endif;
+												endwhile;
+
+											endif;
+											?>
+											</div>
+											<?
+											endwhile;
+
+											else:
+											// no rows found
+											endif;
+											?>
+										</div>
+									</div>
 								</div>
-							<?	
-							endwhile;
 
-							else:
-								// no rows found
-							endif;
-							?>
+								<?php
+								endwhile;
+								endif; ?>
 							</div>
-						  </div>
-						  </div>
+						</section>
+						<div class="navbar__mega--line"></div>
 
-						<?php 
-						endwhile;
-						endif; ?>
-					  </div>
-				</section>
-				<div class="navbar__mega--line"></div>
-				    
-			
-				<a href="<?php echo network_home_url(); ?>" id="site-logo" class="navbar-brand">
-					Revelian
-				</a>
 
-				<!-- The WordPress Menu goes here -->
-					<?php wp_nav_menu(
-						array(
-							'theme_location'  => 'primary',
-							'container_class' => 'navbar__navigation',
-							'container_id'    => 'navbarNavDropdown',
-							'menu_class'      => 'navbar-nav',
-							'fallback_cb'     => '',
-							'menu_id'         => 'main-menu',
-							'walker'          => new understrap_WP_Bootstrap_Navwalker(),
-						)
-					); ?>
-
-					<div class="toggler-container">
-						<button class="navbar-toggler" data-toggle="menu">
-						<a href="#" class="burger-click">
-							<div class="burger">
-							<div class="burger__container">
-								<span class="burger__icon burger__icon--top"></span>
-								<span class="burger__icon burger__icon--middle"></span>
-								<span class="burger__icon burger__icon--bottom"></span>
-							</div>
-							</div>
+						<a href="<?php echo network_home_url(); ?>" id="site-logo" class="navbar-brand">
+							Revelian
 						</a>
-						</button>
-					</div>
+						<div style="display:flex; direction:row;">
+							<!-- The WordPress Menu goes here -->
+							<?php wp_nav_menu(
+								array(
+									'theme_location'  => 'primary',
+									'container_class' => 'navbar__navigation',
+									'container_id'    => 'navbarNavDropdown',
+									'menu_class'      => 'navbar-nav',
+									'fallback_cb'     => '',
+									'menu_id'         => 'main-menu',
+									'walker'          => new understrap_WP_Bootstrap_Navwalker(),
+								)
+							); ?>
+
+							<?php get_search_form( ) ?>
+						</div>
+
+						<div class="toggler-container">
+							<button class="navbar-toggler" data-toggle="menu">
+							<a href="#" class="burger-click">
+								<div class="burger">
+								<div class="burger__container">
+									<span class="burger__icon burger__icon--top"></span>
+									<span class="burger__icon burger__icon--middle"></span>
+									<span class="burger__icon burger__icon--bottom"></span>
+								</div>
+								</div>
+							</a>
+							</button>
+						</div>
 				</div>
 			</div><!-- .container -->
-			
+
 		</nav><!-- .site-navigation -->
 	</div><!-- .wrapper-navbar end -->
 
@@ -195,6 +199,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 				'walker'          => new understrap_WP_Bootstrap_Navwalker(),
 			)
 		); ?>
-	</div>	
+	</div>
 
 	<div class="hfeed site" id="page">
+
+
