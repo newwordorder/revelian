@@ -17198,12 +17198,15 @@ header {
     height: 70px;
     position: relative; }
     .feature-column__fa-icon svg {
+      color: #ef0d33;
       height: auto;
       font-size: 3.5em;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%); }
+      .feature-column__fa-icon svg path {
+        color: #ef0d33; }
   .feature-column--side-icon {
     position: relative; }
     .feature-column--side-icon .feature-column__icon, .feature-column--side-icon .feature-column__icon--container, .feature-column--side-icon .feature-column__fa-icon {
