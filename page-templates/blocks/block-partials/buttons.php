@@ -12,7 +12,7 @@
       $newTab = get_sub_field('new_tab');
       ?>
 
-      <a href="<?php if($linkType == 'page'):  echo $pageUrl; endif; ?><?php if($linkType == 'url'):  echo $url; endif; ?><?php if($linkType == 'anchor'):  echo '#' . $achor; endif; ?>" <?php if($newTab):echo 'target="_blank"'; endif; ?> class="btn btn--<?php echo $buttonStyle; ?>"><?php echo $buttonText; ?> </a>
+      <a href="<?php if($linkType == 'page'):  echo $pageUrl; endif; ?><?php if($linkType == 'url'):  echo $url; endif; ?><?php if($linkType == 'anchor'):  echo '#' . $anchor; endif; ?>" <?php if($newTab):echo 'target="_blank"'; endif; ?> class="btn btn--<?php echo $buttonStyle; ?>"><?php echo $buttonText; ?> </a>
 
     <?php endwhile; ?>
   </div>
