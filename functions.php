@@ -75,5 +75,3 @@ require get_template_directory() . '/inc/acf-options.php';
 require get_template_directory() . '/inc/accordian-shortcode.php';
 
 require get_template_directory() . '/inc/menu-rename.php';
-
-

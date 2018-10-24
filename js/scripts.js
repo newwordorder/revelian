@@ -2913,8 +2913,8 @@ mr = (function (mr, $, window, document){
 			    }else if(videoCover.find('iframe').length){
 			        var iframe = videoCover.find('iframe');
 			        iframe.attr('src',iframe.attr('data-src'));
-			        videoCover.addClass('reveal-video');
-			        return false;
+                    videoCover.addClass('reveal-video');
+                    return false;
 			    }
 			});
 	  };

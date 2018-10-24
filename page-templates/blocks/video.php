@@ -56,7 +56,7 @@ if( get_row_layout() == 'video' ):
               </div>
               <div class="video-play-icon video-play-icon--sm"></div>
               <div class="embed-container ">
-                <?php echo $videoEmbedCode; ?>
+                <?php if($videoEmbedCode):?><iframe width="560" height="315" src="<?php echo $videoEmbedCode; ?>?rel=0&amp;controls=0&amp;showinfo=0&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><? endif; ?>
               </div>
             </div><!--end video cover-->
 
