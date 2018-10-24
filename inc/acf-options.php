@@ -97,7 +97,6 @@ $args2 = array(
 	
 	/* (string) The message shown above the form on submit. Added in v5.6.0. */
 	'updated_message'	=> __("Options Updated", 'acf'),
-			
 );
 
 acf_add_options_page( $args2 );
