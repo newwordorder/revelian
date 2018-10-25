@@ -7,6 +7,7 @@ if( get_row_layout() == 'text_image' ):
 $media = get_sub_field('media');
 
 $text = get_sub_field('text_block');
+$imageFormat = get_sub_field('image_format');
 
 $image = get_sub_field('image');
 
@@ -28,7 +29,9 @@ $highlightLine = get_sub_field('highlight_line');
               <?php get_template_part( 'page-templates/blocks/block-partials/buttons' ); ?>
           </div>
           <div class="<?php if( $layout == '1/3' ): echo 'col-md-4'; endif; ?> <?php if( $layout == '1/2' ): echo 'col-md-6'; endif; ?> <?php if( $layout == '2/3' ): echo 'col-md-8'; endif; ?> flippable__image">
-
+          
+          
+          
             <?php if( $media == 'image' ): ?>
               <?php if( !empty($image) ):
 
@@ -38,8 +41,36 @@ $highlightLine = get_sub_field('highlight_line');
                 $caption = $image['caption'];
 
                ?>
+               
+               <?php if( $imageFormat == 'square' ): ?>
+                <div class="image image--square">
+                  <div class="background-image-holder">
+                      <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                  </div> 
+                </div>
+               <?php endif; //end square ?>
+
+               <?php if( $imageFormat == 'landscape' ): ?>
+                <div class="image image--landscape">
+                  <div class="background-image-holder">
+                      <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                  </div> 
+                </div>
+               <?php endif; //end landscape ?>
+
+               <?php if( $imageFormat == 'portrait' ): ?>
+                <div class="image image--portrait">
+                  <div class="background-image-holder">
+                      <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                  </div> 
+                </div>
+               <?php endif; //end portrait ?>
+
+               <?php if( $imageFormat == 'none' ): ?>
                 <img class="" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
-                <p class="small text-center"><?php echo $caption; ?></p>
+               <?php endif; //end none ?> 
+
+                <p class="image__caption small text-center"><?php echo $caption; ?></p>
               <?php endif; //end $image ?>
 
             <?php endif; //end $media ?>

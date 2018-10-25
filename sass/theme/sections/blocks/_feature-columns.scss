@@ -36,12 +36,17 @@
       position:relative;
   
       svg {
+        color: $primary;
         height: auto;
         font-size: 3.5em;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
+
+        path {
+            color: $primary;
+        }
       }
     }
 
