@@ -19,6 +19,7 @@ $backgroundImage = get_field('background_image');
   $backgroundEffect = $backgroundImage['background_effect'];
   $invertColours = $backgroundImage['invert_colours'];
   $headingtext = get_field('headingtext');
+  $hideTitle = get_field('hide_page_title');
 
 ?>
 
@@ -48,7 +49,7 @@ $backgroundImage = get_field('background_image');
     <div class="row">
       <div class="col-lg-10 col-md-10">
 
-          <h1><?php the_title(); ?></h1>
+          <h1 class="<?php if( $hideTitle == 'yes' ): echo 'd-none'; endif; ?>"><?php the_title(); ?></h1>
           <?php if ($headingtext): ?>
             <p class="headingtext"><?php echo $headingtext; ?></p>
           <?php endif; ?>

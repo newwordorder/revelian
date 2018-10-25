@@ -17251,12 +17251,15 @@ header {
     height: 70px;
     position: relative; }
     .feature-column__fa-icon svg {
+      color: #ef0d33;
       height: auto;
       font-size: 3.5em;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%); }
+      .feature-column__fa-icon svg path {
+        color: #ef0d33; }
   .feature-column--side-icon {
     position: relative; }
     .feature-column--side-icon .feature-column__icon, .feature-column--side-icon .feature-column__icon--container, .feature-column--side-icon .feature-column__fa-icon {
@@ -17930,27 +17933,38 @@ canvas {
   ._container {
     max-width: 540px; } }
 
-.project-tile {
+.product-tile {
   margin: 1em 0;
+  position: relative;
   background: #fff;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
   height: calc( 100% - 2em);
   display: flex;
-  flex-direction: column; }
-
-.project-tile__image {
-  padding-bottom: 66%;
-  position: relative; }
-
-.project-tile__content {
-  padding: 1.5em; }
-
-.project-tile .btn,
-.project-tile .wpcf7 input[type=submit], .wpcf7 .project-tile input[type=submit],
-.project-tile .wpcf7 input[type=submit], .wpcf7 .project-tile input[type=submit] {
-  margin-top: auto;
-  padding-left: 0;
-  padding-right: 0; }
+  flex-direction: column;
+  transition: 0.2s; }
+  .product-tile * {
+    transition: 0.2s; }
+  .product-tile__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .product-tile__image {
+    padding-bottom: 66%;
+    position: relative;
+    overflow: hidden; }
+  .product-tile__content {
+    padding: 1.5em; }
+  .product-tile .btn,
+  .product-tile .wpcf7 input[type=submit], .wpcf7 .product-tile input[type=submit] {
+    margin-top: auto;
+    padding-left: 0;
+    padding-right: 0; }
+  .product-tile:hover {
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.05); }
+    .product-tile:hover .background-image-holder {
+      transform: scale(1.1); }
 
 .product-controls {
   margin-bottom: 50px; }
