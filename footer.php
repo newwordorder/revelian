@@ -553,31 +553,48 @@ if($page_title == "Blog"): ?>
 <script>
 	var headingNode = document.querySelector('.headingtext');
 	if(headingNode){
-	if(headingNode.firstChild != null){
-	var text = headingNode.firstChild.nodeValue;
+		if(headingNode.firstChild != null && window.innerWidth >= '768'){
+		var text = headingNode.firstChild.nodeValue;
 
-	if(typeof text !== "undefined"){
-		textArray = text.split(" ");
-		var newString = "";
+		if(typeof text !== "undefined"){
+			textArray = text.split(" ");
+			var newString = "";
 
-		newString += textArray[0];
-		if(textArray.length > 1){
-			for(var i = 1; i < textArray.length - 1; i++){
-				newString += ' ' + textArray[i];
+			newString += textArray[0];
+			if(textArray.length > 1){
+				for(var i = 1; i < textArray.length - 1; i++){
+					newString += ' ' + textArray[i];
+				}
+				newString += '\xA0' + textArray[textArray.length - 1];
+
+			}else{
+				newStrng += textArray[0];
 			}
-			newString += '\xA0' + textArray[textArray.length - 1];
+		}
 
-		}else{
-			newStrng += textArray[0];
+		headingNode.firstChild.nodeValue = newString;
+
 		}
 	}
 
-	headingNode.firstChild.nodeValue = newString;
-
-	}
-	}
-
 </script>
+
+<script>
+
+var name = '<?php echo get_bloginfo('name'); ?>';
+var array = name.split(" ");
+subsite = array[array.length - 1];
+console.log(subsite);
+if(subsite === 'Employer'){
+	subsite = 'I am an employer';
+}else{
+	subsite = 'I am a jobseeker';
+
+}
+
+	document.querySelector('#dropdownMenuLink').innerHTML = subsite;
+</script>
+
 
 </body>
 

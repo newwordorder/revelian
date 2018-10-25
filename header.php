@@ -54,7 +54,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<div class="navbar__upper">
 					<div class="dropdown show dropdown--heading">
 						<a class="dropdown-toggle--heading dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							I am an employer
+							I am a 
 						</a>
 
 						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -187,18 +187,18 @@ $container = get_theme_mod( 'understrap_container_type' );
 		</nav><!-- .site-navigation -->
 	</div><!-- .wrapper-navbar end -->
 
-	<div class="mobile-nav" id="expanding-nav" >
-		<?php wp_nav_menu(
-			array(
-				'theme_location'  => 'mobile',
-				'container_class' => 'mobile__navigation',
-				'container_id'    => 'mobile',
-				'menu_class'      => 'navbar-nav',
-				'fallback_cb'     => '',
-				'menu_id'         => 'mobile-menu',
-				'walker'          => new understrap_WP_Bootstrap_Navwalker(),
-			)
-		); ?>
+	<div class="mobile-nav container" id="expanding-nav" >
+			<?php wp_nav_menu(
+				array(
+					'theme_location'  => 'mobile',
+					'container_class' => 'mobile__navigation',
+					'container_id'    => 'mobile',
+					'menu_class'      => 'navbar-nav',
+					'fallback_cb'     => '',
+					'menu_id'         => 'mobile-menu',
+					'walker'          => new understrap_WP_Bootstrap_Navwalker(),
+				)
+			); ?>
 	</div>
 
 	<div class="hfeed site" id="page">
