@@ -50,9 +50,8 @@ if( get_row_layout() == 'products' ):
     ?>
 
 <?php setup_postdata($post); ?>
-    <div class="col-md-<?php echo $columns; ?> mix <?php echo $outcome_filter_class_array; ?>">
-        
-            <div class="product-tile">
+<div class="col-md-6 col-lg-<?php echo $columns; ?> mix <?php echo $outcome_filter_class_array; ?>">
+    <div class="product-tile">
             <a href="<?php the_permalink(); ?>"  class="product-tile__link"></a>
             <a href="<?php the_permalink(); ?>">
                 <div class="product-tile__image">

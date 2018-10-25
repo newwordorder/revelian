@@ -354,7 +354,7 @@ section {
   display: block;
   margin-bottom: 30px;
   background-color: $white;
-
+  height: calc(100% - 30px);
 
   * {
     transition: 0.2s;
@@ -1058,6 +1058,25 @@ canvas{
   }
 }
 
+.select{
+  &__filter{
+  background-color:#fff;
+  border: 1px solid #D8D8D8;
+  color:$dark;
+  font-family: $isidora-bold;
+  border-radius:0;
+  min-width:280px;
+}
+&__chevron{
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  right: 1em;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+}
 .image {
 
   position: relative;
