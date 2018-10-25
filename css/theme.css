@@ -18074,6 +18074,19 @@ canvas {
     .pricing_table--large {
       display: none; } }
 
+.image {
+  position: relative;
+  height: 0;
+  overflow: hidden; }
+  .image--square {
+    padding-top: 100%; }
+  .image--landscape {
+    padding-top: calc((2 / 3) * 100%); }
+  .image--portrait {
+    padding-top: calc((3 / 2) * 100%); }
+  .image__caption {
+    margin: 1em 0; }
+
 /*
 * Use existing Bootstrap 4 classes and
 * variables to extend - override CF7 style
