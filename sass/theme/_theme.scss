@@ -884,23 +884,49 @@ canvas{
   }
 }
 
-.project-tile {
+.product-tile {
   margin: 1em 0;
+  position: relative;
   background: #fff;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
   height: calc( 100% - 2em);
   display: flex;
-  flex-direction: column; }
-  .project-tile__image {
+  flex-direction: column; 
+  transition: 0.2s;
+   * {
+    transition: 0.2s;
+   }
+   &__link {
+     position: absolute;
+     top: 0;
+     left:0;
+     right:0;
+     bottom:0;
+   }
+  &__image {
     padding-bottom: 66%;
-    position: relative; }
-  .project-tile__content {
-    padding: 1.5em; }
-  .project-tile .btn,
-  .project-tile .wpcf7 input[type=submit], .wpcf7 .project-tile input[type=submit] {
+    position: relative; 
+    overflow: hidden;
+  }
+  &__content {
+    padding: 1.5em; 
+  }
+  & .btn {
     margin-top: auto;
     padding-left: 0;
-    padding-right: 0; }
+    padding-right: 0; 
+  }
+  .background-image-holder {
+
+  }
+
+    &:hover {
+      box-shadow: 0 15px 20px rgba(0, 0, 0, 0.05);
+      .background-image-holder {
+        transform: scale(1.1);
+      }
+    }
+  }
 
 .product-controls {
   margin-bottom: 50px; }

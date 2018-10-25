@@ -50,34 +50,37 @@ if( get_row_layout() == 'products' ):
     ?>
 
 <?php setup_postdata($post); ?>
-<div class="col-md-<?php echo $columns; ?> mix <?php echo $outcome_filter_class_array; ?>">
-  <div class="project-tile" style="">
-    <a href="<?php the_permalink(); ?>">
-      <div class="project-tile__image" style="">
-        <?php
-        $workImage = get_field('tile_image');
-
-        if( !empty($workImage) ):
-
-          // vars
-          $url = $workImage['url'];
-          $alt = $workImage['alt'];
-
-          ?>
-          <div class="background-image-holder">
-            <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
-          </div>
-        <?php endif; ?>
-      </div>
-      <div class="project-tile__content">
-        <h5><?php the_title(); ?></h5>
-        <p><?php the_field('description'); ?></p>
-        <a href="<?php the_permalink(); ?>" class="btn btn--link">Discover</a>
-       </div>
-       
+    <div class="col-md-<?php echo $columns; ?> mix <?php echo $outcome_filter_class_array; ?>">
         
-      </a>
-    </div>
+            <div class="product-tile">
+            <a href="<?php the_permalink(); ?>"  class="product-tile__link"></a>
+            <a href="<?php the_permalink(); ?>">
+                <div class="product-tile__image">
+                    <?php
+                    $workImage = get_field('tile_image');
+
+                    if( !empty($workImage) ):
+
+                    // vars
+                    $url = $workImage['url'];
+                    $alt = $workImage['alt'];
+
+                    ?>
+                    <div class="background-image-holder">
+                        <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                    </div>
+                    <?php endif; ?>
+                </div>
+                </a>
+                <div class="product-tile__content">
+                    <h5><?php the_title(); ?></h5>
+                    <p><?php the_field('description'); ?></p>
+                    <a href="<?php the_permalink(); ?>" class="btn btn--link">Discover</a>
+                </div>
+            
+                
+            </div>
+        
     </div>
   <?php endforeach; ?>
   </div>
