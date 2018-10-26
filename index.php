@@ -67,7 +67,7 @@ if ($featured->have_posts()):?>
 					<div class="row">
 
 					<?php while ( have_posts() ) : the_post(); ?>
-						<div class="col-md-6">
+						<div class="col-sm-6 col-lg-4">
 
 							<a href="<?php the_permalink(); ?>" class="blog">
 								<div class="blog__thumb">
@@ -89,8 +89,7 @@ if ($featured->have_posts()):?>
 
 						    	</div>
 									<div class="blog__content">
-										<h2><?php the_title(); ?></h2>
-										<?php the_excerpt(); ?>
+										<h5><?php the_title(); ?></h5>
 									</div>
 								</a>
 

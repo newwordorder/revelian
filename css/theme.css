@@ -17205,7 +17205,8 @@ header {
     justify-content: flex-start; }
   #footer #main-menu li {
     margin: 0 !important;
-    line-height: 1em !important; }
+    line-height: 1em !important;
+    list-style: none; }
     #footer #main-menu li a {
       color: #fff; }
   #footer #main-menu .menu-item-91 {
@@ -17213,11 +17214,12 @@ header {
   #footer #secondary-menu {
     flex-direction: row; }
     #footer #secondary-menu li {
-      margin-right: 0.6em;
+      margin-right: 20px;
       margin-left: 0;
       margin-bottom: 0;
       font-size: 1.5em;
-      line-height: 1em !important; }
+      line-height: 1em !important;
+      list-style: none; }
       #footer #secondary-menu li a {
         color: #fff; }
     #footer #secondary-menu .menu-item-92 {
@@ -17999,28 +18001,37 @@ canvas {
 .panel {
   border-top: 1px solid #e9ecef;
   padding: 10px 10px 0; }
+  .panel-heading {
+    padding-right: 40px; }
+  .panel:last-of-type {
+    border-bottom: 1px solid #e9ecef; }
+  .panel .panel-title a {
+    color: #ef0d33;
+    transition: 0.2s;
+    display: block;
+    position: relative; }
+  .panel .panel-title:hover {
+    color: #bf0a29; }
 
-.panel:last-of-type {
-  border-bottom: 1px solid #e9ecef; }
-
-.panel .panel-title a {
-  color: #ef0d33;
-  transition: 0.2s;
-  display: block;
-  position: relative; }
-
-.panel .panel-title a:hover {
-  color: #bf0a29; }
-
-.panel .panel-title a svg {
+.panel-title .collapsed svg {
   position: absolute;
-  right: 0; }
+  right: -40px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  transition: 0.2s; }
 
-.collapsed svg {
-  transform: rotate(45deg); }
-
-[aria-expanded="false"] svg {
-  transform: rotate(0deg); }
+.panel-title svg {
+  position: absolute;
+  right: -40px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transition: 0.2s; }
 
 .team {
   margin: 15px 0; }
@@ -18103,6 +18114,10 @@ canvas {
     padding-top: calc((3 / 2) * 100%); }
   .image__caption {
     margin: 1em 0; }
+
+.dropdown-menu.show {
+  display: block;
+  top: 57px; }
 
 /*
 * Use existing Bootstrap 4 classes and

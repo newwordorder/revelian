@@ -11,7 +11,6 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 ?>
 
-	<?php if ( have_posts() ) : ?>
 
 <section
 
@@ -31,13 +30,12 @@ class="page-header imagebg <?php if( $invertColours == 'yes' ): echo 'image--lig
 
 </section><!-- .page-header -->
 
-<?php endif; ?>
 
 <div class="wrapper" id="search-wrapper">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
-		<div class="row">
+		<div class="">
 
 			<!-- Do the left sidebar check and opens the primary div -->
 

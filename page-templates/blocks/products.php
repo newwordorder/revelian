@@ -25,13 +25,15 @@ if( get_row_layout() == 'products' ):
         </div>
     </div>
 <?php endif; ?>    
+
+
 <?php $posts = get_sub_field('products'); if( $posts ): ?>
 <div class="row">
 
    
 
 <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
-
+    
     <?php
         $terms = get_the_terms($post->ID, 'outcome');
         if ($terms && !is_wp_error($terms)) :
@@ -48,8 +50,10 @@ if( get_row_layout() == 'products' ):
             $outcome_filter_assigned_list = join(", ", $outcome_filter_name);
         endif;
     ?>
+    
 
 <?php setup_postdata($post); ?>
+<?php if(get_post_status() == 'publish'): ?>
 <div class="col-md-6 col-lg-<?php echo $columns; ?> mix <?php echo $outcome_filter_class_array; ?>">
     <div class="product-tile">
             <a href="<?php the_permalink(); ?>"  class="product-tile__link"></a>
@@ -81,6 +85,7 @@ if( get_row_layout() == 'products' ):
             </div>
         
     </div>
+    <?php else: endif; ?>
   <?php endforeach; ?>
   </div>
   <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>

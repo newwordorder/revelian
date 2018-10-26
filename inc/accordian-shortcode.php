@@ -26,8 +26,8 @@
             $out .='<div class="panel panel-default">';
             $out .='<div class="panel-heading" role="tab" id="headingOne">';
             $out .='<h5 class="panel-title">';
-            $out .='<a role="button" data-toggle="collapse" data-parent="#accordion" href="#'. $id .'" aria-expanded="true" aria-controls="collapseOne">';
-            $out .='<i class="fal fa-plus"></i>';
+            $out .='<a role="button" data-toggle="collapse" data-parent="#accordion" href="#'. $id .'" aria-expanded="true" aria-controls="collapseOne" class="collapsed">';
+            $out .='<i class="fal fa-plus js-rotate-if-collapsed"></i>';
             $out .= $question;
             $out .='</a>';
             $out .='</h5>';
