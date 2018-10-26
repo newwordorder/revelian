@@ -26,7 +26,7 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 				<p class="footer-title">Explore</p>
 			<?php wp_nav_menu(
 						array(
-							'theme_location'  => 'primary',
+							'theme_location'  => 'footer',
 							'container_class' => 'navbar__navigation',
 							'container_id'    => 'navbarNavDropdown',
 							'menu_class'      => 'navbar-nav',
@@ -41,7 +41,7 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 
 			<?php wp_nav_menu(
 						array(
-							'theme_location'  => 'top',
+							'theme_location'  => 'footer-social',
 							'container_class' => 'navbar__navigation',
 							'container_id'    => 'navbarNavDropdown',
 							'menu_class'      => 'navbar-nav',
