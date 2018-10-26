@@ -1,6 +1,6 @@
 <?php 
 /**
- * Search results partial template.
+ * Resource results partial template.
  *
  * @package understrap
  */
@@ -8,7 +8,7 @@
 
     <div class="col-md-6 col-lg-4">
 		<?php
-			$taxinfo = get_the_terms( $query->post, array('resource'));
+			$taxinfo = get_the_terms( $query->post, array('resource_type'));
 			$resource_type = $taxinfo[0]->name;
 			?>
 
@@ -33,7 +33,7 @@
 					<?php endif; ?>
 					<?php if( $category ): ?>
 					<div class="icon" style="position:absolute; height: 1em; width: 1em; bottom:0; left: 0; background-color:white; display:flex; flex-direction: row; align-items: center; justify-content: center;">
-						<?php if($category == 'Case Study' || $category == "White Paper"): ?>
+						<?php if($category == 'Case Study' || $category == "White paper"): ?>
 						<i class="fas fa-file" style="font-size:0.5em; color:#ef0d33;"></i>
 						<?php endif; ?>
 						<?php if($category == 'Event'): ?>

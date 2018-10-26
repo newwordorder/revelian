@@ -17,7 +17,6 @@ get_header();
 
 	$our_title = get_the_title( get_option('page_for_posts', true) );
 
-
 	$image = get_field('background_image');
 	$imageOverlay = get_field('image_overlay');
 
@@ -110,7 +109,7 @@ $alt = $image['alt'];
 					?>
 					<div class="row dflex justify-content-center my-4">
 					<form id="filters" action="#">
-					<?php if( $terms = get_terms( 'resource', 'orderby=name' ) ) : // to make it simple I use default categories
+					<?php if( $terms = get_terms( 'resource_type', 'orderby=name' ) ) : // to make it simple I use default categories
 							echo '<select id="select" name="categoryfilter" class="select__filter"><option>All</option>';
 							foreach ( $terms as $term ) :
 								echo '<option value="' . $term->term_id . '">' . $term->name . '</option>'; // ID of the category as the value of an option
@@ -118,8 +117,8 @@ $alt = $image['alt'];
 							echo '</select>';
 							endif;
 						?>
-						 <i class="fal fa-chevron-down select__chevron"></i>
-						 
+						<i class="fal fa-chevron-down select__chevron"></i>
+
 						<!-- required hidden field for admin-ajax.php -->
 						<input type="hidden" name="action" value="filter" />
 					</form>
