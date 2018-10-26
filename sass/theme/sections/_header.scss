@@ -18,7 +18,7 @@
       color: rgba($white, 1);
       transition: 0.2s;
       padding: 0;
-      margin-left: 30px;
+      margin-left: 1em;
       font-family:$isidora-bold;
       font-size:0.75rem;
 
@@ -101,7 +101,6 @@
 }
 
 .fa-search{
-  font-weight:lighter;
   font-size:1.2rem;
   line-height:1.2rem;
   transform:translateY(0.1rem);
@@ -483,7 +482,7 @@ header {
 
 #searchform{
   display:flex;
-  margin: 0px 1em;
+  margin: 0px 0px 0px 1em;
 
   @include media-breakpoint-down(md) {
     display:none;
