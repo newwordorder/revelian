@@ -16777,7 +16777,7 @@ blockquote {
     color: white;
     transition: 0.2s;
     padding: 0;
-    margin-left: 30px;
+    margin-left: 1em;
     font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif;
     font-size: 0.75rem; }
     @media (max-width: 991.98px) {
@@ -16843,7 +16843,6 @@ blockquote {
   opacity: 0; }
 
 .fa-search {
-  font-weight: lighter;
   font-size: 1.2rem;
   line-height: 1.2rem;
   transform: translateY(0.1rem); }
@@ -17128,7 +17127,7 @@ header {
 
 #searchform {
   display: flex;
-  margin: 0px 1em; }
+  margin: 0px 0px 0px 1em; }
   @media (max-width: 991.98px) {
     #searchform {
       display: none; } }
@@ -17205,7 +17204,7 @@ header {
   #footer .navbar__navigation {
     justify-content: flex-start; }
   #footer #main-menu li {
-    margin-bottom: 0;
+    margin: 0 !important;
     line-height: 1em !important; }
     #footer #main-menu li a {
       color: #fff; }
@@ -17215,8 +17214,9 @@ header {
     flex-direction: row; }
     #footer #secondary-menu li {
       margin-right: 0.6em;
+      margin-left: 0;
       margin-bottom: 0;
-      font-size: 2em;
+      font-size: 1.5em;
       line-height: 1em !important; }
       #footer #secondary-menu li a {
         color: #fff; }

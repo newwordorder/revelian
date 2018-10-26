@@ -7,10 +7,9 @@ jQuery(function($){
 	 */
 	$('#loadmore').click(function(){
 
-		console.log('oi')
 
 		$.ajax({
-			url : loadmore_params.ajaxurl, // AJAX handler
+			url : ajaxurl, // AJAX handler
 			data : {
 				'action': 'loadmorebutton', // the parameter for admin-ajax.php
 				'query': loadmore_params.posts, // loop parameters passed by wp_localize_script()
@@ -53,8 +52,10 @@ jQuery(function($){
 	});
 
 	function query(){
+
+
 		$.ajax({
-			url : loadmore_params.ajaxurl,
+			url : ajaxurl,
 			data : $('#filters').serialize(), // form data
 			dataType : 'json', // this data type allows us to receive objects from the server
 			type : 'POST',
@@ -89,7 +90,10 @@ jQuery(function($){
 				} else {
 					$('#loadmore').show();
 				}
-			}
+			},
+			error: function( data ) { 
+				console.log(data);
+			}   
 		});
 	}
 

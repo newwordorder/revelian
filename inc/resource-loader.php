@@ -12,14 +12,14 @@ function script_and_styles() {
 	);
 
 	// for taxonomies / categories
-     if( isset( $_POST['categoryfilter'])  && $_POST['categoryfilter'] != 'All' )
+    if( isset( $_POST['categoryfilter'])  && $_POST['categoryfilter'] != 'All' )
 		$args['tax_query'] = array(
 			array(
-				'taxonomy' => 'resource',
+				'taxonomy' => 'resource_type',
 				'field' => 'id',
 				'terms' => $_POST['categoryfilter']
 			)
-		); 
+		);
 
 	$query = new WP_Query( $args );
 
@@ -29,13 +29,13 @@ function script_and_styles() {
 	// passing parameters here
 	// actually the <script> tag will be created and the object "loadmore_params" will be inside it
 	wp_localize_script( 'scripts', 'loadmore_params', array(
-		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
-		'posts' => json_encode( $_query->query_vars ), // everything about your loop is here
+		'ajaxurl' => admin_url('admin-ajax.php'), // WordPress AJAX
+		'posts' => json_encode( $query->query_vars ), // everything about your loop is here
 		'current_page' => $query->query_vars['paged'] ? $query->query_vars['paged'] : 1,
 		'max_page' => $query->max_num_pages
 	) );
 
- 	wp_enqueue_script( 'scripts' );
+	wp_enqueue_script( 'scripts' );
 }
 
 add_action('wp_ajax_loadmorebutton', 'loadmore_ajax_handler');
@@ -69,8 +69,6 @@ function loadmore_ajax_handler(){
 	die; // here we exit the script and even no wp_reset_query() required!
 }
 
-
-
 add_action('wp_ajax_filter', 'filter_function');
 add_action('wp_ajax_nopriv_filter', 'filter_function');
 
@@ -84,19 +82,19 @@ function filter_function(){
 		'post_type' => 'resource',
 		'orderby' => $order[0], // example: date
         'order'	=> $order[1] // example: ASC
-        
+
 	);
 
 
     if( isset( $_POST['categoryfilter'])  && $_POST['categoryfilter'] != 'All' )
     $params['tax_query'] = array(
         array(
-            'taxonomy' => 'resource',
+            'taxonomy' => 'resource_type',
             'field' => 'id',
             'terms' => $_POST['categoryfilter']
         )
-    ); 
-    
+    );
+
     query_posts( $params );
 
 	global $wp_query;
@@ -109,7 +107,7 @@ function filter_function(){
 	);
 
 	// for taxonomies / categories
-	
+
 
 	$query = new WP_Query( $args );
 

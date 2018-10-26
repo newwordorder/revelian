@@ -33,6 +33,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 	})(window,document,'script','dataLayer','GTM-MZ6H3GG');</script>
 	<!-- End Google Tag Manager -->
 
+	<script type="text/javascript">
+    	var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
+	</script>
+
 </head>
 
 <body <?php body_class(); ?>>

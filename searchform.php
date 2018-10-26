@@ -18,7 +18,7 @@
 	</div>
 </form> -->
 
-<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+<form method="get"  autocomplete="off" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
 <i class="fal fa-search" style='color:#fff;'></i><div class="input-group">
 		<input class="field form-control" id="s" name="s" type="text" placeholder="<?php esc_attr_e( 'Search &hellip;', 'understrap' ); ?>" value="<?php the_search_query(); ?>">
 	</div>
