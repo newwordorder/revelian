@@ -18115,6 +18115,10 @@ canvas {
   .image__caption {
     margin: 1em 0; }
 
+.dropdown-menu.show {
+  display: block;
+  top: 57px; }
+
 /*
 * Use existing Bootstrap 4 classes and
 * variables to extend - override CF7 style

@@ -109,7 +109,7 @@ class understrap_WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
 			if ( $args->has_children && $depth === 0 ) {
 				$atts['href']        = '#';
 				$atts['data-toggle'] = 'dropdown';
-				$atts['class']       = 'nav-link dropdown-toggle';
+				$atts['class']       = 'nav-link';
 			} else {
 				$atts['href']  = ! empty( $item->url ) ? $item->url : '';
 				$atts['class'] = 'nav-link';
