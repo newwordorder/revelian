@@ -955,26 +955,48 @@ canvas{
 
 .panel {
   border-top: 1px solid #e9ecef;
-  padding: 10px 10px 0; }
-  .panel:last-of-type {
+  padding: 10px 10px 0; 
+
+  &-heading {
+    padding-right: 40px;
+  }
+  &:last-of-type {
     border-bottom: 1px solid #e9ecef; }
-  .panel .panel-title a {
-    color: #ef0d33;
+  & .panel-title {
+      a {
+      color: #ef0d33;
+      transition: 0.2s;
+      display: block;
+      position: relative; 
+      }
+      &:hover {
+        color: #bf0a29; 
+      }
+
+    }
+  }
+
+  .panel-title .collapsed svg {
+    position: absolute;
+    right: -40px; 
+      -webkit-transform: rotate(0deg);
+      -moz-transform:    rotate(0deg);
+      -ms-transform:     rotate(0deg);
+      -o-transform:      rotate(0deg);
+      transform:         rotate(0deg);
     transition: 0.2s;
-    display: block;
-    position: relative; }
-    .panel .panel-title a:hover {
-      color: #bf0a29; }
-    .panel .panel-title a svg {
-      position: absolute;
-      right: 0; }
-
-.collapsed svg {
-  transform: rotate(45deg); }
-
-[aria-expanded="false"] svg {
-  transform: rotate(0deg); }
-
+  }
+  .panel-title svg {
+    position: absolute;
+    right: -40px; 
+      -webkit-transform: rotate(45deg);
+      -moz-transform:    rotate(45deg);
+      -ms-transform:     rotate(45deg);
+      -o-transform:      rotate(45deg);
+      transform:         rotate(45deg);
+      transition: 0.2s;
+  }
+  
 
 .team {
 
