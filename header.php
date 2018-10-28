@@ -152,7 +152,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						<div class="navbar__mega--line"></div>
 
 
-						<a href="<?php echo network_home_url(); ?>" id="site-logo" class="navbar-brand">
+						<a href="<?php echo get_home_url(); ?>" id="site-logo" class="navbar-brand">
 							Revelian
 						</a>
 						<div style="display:flex; direction:row;">
