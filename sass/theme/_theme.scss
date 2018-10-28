@@ -350,11 +350,12 @@ section {
   background-color: $light;
 }
 
-.blog {
+.blog-tile {
   display: block;
   margin-bottom: 30px;
   background-color: $white;
   height: calc(100% - 30px);
+  position: relative;
 
   * {
     transition: 0.2s;
@@ -370,20 +371,35 @@ section {
     overflow: hidden;
     padding-bottom: 66%;
 
-    &:hover .background-image-holder {
-      transform: scale(1.1);
-    }
+    
+  }
+
+  &:hover .background-image-holder {
+    transform: scale(1.1);
   }
 
   &__content {
 
-    padding: 30px;
-    text-align: center;
+    padding: 20px;
 
     &:hover {
       opacity: 0.8;
     }
 
+  }
+
+  &__tile-link {
+    position: absolute;
+     top: 0;
+     left:0;
+     right:0;
+     bottom:0;
+  }
+
+  & .btn {
+    margin-top: auto;
+    padding-left: 0;
+    padding-right: 0; 
   }
 }
 

@@ -17519,27 +17519,38 @@ section.bg-effect--ken-burns {
 .blog-feed {
   background-color: #f8f9fa; }
 
-.blog {
+.blog-tile {
   display: block;
   margin-bottom: 30px;
   background-color: #fff;
-  height: calc(100% - 30px); }
-  .blog * {
+  height: calc(100% - 30px);
+  position: relative; }
+  .blog-tile * {
     transition: 0.2s; }
-  .blog:hover {
+  .blog-tile:hover {
     text-decoration: none; }
-  .blog__thumb {
+  .blog-tile__thumb {
     position: relative;
     height: 0;
     overflow: hidden;
     padding-bottom: 66%; }
-    .blog__thumb:hover .background-image-holder {
-      transform: scale(1.1); }
-  .blog__content {
-    padding: 30px;
-    text-align: center; }
-    .blog__content:hover {
+  .blog-tile:hover .background-image-holder {
+    transform: scale(1.1); }
+  .blog-tile__content {
+    padding: 20px; }
+    .blog-tile__content:hover {
       opacity: 0.8; }
+  .blog-tile__tile-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .blog-tile .btn,
+  .blog-tile .wpcf7 input[type=submit], .wpcf7 .blog-tile input[type=submit] {
+    margin-top: auto;
+    padding-left: 0;
+    padding-right: 0; }
 
 .related-posts {
   background: #f8f9fa; }
