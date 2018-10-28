@@ -45,13 +45,8 @@ if ($featured->have_posts()):?>
 			<img src="<?php echo $bg_image['url']; ?>" />
 		</div>
 		<div style="width:100%;">
-			<div class="container" style="padding: 200px 15px 100px; height:100%; z-index:5 !important;">
-				<div class="row">
-					<div class="col-md-8">
-						<h1 class="mb-4"><?php the_title(); ?></h1>
-						<a class="btn btn--outline" href="<?php the_permalink(); ?>">Read</a>
-					</div>
-				</div>
+			<div class="_container">
+				<p class="headingtext" style="padding: 200px 0 100px; z-index:5 !important;"><?php the_title(); ?></p>
 			</div>
 		</div>
 	</div>
@@ -73,10 +68,9 @@ if ($featured->have_posts()):?>
 
 					<?php while ( have_posts() ) : the_post(); ?>
 						<div class="col-sm-6 col-lg-4">
-							<div class="blog-tile">
-								<a href="<?php the_permalink(); ?>" class="blog-tile__tile-link">
-								</a>
-								
+
+							<a href="<?php the_permalink(); ?>" class="blog">
+								<div class="blog__thumb">
 
 									<?php
 									$workImage = get_field('background_image_background_image');
@@ -87,20 +81,18 @@ if ($featured->have_posts()):?>
 						            $url = $workImage['url'];
 						            $alt = $workImage['alt'];
 
-									?>
-									<div class="blog-tile__thumb">
-										<div class="background-image-holder" >
-											<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
-										</div>
-									</div>
+						            ?>
+						            <div class="background-image-holder" >
+						            	<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+						            </div>
 						        	<?php endif; ?>
 
-						    	
-									<div class="blog-tile__content">
+						    	</div>
+									<div class="blog__content">
 										<h5><?php the_title(); ?></h5>
-										<a class="btn" href="<?php the_permalink(); ?>">Read</a>
+										
 									</div>
-							</div>
+								</a>
 
 					</div>
 
