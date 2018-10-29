@@ -20,18 +20,29 @@ if( get_row_layout() == 'pricing_table' ):
         <?php while( have_rows('pricing_table_section_repeater') ): the_row();?>
 
             <?php if( have_rows('rows') ): ?>
+              <?php $count = 0; ?>
 
             <?php while( have_rows('rows') ): the_row();
                 $title = get_sub_field('title');
                 $column_1 = get_sub_field('column_1');
                 $column_2 = get_sub_field('column_2');
-            ?>
-            <div class="row">
-            <div class="col-6 offset-1"><p><?php echo $title; ?></p></div>
-            <div class="col-2 d-flex justify-content-center align-items-center"><?php echo $column_1; ?></div>
-            <div class="col-2 d-flex justify-content-center align-items-center"><?php echo $column_2; ?></div>
-            </div>
 
+                if($count > 0):
+            ?>
+                <div class="row">
+                <div class="col-6 offset-1"><p><?php echo $title; ?></p></div>
+                <div class="col-2 d-flex justify-content-center align-items-center"><?php echo $column_1; ?></div>
+                <div class="col-2 d-flex justify-content-center align-items-center"><?php echo $column_2; ?></div>
+                </div>
+                <?php else: ?>
+                <div class="row">
+                <div class="col-6 offset-1"><p><b><?php echo $title; ?></b></p></div>
+                <div class="col-2 d-flex justify-content-center align-items-center"><?php echo $column_1; ?></div>
+                <div class="col-2 d-flex justify-content-center align-items-center"><?php echo $column_2; ?></div>
+                </div>
+                <?php endif; ?>
+
+              <?php $count += 1; ?>
             <?php endwhile; ?>
 
             <?php endif; ?>
