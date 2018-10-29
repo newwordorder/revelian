@@ -480,6 +480,11 @@ header {
   position:absolute;
 }
 
+.form-control{
+  cursor:pointer !important;
+
+}
+
 #searchform{
   display:flex;
   margin: 0px 0px 0px 1em;
@@ -517,6 +522,10 @@ header {
   #full-screen-search-close{
     color:$primary;
   }
+}
+
+.fa-search{
+  opacity:0;
 }
 
 .collapse.show {
