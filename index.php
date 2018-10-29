@@ -69,14 +69,14 @@ if ($featured->have_posts()):?>
 
 					<?php /* Start the Loop */ ?>
 
-					<div class="row">
+					<div class="row" id="posts_row">
 
 					<?php while ( have_posts() ) : the_post(); ?>
 						<div class="col-sm-6 col-lg-4">
 							<div class="blog-tile">
 								<a href="<?php the_permalink(); ?>" class="blog-tile__tile-link">
 								</a>
-								
+
 
 									<?php
 									$workImage = get_field('background_image_background_image');
@@ -98,26 +98,27 @@ if ($featured->have_posts()):?>
 									</a>
 						        	<?php endif; ?>
 
-						    	
+
 									<div class="blog-tile__content">
 										<h5><?php the_title(); ?></h5>
 										<a class="btn" href="<?php the_permalink(); ?>">Read</a>
 									</div>
 							</div>
 
-					</div>
+						</div>
 
 					<?php endwhile; ?>
-
-							<?php
-							global $wp_query; // you can remove this line if everything works for you
-
-							// don't display the button if there are not enough posts
-							if (  $wp_query->max_num_pages > 1 )
-								echo '<div class="misha_loadmore btn btn--solid" style="margin:auto;">More posts</div>'; // you can use <a> as well
-							?>
-
 					</div>
+
+					<div class='row'>
+				<?php
+					global $wp_query; // you can remove this line if everything works for you
+
+					// don't display the button if there are not enough posts
+					if (  $wp_query->max_num_pages > 1 )
+						echo '<div id="misha_loadmore" class="btn btn--solid" style="margin:auto;">More posts</div>'; // you can use <a> as well
+					?>
+				</div>
 
 				<?php else : ?>
 

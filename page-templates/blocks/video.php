@@ -17,48 +17,17 @@ if( get_row_layout() == 'video' ):
 
     <?php if( $width == 'full' ): ?>
 
-      <div class="video-cover rounded">
-        <div class="background-image-holder">
-          <?php if( !empty($videoCoverImage) ):
+      <?php if($videoEmbedCode):?><?php echo $videoEmbedCode; ?><? endif; ?>
 
-            // vars
-            $url = $videoCoverImage['url'];
-            $alt = $videoCoverImage['alt'];
-
-            ?>
-            <img class="" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
-          <?php endif; //end $image ?>
-        </div>
-        <div class="video-play-icon video-play-icon--sm"></div>
-        <div class="embed-container ">
-          <?php echo $videoEmbedCode; ?>
-        </div>
-      </div><!--end video cover-->
 
     <?php else: // end full ?>
 
 
       <div class="container space-below--<?php echo $spaceBelow ?>">
         <div class="row justify-content-center">
-          <div class="col-md-<?php echo $width; ?>">
+          <div class="col-md-<?php echo $width; ?> d-flex justify-content-center">
 
-            <div class="video-cover">
-              <div class="background-image-holder ">
-                <?php if( !empty($videoCoverImage) ):
-
-                  // vars
-                  $url = $videoCoverImage['url'];
-                  $alt = $videoCoverImage['alt'];
-
-                  ?>
-                  <img class="rounded" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
-                <?php endif; //end $image ?>
-              </div>
-              <div class="video-play-icon video-play-icon--sm"></div>
-              <div class="embed-container ">
-                <?php if($videoEmbedCode):?><iframe width="560" height="315" src="<?php echo $videoEmbedCode; ?>?rel=0&amp;controls=0&amp;showinfo=0&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><? endif; ?>
-              </div>
-            </div><!--end video cover-->
+            <?php if($videoEmbedCode):?><?php echo $videoEmbedCode; ?><? endif; ?>
 
           </div>
         </div>
@@ -67,25 +36,9 @@ if( get_row_layout() == 'video' ):
       <?php else: ?>
       <div class="container space-below--md">
         <div class="row justify-content-center">
-          <div class="col-md-10">
+          <div class="col-md-10 d-flex justify-content-center">
 
-            <div class="video-cover">
-              <div class="background-image-holder ">
-                <?php if( !empty($videoCoverImage) ):
-
-                  // vars
-                  $url = $videoCoverImage['url'];
-                  $alt = $videoCoverImage['alt'];
-
-                  ?>
-                  <img class="rounded" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
-                <?php endif; //end $image ?>
-              </div>
-              <div class="video-play-icon video-play-icon--sm"></div>
-              <div class="embed-container ">
-                <?php echo $videoEmbedCode; ?>
-              </div>
-            </div><!--end video cover-->
+            <?php if($videoEmbedCode):?><?php echo $videoEmbedCode; ?><? endif; ?>
 
           </div>
         </div>
@@ -98,18 +51,7 @@ if( get_row_layout() == 'video' ):
     <div class="container video video-1">
       <div class="row justify-content-center">
         <div class="col-sm-8 modal-video d-flex justify-content-center">
-          <div class="modal-instance">
-            <div class="video-play-icon video-play-icon--sm modal-trigger box-shadow"></div>
-            <div class="modal-container">
-              <div class="modal-content bg-dark" data-width="60%">
-                <div class="embed-container ">
-                  <?php echo $videoEmbedCode; ?>
-                </div>
-              </div>
-              <!--end of modal-content-->
-            </div>
-            <!--end of modal-container-->
-          </div>
+          <?php if($videoEmbedCode):?><?php echo $videoEmbedCode; ?><? endif; ?>
           <!--end of modal instance-->
           <div class="modal-video__text">
             <?php echo $text; ?>

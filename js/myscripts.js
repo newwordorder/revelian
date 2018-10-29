@@ -42,6 +42,7 @@ jQuery(function($){
 		return false;
 	});
 
+
 	/*
 	 * Filter
 	 */
@@ -53,6 +54,7 @@ jQuery(function($){
 
 	function query(){
 
+		if(document.querySelector('#filters') != null){
 
 		$.ajax({
 			url : ajaxurl,
@@ -95,6 +97,8 @@ jQuery(function($){
 				console.log(data);
 			}   
 		});
+		}else{
+		}
 	}
 
 

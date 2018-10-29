@@ -99,7 +99,6 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 
 		function setImgSize(sprite, width, height, imgSize){
 
-
 			let aspectRatio = (width / height);
 			let imageRatio = (imgSize.width / imgSize.height);
 			let scaleFactor;
@@ -435,7 +434,15 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 			}
 
 			//document.getElementById('dropdown').classList.add('active');
-			var menu = document.querySelector('[data-menu=' + e.target.title + ']');
+			if(e.target.title.split(' ').length > 1){
+				var string = "";
+				for(i = 0; i < e.target.title.split(' ').length; i++){
+					string += '-' + e.target.title.split(' ')[i];
+				}
+				var menu = document.querySelector('[data-menu=' + string + ']');
+			}else{
+				var menu = document.querySelector('[data-menu=' + e.target.title + ']');
+			}
 			var line = document.querySelector('.navbar__mega--line');
 
 			tl.to(line, 0.3, {
@@ -545,6 +552,10 @@ if($page_title == "Blog"): ?>
 	<script>
 		$(document).ready(function(){
 			$(".owl-carousel").owlCarousel({items:1, loop:true, nav:true, dots:false, navText:['<i class="fal fa-chevron-left"></i>','<i class="fal fa-chevron-right"></i>']});
+			var a = new TweenLite(".fa-search", 0.6, {
+				opacity:1,
+				delay:0.6,
+			})
 		});
 	</script>
 <?php endif; ?>
@@ -581,18 +592,18 @@ if($page_title == "Blog"): ?>
 
 <script>
 
-var name = '<?php echo get_bloginfo('name'); ?>';
-var array = name.split(" ");
-subsite = array[array.length - 1];
-console.log(subsite);
-if(subsite === 'Employer'){
-	subsite = 'I am an employer';
-}else{
-	subsite = 'I am a jobseeker';
+	var name = '<?php echo get_bloginfo('name'); ?>';
+	var array = name.split(" ");
+	subsite = array[array.length - 1];
+	console.log(subsite);
+	if(subsite === 'Employer'){
+		subsite = 'I am an employer';
+	}else{
+		subsite = 'I am a jobseeker';
 
-}
+	}
 
-	document.querySelector('#dropdownMenuLink').innerHTML = subsite;
+		document.querySelector('#dropdownMenuLink').innerHTML = subsite;
 </script>
 
 
