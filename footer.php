@@ -552,6 +552,10 @@ if($page_title == "Blog"): ?>
 	<script>
 		$(document).ready(function(){
 			$(".owl-carousel").owlCarousel({items:1, loop:true, nav:true, dots:false, navText:['<i class="fal fa-chevron-left"></i>','<i class="fal fa-chevron-right"></i>']});
+			var a = new TweenLite(".fa-search", 0.6, {
+				opacity:1,
+				delay:0.6,
+			})
 		});
 	</script>
 <?php endif; ?>
