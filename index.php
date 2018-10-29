@@ -88,11 +88,14 @@ if ($featured->have_posts()):?>
 						            $alt = $workImage['alt'];
 
 									?>
-									<div class="blog-tile__thumb">
-										<div class="background-image-holder" >
-											<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+									<a href="<?php the_permalink(); ?>">
+								
+										<div class="blog-tile__thumb">
+											<div class="background-image-holder" >
+												<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+											</div>
 										</div>
-									</div>
+									</a>
 						        	<?php endif; ?>
 
 						    	
