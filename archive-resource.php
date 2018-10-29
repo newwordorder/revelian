@@ -57,10 +57,8 @@ if( !empty($image) ):
   <div class="row">
 	<div class="col-lg-10 col-md-10">
 
-		<h1><?php the_title(); ?></h1>
-		<?php if ($headingtext): ?>
-		  <p class="headingtext"><?php echo $headingtext; ?></p>
-		<?php endif; ?>
+		<h1>Resources</h1>
+
 
 	</div>
   </div>
@@ -81,16 +79,14 @@ $alt = $image['alt'];
 <?php endif; ?>
 
 <div class="container">
-<div class="row">
-	<div class="col-lg-10 col-md-10">
+	<div class="row">
+		<div class="col-lg-10 col-md-10">
 
-		<h1><?php the_title(); ?></h1>
-		<?php if ($headingtext): ?>
-			<p class="headingtext"><?php echo $headingtext; ?></p>
-		<?php endif; ?>
+			<h1>Resources</h1>
 
+
+		</div>
 	</div>
-</div>
 </div>
 
 

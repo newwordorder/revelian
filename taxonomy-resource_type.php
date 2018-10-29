@@ -19,10 +19,10 @@ get_header();
 
           <?php endif; ?>
         </div>
-        <div class="container pos-vertical-center">
+        <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-8 text-center">
-                  <h1><?php the_field('projects_page_title','options'); ?></h1>
+                <div class="col-md-8">
+                  <h1><?php the_title(); ?></h1>
                 </div>
             </div>
         </div>
@@ -35,35 +35,40 @@ get_header();
 
     <?php while ( have_posts() ) : the_post(); ?>
 
-			<div class="col-md-3">
-          <a href="<?php the_permalink(); ?>">
-            <?php
-
-            $image = get_field('background_image');
-
-            if( !empty($image) ):
-
-              // vars
-              $url = $image['url'];
-              $alt = $image['alt'];
-
-              // thumbnail
-              $size = '600x600';
-              $thumb = $image['sizes'][ $size ];
-              ?>
-              <img class="project__image" src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
+			<div class="col-sm-6 col-lg-4">
+				<div class="blog-tile">
+					<a href="<?php the_permalink(); ?>" class="blog-tile__tile-link">
+					</a>
 
 
-            <?php endif; ?>
+						<?php
+						$workImage = get_field('background_image_background_image');
 
-            <h4 class="project__name"><?php the_title(); ?></h4>
-            <p class="project__client"><?php the_field('client_name'); ?></p>
+						if( !empty($workImage) ):
 
-          </a>
+						// vars
+						$url = $workImage['url'];
+						$alt = $workImage['alt'];
+
+						?>
+						<a href="<?php the_permalink(); ?>">
+					
+							<div class="blog-tile__thumb">
+								<div class="background-image-holder" >
+									<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+								</div>
+							</div>
+						</a>
+						<?php endif; ?>
 
 
+						<div class="blog-tile__content">
+							<h5><?php the_title(); ?></h5>
+							<a class="btn" href="<?php the_permalink(); ?>">Read</a>
+						</div>
+				</div>
 
-			</div><!-- #primary -->
+			</div>
 
       <?php endwhile; // end of the loop. ?>
 
