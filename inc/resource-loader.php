@@ -4,15 +4,23 @@ add_action( 'wp_enqueue_scripts', 'script_and_styles');
 
 function script_and_styles() {
 	// absolutely need it, because we will get $wp_query->query_vars and $wp_query->max_num_pages from it.
+	if(get_the_title() == "Resources"):
 	$args = array(
 		'post_type' => 'resource',
 		'post_status' => 'publish',
 		'orderby' => 'date', // we will sort posts by date
 		'order'	=> $_POST['date'] // ASC or DESC
 	);
+	else:
+		$args = array(
+			'post_status' => 'publish',
+			'orderby' => 'date', // we will sort posts by date
+			'order'	=> $_POST['date'] // ASC or DESC
+		);
+	endif;
 
 	// for taxonomies / categories
-    if( isset( $_POST['categoryfilter'])  && $_POST['categoryfilter'] != 'All' )
+    if( isset( $_POST['categoryfilter'])  && $_POST['categoryfilter'] != 'All' ):
 		$args['tax_query'] = array(
 			array(
 				'taxonomy' => 'resource_type',
@@ -22,6 +30,7 @@ function script_and_styles() {
 		);
 
 	$query = new WP_Query( $args );
+	endif;
 
 	// when you use wp_localize_script(), do not enqueue the target script immediately
 	wp_register_script( 'scripts', get_stylesheet_directory_uri() . '/js/myscripts.js', array('jquery') );
@@ -113,7 +122,7 @@ function filter_function(){
 
 	if( have_posts() ) :
 
- 		ob_start(); // start buffering because we do not need to print the posts now
+	ob_start(); // start buffering because we do not need to print the posts now
 
 		while( have_posts() ): the_post();
 
@@ -122,15 +131,15 @@ function filter_function(){
 
 		endwhile;
 
- 		$posts_html = ob_get_contents(); // we pass the posts to variable
-   		ob_end_clean(); // clear the buffer
+	$posts_html = ob_get_contents(); // we pass the posts to variable
+	ob_end_clean(); // clear the buffer
 	else:
 		$posts_html = '<p>Nothing found for your criteria.</p>';
 	endif;
 
 	// no wp_reset_query() required
 
- 	echo json_encode( array(
+	echo json_encode( array(
 		'posts' => json_encode( $wp_query->query_vars ),
 		'max_page' => $wp_query->max_num_pages,
 		'found_posts' => $wp_query->found_posts,
@@ -139,5 +148,11 @@ function filter_function(){
 
 	die();
 }
+
+
+
+
+
+
 
 ?>
