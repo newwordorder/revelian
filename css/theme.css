@@ -17125,6 +17125,26 @@ header {
   opacity: 0;
   position: absolute; }
 
+.form-control, .wpcf7 input[type=text],
+.wpcf7 input[type=search],
+.wpcf7 input[type=url],
+.wpcf7 input[type=tel],
+.wpcf7 input[type=number],
+.wpcf7 input[type=range],
+.wpcf7 input[type=date],
+.wpcf7 input[type=month],
+.wpcf7 input[type=week],
+.wpcf7 input[type=time],
+.wpcf7 input[type=datetime],
+.wpcf7 input[type=datetime-local],
+.wpcf7 input[type=color],
+.wpcf7 input[type=email],
+.wpcf7 input[type=file],
+.wpcf7 input[type=submit],
+.wpcf7 select,
+.wpcf7 textarea, .wpcf7 .wpcf7-validation-errors {
+  cursor: pointer !important; }
+
 #searchform {
   display: flex;
   margin: 0px 0px 0px 1em; }
@@ -17152,6 +17172,9 @@ header {
 
 #full-screen-search #full-screen-search-close {
   color: #ef0d33; }
+
+.fa-search {
+  opacity: 0; }
 
 .collapse.show {
   display: flex; }
