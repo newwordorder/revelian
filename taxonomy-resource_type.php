@@ -20,57 +20,24 @@ get_header();
           <?php endif; ?>
         </div>
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row">
                 <div class="col-md-8">
-                  <h1><?php the_title(); ?></h1>
+                  <h1><?php single_term_title(); ?></h1>
                 </div>
             </div>
         </div>
     </section>
 </div>
-<section class="content-container">
+<section class="wrapper blog-feed" id="index-wrapper">
 	<div class="container" id="content">
 
 		<div class="row">
 
-    <?php while ( have_posts() ) : the_post(); ?>
-
-			<div class="col-sm-6 col-lg-4">
-				<div class="blog-tile">
-					<a href="<?php the_permalink(); ?>" class="blog-tile__tile-link">
-					</a>
-
-
-						<?php
-						$workImage = get_field('background_image_background_image');
-
-						if( !empty($workImage) ):
-
-						// vars
-						$url = $workImage['url'];
-						$alt = $workImage['alt'];
-
-						?>
-						<a href="<?php the_permalink(); ?>">
-					
-							<div class="blog-tile__thumb">
-								<div class="background-image-holder" >
-									<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
-								</div>
-							</div>
-						</a>
-						<?php endif; ?>
-
-
-						<div class="blog-tile__content">
-							<h5><?php the_title(); ?></h5>
-							<a class="btn" href="<?php the_permalink(); ?>">Read</a>
-						</div>
-				</div>
-
-			</div>
-
-      <?php endwhile; // end of the loop. ?>
+	<?php while ( have_posts() ) : the_post(); 
+	
+	get_template_part( 'loop-templates/content-resource', get_post_format() );
+	
+endwhile; // end of the loop. ?>
 
 		</div><!-- .row end -->
 
