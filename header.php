@@ -30,7 +30,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-MZ6H3GG');</script>
+	})(window,document,'script','dataLayer','GTM-NZ55W7');</script>
 	<!-- End Google Tag Manager -->
 
 	<script type="text/javascript">
@@ -42,7 +42,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 <body <?php body_class(); ?>>
 
 	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MZ6H3GG"
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZ55W7"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
 
