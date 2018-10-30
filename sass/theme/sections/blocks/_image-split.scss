@@ -1,0 +1,17 @@
+.image-split {
+    position: relative;
+    
+    &__link {
+        position: absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        z-index: 4;
+    }
+
+    &__btn {
+        z-index: 10;
+        text-transform: uppercase;
+    }
+}

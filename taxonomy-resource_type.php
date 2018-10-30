@@ -19,53 +19,25 @@ get_header();
 
           <?php endif; ?>
         </div>
-        <div class="container pos-vertical-center">
-            <div class="row justify-content-center">
-                <div class="col-md-8 text-center">
-                  <h1><?php the_field('projects_page_title','options'); ?></h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                  <h1><?php single_term_title(); ?></h1>
                 </div>
             </div>
         </div>
     </section>
 </div>
-<section class="content-container">
+<section class="wrapper blog-feed" id="index-wrapper">
 	<div class="container" id="content">
 
 		<div class="row">
 
-    <?php while ( have_posts() ) : the_post(); ?>
-
-			<div class="col-md-3">
-          <a href="<?php the_permalink(); ?>">
-            <?php
-
-            $image = get_field('background_image');
-
-            if( !empty($image) ):
-
-              // vars
-              $url = $image['url'];
-              $alt = $image['alt'];
-
-              // thumbnail
-              $size = '600x600';
-              $thumb = $image['sizes'][ $size ];
-              ?>
-              <img class="project__image" src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
-
-
-            <?php endif; ?>
-
-            <h4 class="project__name"><?php the_title(); ?></h4>
-            <p class="project__client"><?php the_field('client_name'); ?></p>
-
-          </a>
-
-
-
-			</div><!-- #primary -->
-
-      <?php endwhile; // end of the loop. ?>
+	<?php while ( have_posts() ) : the_post(); 
+	
+	get_template_part( 'loop-templates/content-resource', get_post_format() );
+	
+endwhile; // end of the loop. ?>
 
 		</div><!-- .row end -->
 

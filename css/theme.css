@@ -17328,6 +17328,19 @@ header {
 .bg--dark .feature-card {
   background-color: rgba(255, 255, 255, 0.1); }
 
+.image-split {
+  position: relative; }
+  .image-split__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 4; }
+  .image-split__btn {
+    z-index: 10;
+    text-transform: uppercase; }
+
 body {
   background: #000; }
 
