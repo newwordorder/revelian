@@ -93,6 +93,14 @@
   }
 }
 
+.navbar__navigation--footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  opacity:0;
+
+}
+
 #site-logo{
   text-transform:uppercase;
   color:#fff;
