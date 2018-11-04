@@ -16949,7 +16949,7 @@ blockquote {
   height: 100%;
   transform: translateX(0%);
   opacity: 1;
-  position: fixed;
+  position: relative;
   display: block; }
 
 header {
