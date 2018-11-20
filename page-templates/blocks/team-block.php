@@ -43,7 +43,7 @@ if( get_row_layout() == 'team_block' ):
 
                     ?>
 
-                    <div class="background-image-holder">
+                    <div class="background-image-holder" style="background-image:url('<?php echo $url; ?>')">
                         <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
                     </div>
                     <?php endif; ?>

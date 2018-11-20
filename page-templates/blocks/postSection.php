@@ -39,7 +39,7 @@ if( get_row_layout() == 'post_section' ):
                             $thumb = $image['sizes'][ $size ];
                             ?>
                             <div class="image">
-                                <div class="background-image-holder">
+                                <div class="background-image-holder" style="background-image:url('<?php echo $url; ?>')">
                                     <img style='margin-left:0px; margin-right:0px;' src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
                                 </div>
                                 <?php if( $category ): ?>

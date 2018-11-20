@@ -41,7 +41,7 @@ if ($featured->have_posts()):?>
 		$bg_image = $image['background_image'];
 	?>
 	<div data-overlay="5" style="width:100%; height:100%">
-		<div class="background-image-holder">
+		<div class="background-image-holder" style="background-image:url('<?php echo $image['url']; ?>')">
 			<img src="<?php echo $bg_image['url']; ?>" />
 		</div>
 		<div style="width:100%;">
@@ -82,7 +82,7 @@ if ($featured->have_posts()):?>
 						            $alt = $workImage['alt'];
 
 						            ?>
-						            <div class="background-image-holder" >
+						            <div class="background-image-holder" style="background-image:url('<?php echo $url; ?>')">
 						            	<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
 						            </div>
 						        	<?php endif; ?>

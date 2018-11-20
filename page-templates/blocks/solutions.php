@@ -1,5 +1,5 @@
 <?php // PRODUCTS
-if( get_row_layout() == 'products' ): 
+if( get_row_layout() == 'solutions' ): 
     
     $columns = get_sub_field('columns_per_row');
     $filters = get_sub_field('include_filters');    
@@ -27,7 +27,7 @@ if( get_row_layout() == 'products' ):
 <?php endif; ?>    
 
 
-<?php $posts = get_sub_field('products'); if( $posts ): ?>
+<?php $posts = get_sub_field('solutions'); if( $posts ): ?>
 <div class="row">
 
    
@@ -60,16 +60,16 @@ if( get_row_layout() == 'products' ):
             <a href="<?php the_permalink(); ?>">
                 <div class="product-tile__image">
                     <?php
-                    $workImage = get_field('tile_image');
+                    $workImage = get_field('background_image');
 
                     if( !empty($workImage) ):
 
                     // vars
-                    $url = $workImage['url'];
+                    $url = $workImage['background_image'];
                     $alt = $workImage['alt'];
 
                     ?>
-                    <div class="background-image-holder" style="background-image:url('<?php echo $url; ?>')">
+                    <div class="background-image-holder" style="background-image:url('<?php echo $url['url']; ?>')">
                         <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
                     </div>
                     <?php endif; ?>
