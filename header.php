@@ -105,6 +105,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 			.blog-tile{
 				height:unset;
 			}
+			.line-container{
+				text-align:center;
+			}
 		</style>
 	</noscript>
 
