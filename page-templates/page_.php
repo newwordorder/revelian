@@ -1,18 +1,19 @@
 <?php
 /**
-* Template Name: Home
+* Template Name: __home
+*
 *
 * @package understrap
 */
 
 get_header();
 
-//$image = get_field('background_image');
-//$imageOverlay = get_field('image_overlay');
+$image = get_field('background_image');
+$imageOverlay = get_field('image_overlay');
 
-$backgroundImage = get_field('background_image');
+//$backgroundImage = get_field('background_image');
 
-  $image = $backgroundImage['background_image'];
+  //$image = $backgroundImage['background_image'];
   $secondaryimage = $backgroundImage['secondary_image'];
   $imageOverlay = $backgroundImage['image_overlay'];
   $backgroundEffect = $backgroundImage['background_effect'];
@@ -52,7 +53,7 @@ $backgroundImage = get_field('background_image');
   	$alt = $image['alt'];
 
    ?>
-  <div class="background-image-holder" style="background-image:url('<?php echo $url; ?>')">
+  <div class="background-image-holder">
   		<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
   </div>
   <?php endif; ?>
@@ -92,6 +93,7 @@ if( !empty($image) ):
     <div class="col-lg-10 col-md-10">
 
         <h1><?php the_title(); ?></h1>
+        <hr></hr>
         <p class="headingtext"><?php echo $headingtext; ?></p>
 
     </div>

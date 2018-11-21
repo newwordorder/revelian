@@ -24,7 +24,7 @@ if( get_row_layout() == 'image_split' ):
   
     <div class="col-md-6 px-0 py-7 imagebg zoomimg image-split">
     <a class="image-split__link" href="<?php echo $link_url_left; ?>"></a>
-      <div class="background-image-holder">
+      <div class="background-image-holder" style="background-image:url('<?php echo $image_left['url']; ?>')">
         <img src="<?php echo $image_left['url']; ?>" alt="<?php echo $image_left['alt']; ?>"/>
       </div>
       <div class="text text-center">
@@ -37,7 +37,7 @@ if( get_row_layout() == 'image_split' ):
     
     <div class="col-md-6 px-0 py-7 imagebg zoomimg image-split">
     <a class="image-split__link" href="<?php echo $link_url_right; ?>"></a>
-    <div class="background-image-holder">
+    <div class="background-image-holder" style="background-image:url('<?php echo $image_right['url']; ?>')">
         <img src="<?php echo $image_right['url']; ?>" alt="<?php echo $image_right['alt']; ?>"/>
       </div>
       <div class="text text-center">

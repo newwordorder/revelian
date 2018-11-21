@@ -47,7 +47,7 @@ $blockSetup = get_sub_field('block_setup');
       <div class="wrapper contain">
       <!-- This div handle the background color -->
       <div class="mask-bg-color full-size bg--image">
-        <div class="background-image-holder">
+        <div class="background-image-holder" style="background-image:url('<?php echo $url; ?>')">
           <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
         </div>
       </div>
@@ -55,7 +55,7 @@ $blockSetup = get_sub_field('block_setup');
       <div class="blend-multiply full-size">	
         <!-- This div handle the background element (could be an image, a video or in that case a gif) -->
         <div class="animated-bg full-size bg--image">
-          <div class="background-image-holder">
+          <div class="background-image-holder" style="background-image:url('<?php echo $url; ?>')">
             <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
           </div>
         </div>
@@ -81,7 +81,7 @@ $blockSetup = get_sub_field('block_setup');
         $alt = $image['alt'];
 
       ?>
-      <div class="background-image-holder">
+      <div class="background-image-holder" style="background-image:url('<?php echo $url; ?>')">
           <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
       </div>
     <?php endif; ?>

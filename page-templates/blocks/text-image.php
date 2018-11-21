@@ -44,7 +44,7 @@ $highlightLine = get_sub_field('highlight_line');
                
                <?php if( $imageFormat == 'square' ): ?>
                 <div class="image image--square">
-                  <div class="background-image-holder">
+                  <div class="background-image-holder" style="background-image:url('<?php echo $url; ?>')">
                       <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
                   </div> 
                 </div>
@@ -52,7 +52,7 @@ $highlightLine = get_sub_field('highlight_line');
 
                <?php if( $imageFormat == 'landscape' ): ?>
                 <div class="image image--landscape">
-                  <div class="background-image-holder">
+                  <div class="background-image-holder" style="background-image:url('<?php echo $url; ?>')">
                       <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
                   </div> 
                 </div>
@@ -60,7 +60,7 @@ $highlightLine = get_sub_field('highlight_line');
 
                <?php if( $imageFormat == 'portrait' ): ?>
                 <div class="image image--portrait">
-                  <div class="background-image-holder">
+                  <div class="background-image-holder" style="background-image:url('<?php echo $url; ?>')">
                       <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
                   </div> 
                 </div>
@@ -82,7 +82,7 @@ $highlightLine = get_sub_field('highlight_line');
             <?php if( $media == 'video' ): ?>
 
               <div class="video-cover ">
-              	<div class="background-image-holder ">
+              	<div class="background-image-holder " style="background-image:url('<?php echo $url; ?>')">
                   <?php if( !empty($videoCoverImage) ):
 
                     // vars

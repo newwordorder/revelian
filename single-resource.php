@@ -39,7 +39,7 @@ $backgroundImage = get_field('background_image');
   	$alt = $image['alt'];
 
    ?>
-  <div class="background-image-holder">
+  <div class="background-image-holder" style="background-image:url('<?php echo $url; ?>')">
   		<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
   </div>
   <?php endif; ?>
