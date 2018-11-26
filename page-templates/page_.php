@@ -8,12 +8,12 @@
 
 get_header();
 
-$image = get_field('background_image');
-$imageOverlay = get_field('image_overlay');
+//$image = get_field('background_image');
+//$imageOverlay = get_field('image_overlay');
 
-//$backgroundImage = get_field('background_image');
+$backgroundImage = get_field('background_image');
 
-  //$image = $backgroundImage['background_image'];
+  $image = $backgroundImage['background_image'];
   $secondaryimage = $backgroundImage['secondary_image'];
   $imageOverlay = $backgroundImage['image_overlay'];
   $backgroundEffect = $backgroundImage['background_effect'];
@@ -53,9 +53,14 @@ $imageOverlay = get_field('image_overlay');
   	$alt = $image['alt'];
 
    ?>
-  <div class="background-image-holder">
+  <div class="background-image-holder"> 
   		<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
   </div>
+  <noscript>
+  <div class="background-image-holder" style="background-image:url('<?php echo $url; ?>');"> 
+  		<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+  </div>
+  </noscript>
   <?php endif; ?>
 
   <div class="container line-container">

@@ -37,7 +37,7 @@ $container = get_theme_mod( 'understrap_container_type' );
     	var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
 	</script>
 
-		<noscript>
+	<noscript>
 		<style type="text/css">
 			#site-logo{
 				opacity:1;
@@ -108,8 +108,155 @@ $container = get_theme_mod( 'understrap_container_type' );
 			.line-container{
 				text-align:center;
 			}
+			.preloader-wrap{
+				display:none;
+			}
 		</style>
 	</noscript>
+
+	<!--[if IE]>
+	Place content here to target all Internet Explorer users.
+	<style type="text/css">
+			#site-logo{
+				opacity:1;
+			}
+
+			.navbar__navigation{
+				opacity:1;
+			}
+
+			.navbar__upper{
+				opacity:1;
+			}
+
+			.dropdown{
+				opacity;1;
+			}
+
+			h4{
+				opacity:1;
+			}
+			.headingtext{
+				opacity:1;
+			}
+		
+			.fa-arrow-down{
+				opacity:1;
+				bottom:40px;
+			}
+			.zoomimg{
+				opacity:1;
+			}
+
+		
+			.preloader-wrap{
+				display:none;
+			}
+			.background-image-holder{
+				opacity:1;
+			}
+			.slider{
+				display:none;
+			}
+
+			.product-tile{
+				height:unset;
+			}
+			.collapse{
+				display:unset;
+			}
+
+			.feature-card{
+				height:unset;
+			}
+
+			.blog-tile{
+				height:unset;
+			}
+			.line-container{
+				text-align:center;
+			}
+			.preloader-wrap{
+				display:none;
+			}
+
+		</style>
+	<![endif]-->
+
+	<style>
+	
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+     /* IE10+ CSS styles go here */
+		#site-logo{
+				opacity:1;
+				position:absolute;
+			}
+
+			.footer-brand{
+				position:relative;
+			}
+
+			.navbar__navigation{
+				opacity:1;
+			}
+
+			.navbar__upper{
+				opacity:1;
+			}
+
+			.dropdown{
+				opacity;1;
+			}
+
+			h4{
+				opacity:1;
+			}
+			.headingtext{
+				opacity:1;
+			}
+		
+			.fa-arrow-down{
+				opacity:1;
+				bottom:40px;
+			}
+			.zoomimg{
+				opacity:1;
+			}
+
+		
+			.preloader-wrap{
+				display:none;
+			}
+			.background-image-holder{
+				opacity:1;
+			}
+			.slider{
+				display:none;
+			}
+
+			.product-tile{
+				height:unset;
+			}
+			.collapse{
+				display:unset;
+			}
+
+			.feature-card{
+				height:unset;
+			}
+
+			.blog-tile{
+				height:unset;
+			}
+			.line-container{
+				text-align:center;
+			}
+			.preloader-wrap{
+				display:none;
+			}
+
+				}
+	</style>
 
 </head>
 

@@ -89,6 +89,8 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 
 <?php if(get_the_title() == "Home"): ?>
 	<script type="text/javascript">
+
+
 		let appContainer = document.getElementById('header');
 
 		window.onload = loaded(appContainer);
@@ -409,6 +411,7 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 
 	</script>
 <?php endif; ?>
+
 
 <script>
 	var tl = new TimelineLite();
