@@ -13,7 +13,7 @@ $flipLayout = get_sub_field('50_50_flip_layout');
 <div class="imageblock switchable <?php if( !($flipLayout) == 'yes' ): echo 'switchable--switch'; endif; ?>">
 
   <div class="imageblock__content col-md-6 pos-right">
-      <div class="background-image-holder">
+      <div class="background-image-holder" style="background-image:url('<?php echo $image['url']; ?>')">
         <?php
 
         if( !empty($image) ):

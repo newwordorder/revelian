@@ -9,7 +9,7 @@
 
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html5>
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -36,6 +36,227 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<script type="text/javascript">
     	var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
 	</script>
+
+	<noscript>
+		<style type="text/css">
+			#site-logo{
+				opacity:1;
+			}
+
+			.navbar__navigation{
+				opacity:1;
+			}
+
+			.navbar__upper{
+				opacity:1;
+			}
+
+			.dropdown{
+				opacity;1;
+			}
+
+			h4{
+				opacity:1;
+			}
+			.headingtext{
+				opacity:1;
+			}
+			.line-container--before{
+				opacity:1;
+				height:140;
+			}
+			.line-container--after{
+				opacity:1;
+				height:140;
+				bottom:'-20px';
+			}
+			.fa-arrow-down{
+				opacity:1;
+				bottom:40px;
+			}
+			.zoomimg{
+				opacity:1;
+			}
+			
+			.navbar__inner--after {
+				width: 100%;
+			}
+			.preloader-wrap{
+				display:none;
+			}
+			.background-image-holder{
+				opacity:1;
+			}
+			.slider{
+				display:none;
+			}
+
+			.product-tile{
+				height:unset;
+			}
+			.collapse{
+				display:unset;
+			}
+
+			.feature-card{
+				height:unset;
+			}
+
+			.blog-tile{
+				height:unset;
+			}
+			.line-container{
+				text-align:center;
+			}
+			.preloader-wrap{
+				display:none;
+			}
+		</style>
+	</noscript>
+
+	<!--[if IE]>
+	Place content here to target all Internet Explorer users.
+	<style type="text/css">
+			#site-logo{
+				opacity:1;
+			}
+
+			.navbar__navigation{
+				opacity:1;
+			}
+
+			.navbar__upper{
+				opacity:1;
+			}
+
+			.dropdown{
+				opacity;1;
+			}
+
+			h4{
+				opacity:1;
+			}
+			.headingtext{
+				opacity:1;
+			}
+		
+			.fa-arrow-down{
+				opacity:1;
+				bottom:40px;
+			}
+			.zoomimg{
+				opacity:1;
+			}
+
+		
+			.preloader-wrap{
+				display:none;
+			}
+			.background-image-holder{
+				opacity:1;
+			}
+			.slider{
+				display:none;
+			}
+
+			.product-tile{
+				height:unset;
+			}
+			.collapse{
+				display:unset;
+			}
+
+			.feature-card{
+				height:unset;
+			}
+
+			.blog-tile{
+				height:unset;
+			}
+			.line-container{
+				text-align:center;
+			}
+			.preloader-wrap{
+				display:none;
+			}
+
+		</style>
+	<![endif]-->
+
+	<style>
+	
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+     /* IE10+ CSS styles go here */
+		#site-logo{
+				opacity:1;
+				position:absolute;
+			}
+
+			.footer-brand{
+				position:relative;
+			}
+
+			.navbar__navigation{
+				opacity:1;
+			}
+
+			.navbar__upper{
+				opacity:1;
+			}
+
+			.dropdown{
+				opacity;1;
+			}
+
+			h4{
+				opacity:1;
+			}
+			.headingtext{
+				opacity:1;
+			}
+		
+			.fa-arrow-down{
+				opacity:1;
+				bottom:40px;
+			}
+			.zoomimg{
+				opacity:1;
+			}
+
+		
+			.preloader-wrap{
+				display:none;
+			}
+			.background-image-holder{
+				opacity:1;
+			}
+			.slider{
+				display:none;
+			}
+
+			.product-tile{
+				height:unset;
+			}
+			.collapse{
+				display:unset;
+			}
+
+			.feature-card{
+				height:unset;
+			}
+
+			.blog-tile{
+				height:unset;
+			}
+			.line-container{
+				text-align:center;
+			}
+			.preloader-wrap{
+				display:none;
+			}
+
+				}
+	</style>
 
 </head>
 
@@ -204,6 +425,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				)
 			); ?>
 	</div>
+
 
 	<div class="hfeed site" id="page">
 

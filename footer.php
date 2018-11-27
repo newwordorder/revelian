@@ -27,7 +27,7 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 			<?php wp_nav_menu(
 						array(
 							'theme_location'  => 'footer',
-							'container_class' => 'navbar__navigation',
+							'container_class' => 'navbar__navigation navbar__navigation--footer',
 							'container_id'    => 'navbarNavDropdown',
 							'menu_class'      => 'navbar-nav',
 							'fallback_cb'     => '',
@@ -42,7 +42,7 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 			<?php wp_nav_menu(
 						array(
 							'theme_location'  => 'footer-social',
-							'container_class' => 'navbar__navigation',
+							'container_class' => 'navbar__navigation navbar__navigation--footer',
 							'container_id'    => 'navbarNavDropdown',
 							'menu_class'      => 'navbar-nav',
 							'fallback_cb'     => '',
@@ -89,6 +89,8 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 
 <?php if(get_the_title() == "Home"): ?>
 	<script type="text/javascript">
+
+
 		let appContainer = document.getElementById('header');
 
 		window.onload = loaded(appContainer);
@@ -409,6 +411,7 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 
 	</script>
 <?php endif; ?>
+
 
 <script>
 	var tl = new TimelineLite();

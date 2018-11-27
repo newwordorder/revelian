@@ -9,6 +9,8 @@
 
 
   .navbar-nav {
+    align-items:center;
+
 
     .active > .nav-link {
       color: rgba($white,1);
@@ -91,6 +93,14 @@
     display: none;
     justify-content: flex-start;
   }
+}
+
+.navbar__navigation--footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  opacity:0;
+
 }
 
 #site-logo{
@@ -178,6 +188,7 @@
   border-radius: 0;
   .dropdown-item{
     color:#fff;
+    font-family:$isidora-semibold;
     &:hover{
       color:$primary;
     }
@@ -540,6 +551,7 @@ header {
   }
   .navbar-expand-custom .navbar-nav {
       flex-direction: row;
+      align-items:center;
   }
   .navbar-expand-custom .navbar-nav .nav-link {
       padding-right: .5rem;

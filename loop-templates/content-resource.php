@@ -31,7 +31,7 @@
 						<a href="<?php the_permalink(); ?>">
 					
 							<div class="blog-tile__thumb">
-								<div class="background-image-holder" >
+								<div class="background-image-holder" style="background-image:url('<?php echo $url; ?>')">
 									<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
 								</div>
 							</div>
