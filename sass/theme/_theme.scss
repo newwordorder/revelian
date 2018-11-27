@@ -607,9 +607,9 @@ canvas{
     display:block;
     content:"";
     width:1px;
-    height:140px;
+    height:100px;
     left:50%;
-    top:-20px;
+    top:0px;
     transform: translateX(-50%);
     background-color:white;
   }
@@ -618,10 +618,10 @@ canvas{
     position:absolute;
     display:block;
     width:1px;
-    height:140px;
+    height:100px;
     left:50%;
     transform: translateX(-50%);
-    bottom:-20px;
+    bottom:0px;
     background-color:white;
   }
 }
@@ -636,6 +636,10 @@ canvas{
   left:50%;
   transform: translateX(-50%);
   bottom:40px;
+}
+
+.text{
+  padding: 8rem 0rem;
 }
 
 .zoomimg{
