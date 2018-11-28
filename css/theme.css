@@ -17717,7 +17717,9 @@ header {
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
   padding: 2em;
   background-color: #fff;
-  height: 100%; }
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content; }
   @media (max-width: 767.98px) {
     .feature-card {
       margin-bottom: 30px; } }
@@ -18448,7 +18450,6 @@ canvas {
   background: #fff;
   -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
           box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-  height: calc( 100% - 2em);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
