@@ -1,7 +1,6 @@
 .feature-column {
-
     margin: 15px 0;
-
+    display:flex;
     @include media-breakpoint-down(sm) {
       margin-bottom: 30px;
     }
@@ -73,7 +72,7 @@
     box-shadow:0 10px 20px rgba(0, 0, 0, 0.05);
     padding: 2em;
     background-color:$white;
-    max-height: fit-content;
+    height:auto;
     
     @include media-breakpoint-down(sm) {
       margin-bottom: 30px;
