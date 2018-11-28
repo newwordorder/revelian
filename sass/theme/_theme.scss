@@ -354,7 +354,8 @@ section {
   display: block;
   margin-bottom: 30px;
   background-color: $white;
-  height: calc(100% - 30px);
+  height: auto;
+  width:100%;
   position: relative;
 
   * {
@@ -837,10 +838,6 @@ canvas{
   }
 }
 
-.owl-stage-outer{
-  min-height:100%;
-}
-
 .owl-nav{
   position:absolute;
   right:0;
@@ -856,7 +853,7 @@ canvas{
 
 .owl-carousel {
   position: relative;
-  height: 100%;
+ /*  height: 100%; */
 
   .owl-stage{
   }
@@ -913,6 +910,7 @@ canvas{
   display: flex;
   flex-direction: column; 
   transition: 0.2s;
+  height:auto;
    * {
     transition: 0.2s;
    }

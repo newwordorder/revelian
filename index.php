@@ -40,12 +40,12 @@ if ($featured->have_posts()):?>
 		$image = get_field('background_image');
 		$bg_image = $image['background_image'];
 	?>
-	<div data-overlay="5" style="width:100%; height:100%">
+	<div data-overlay="5" style="width:100%;">
 		<div class="background-image-holder" style="background-image:url('<?php echo $url; ?>')">
 			<img src="<?php echo $bg_image['url']; ?>" />
 		</div>
 		<div style="width:100%;">
-			<div class="container" style="padding: 200px 15px 100px; height:100%; z-index:5 !important;">
+			<div class="container" style="padding: 200px 15px 100px; z-index:5 !important;">
 				<div class="row">
 					<div class="col-md-8">
 						<h1 class="mb-4"><?php the_title(); ?></h1>
@@ -72,7 +72,7 @@ if ($featured->have_posts()):?>
 					<div class="row" id="posts_row">
 
 					<?php while ( have_posts() ) : the_post(); ?>
-						<div class="col-sm-6 col-lg-4">
+						<div class="col-sm-6 col-lg-4 d-flex">
 							<div class="blog-tile">
 								<a href="<?php the_permalink(); ?>" class="blog-tile__tile-link">
 								</a>
