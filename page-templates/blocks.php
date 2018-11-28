@@ -51,4 +51,3 @@ if( have_rows('blocks') ) {
 ?>
 
 
-<?php get_footer();
