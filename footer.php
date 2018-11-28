@@ -55,7 +55,36 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 	</div>
 </footer>
 
+<div id="myOverlay" class="overlay">
+  <span class="closebtn" onclick="closeSearch()" title="Close Overlay"><i class="fal fa-times"></i></span>
+  <div class="overlay-content">
+	<form method="get"  autocomplete="off" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+		<input class="full-page-search-input field" id="s" name="s" type="text" placeholder="<?php esc_attr_e( 'Search &hellip;', 'understrap' ); ?>" value="<?php the_search_query(); ?>">
+	</form>
+  </div>
+</div>
 
+<style>
+
+
+</style>
+
+<script>
+	// Open the full screen search box 
+
+jQuery('.search-open a').click(function(){
+    document.getElementById("myOverlay").style.display = "block";
+});
+
+function openSearch() {
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+// Close the full screen search box 
+function closeSearch() {
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
 
 
 </div><!-- #page we need this extra closing tag here -->
