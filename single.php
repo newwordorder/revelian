@@ -87,7 +87,17 @@ if( !empty($image) ):
 <?php endif;?>
 
 </section>
+<section class="bg--none space--sm">
+<div class="container justify-content-center text-center">
+  <?php echo do_shortcode('[addthis tool="addthis_inline_share_toolbox_b4ew"]') ?>
+</div>
+</section>
 <?php get_template_part( 'page-templates/post-blocks' ); ?>
+<section class="bg--none space--sm">
+<div class="container justify-content-center text-center">
+  <?php echo do_shortcode('[addthis tool="addthis_inline_share_toolbox_b4ew"]') ?>
+</div>
+</section>
 
 <?php
            // the query
