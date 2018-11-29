@@ -26,7 +26,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 		<div style="width:100%;">
 			<div class="container" style="padding: 200px 15px 100px; z-index:5 !important;">
 					<?php
-						the_archive_title( '<h1 class="headingtext">', '</h1>' );
+						the_archive_title( '<h1>', '</h1>' );
 						the_archive_description( '<div class="taxonomy-description">', '</div>' );
 						?>
 			</div>
