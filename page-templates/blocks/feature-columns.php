@@ -25,7 +25,7 @@ if( get_row_layout() == 'feature_columns' ):
         ?>
 
           <div class="col-md-6 col-lg<?php if ( $columns == '3' ): ?>-<?php endif; ?><?php if ( $columns == '6' ): ?>-<?php endif; ?><?php if ( $columns == '4' ): ?>-<?php endif; ?><?php echo $columns; ?> feature-column <?php if($sideIcon == 'yes'): ?>feature-column--side-icon<?php endif; ?> <?php if( $centered == 'yes' ): ?>feature-column--centered<?php endif; ?> ">
-          <?php if($card == 'yes'): ?><div class="feature-card"><?php endif; ?>
+          <div class="<?php if($card == 'yes'): ?>feature-card<?php endif; ?>">
 
               <?php if( $type == 'image' ):
                 if( !empty($image) ):
@@ -70,7 +70,7 @@ if( get_row_layout() == 'feature_columns' ):
                 <?php get_template_part( 'page-templates/blocks/block-partials/buttons' ); ?>
 
 
-              <?php if($card == 'yes'): ?></div><?php endif; ?>
+              </div>
             </div>
 
     <?php endwhile; ?>
