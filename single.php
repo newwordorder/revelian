@@ -89,6 +89,78 @@ if( !empty($image) ):
 </section>
 <?php get_template_part( 'page-templates/post-blocks' ); ?>
 
+<?php
+           // the query
+           $the_query = new WP_Query( array(
+             'category__in' => wp_get_post_categories( $post->ID ), 
+              'posts_per_page' => 3,
+              'post__not_in' => array( $post->ID ) 
+           ));
+        ?>
+
+			<?php if ( $the_query->have_posts() ) : ?>
+
+<section class="related-posts space--lg">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center mb-3">
+        <h3>Related posts</h3>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+    
+        <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+				<div class="col-sm-6 col-lg-4 d-flex">
+						<div class="blog-tile">
+							<a href="<?php the_permalink(); ?>" class="blog-tile__tile-link">
+							</a>
+
+
+								<?php
+								$workImage = get_field('background_image_background_image');
+
+								if( !empty($workImage) ):
+
+								// vars
+								$url = $workImage['url'];
+								$alt = $workImage['alt'];
+
+								?>
+								<a href="<?php the_permalink(); ?>">
+							
+									<div class="blog-tile__thumb">
+										<div class="background-image-holder" style="background-image:url('<?php echo $url; ?>')">
+											<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+										</div>
+									</div>
+								</a>
+								<?php endif; ?>
+
+
+								<div class="blog-tile__content">
+									<h5><?php the_title(); ?></h5>
+									<a class="btn" href="<?php the_permalink(); ?>">Read</a>
+								</div>
+						</div>
+
+					</div>
+          <?php endwhile;
+
+// reset post data
+wp_reset_postdata();
+
+?>
+<?php endif; ?>
+
+			
+  </div>
+
+</div>
+</section>
+
+
+
+
 <script>
   function animateIn(){
 
