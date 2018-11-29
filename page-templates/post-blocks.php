@@ -35,4 +35,3 @@ if( have_rows('posts_blocks') ) {
 
 ?>
 
-<?php get_footer();
