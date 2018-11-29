@@ -471,7 +471,7 @@ $footer_blurb = get_field('footer_blurb', 'footer');
 			}
 			tl.add(() => {
 			tl.to(document.getElementById('dropdown'), 0.3, {
-				height: menu.offsetHeight,
+				height: auto,
     			borderTop:'2px solid #fff',
 			},'-=0.1')
 		})
