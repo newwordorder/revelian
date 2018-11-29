@@ -14,7 +14,7 @@ get_header();
 	style="padding:0;"
 >
 
-	<div data-overlay="5" style="width:100%; height:100%">
+	<div data-overlay="5" style="width:100%;">
 		<div class="background-image-holder">
 			<img src="<?php echo $bg_image['url']; ?>" />
 		</div>
