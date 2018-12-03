@@ -100,6 +100,9 @@ if ($featured->have_posts()):?>
 
 
 									<div class="blog-tile__content">
+									<?php if ( get_field('minutes_to_read')): ?>
+										<p class="small"><?php the_field('minutes_to_read'); ?> minute read</p>
+									<?php endif; ?>
 										<h5><?php the_title(); ?></h5>
 										<a class="btn" href="<?php the_permalink(); ?>">Read</a>
 									</div>

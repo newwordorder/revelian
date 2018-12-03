@@ -47,7 +47,9 @@ $backgroundImage = get_field('background_image');
   <div class="container">
     <div class="row">
       <div class="col-lg-10 col-md-10">
-
+      <?php if ( get_field('minutes_to_read')): ?>
+          <p class="h6"><?php the_field('minutes_to_read'); ?> minute read</p>
+        <?php endif; ?>
           <h1 class="<?php if( $hideTitle == 'yes' ): echo 'd-none'; endif; ?>"><?php the_title(); ?></h1>
           <?php if ($headingtext): ?>
             <p class="headingtext"><?php echo $headingtext; ?></p>
@@ -74,6 +76,9 @@ if( !empty($image) ):
   <div class="row">
     <div class="col-lg-10 col-md-10">
 
+        <?php if ( get_field('minutes_to_read')): ?>
+          <p class="h6"><?php the_field('minutes_to_read'); ?> minute read</p>
+        <?php endif; ?>
        <h1><?php the_title(); ?></h1>
        <?php if ($headingtext): ?>
          <p class="headingtext"><?php echo $headingtext; ?></p>
@@ -87,7 +92,17 @@ if( !empty($image) ):
 <?php endif;?>
 
 </section>
+<section class="bg--none space--sm">
+<div class="container justify-content-center text-center">
+  <?php echo do_shortcode('[addthis tool="addthis_inline_share_toolbox_b4ew"]') ?>
+</div>
+</section>
 <?php get_template_part( 'page-templates/post-blocks' ); ?>
+<section class="bg--none space--sm">
+<div class="container justify-content-center text-center">
+  <?php echo do_shortcode('[addthis tool="addthis_inline_share_toolbox_b4ew"]') ?>
+</div>
+</section>
 
 <?php
            // the query

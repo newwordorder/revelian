@@ -3,7 +3,7 @@
 // check if the repeater field has rows of data
 if( have_rows('posts_blocks') ) {
 
-  echo '<section>';
+  echo '<section class="space--md">';
 
   // loop through the rows of data
   while ( have_rows('posts_blocks') ) { the_row();

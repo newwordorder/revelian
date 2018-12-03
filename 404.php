@@ -20,7 +20,7 @@ get_header();
 		</div>
 		<div style="width:100%;">
 			<div class="container">
-				<p class="headingtext" style="padding: 200px 0 100px; z-index:5 !important;">Page Not Found!</p>
+				<p class="headingtext" style="padding: 200px 0 100px; z-index:5 !important;"><?php the_field('404_page_title', 'options'); ?></p>
 			</div>
 		</div>
 	</div>
@@ -35,9 +35,7 @@ get_header();
 		<div class="row">
 
 			<div class="col-md-10 offset-md-1">
-				<h1 style="text-align: center;">404</h1>
-				<hr  class="x-gap" style="margin: 33px 0 0 0;"><h2 style="text-align: center;"> We&#8217;re sorry.</h2>
-				<h2 style="text-align: center;">The page you are looking for cannot be found.</h2>
+				<?php the_field('404_text_field', 'options'); ?>
 			</div>
 
 
