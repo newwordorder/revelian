@@ -163,7 +163,6 @@ class testsBox {
   }
 
   navigateTo(index) {
-    debugger;
     if (index != this.activePage) {
       this.activePage = index;
       this.togglePageList(this.listObjects());
