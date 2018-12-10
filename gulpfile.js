@@ -21,6 +21,19 @@ var gulpSequence = require( 'gulp-sequence' );
 var replace = require( 'gulp-replace' );
 var autoprefixer = require( 'gulp-autoprefixer' );
 
+var gulp = require("gulp");
+var babel = require("gulp-babel");
+
+
+
+gulp.task("js_babel", function () {
+  return gulp.src("./js/testsbox.js")
+    .pipe(babel())
+    .pipe( rename( { suffix: '.min' } ) )
+    .pipe(gulp.dest("./js"));
+});
+
+
 // Configuration file to keep your code DRY
 var cfg = require( './gulpconfig.json' );
 var paths = cfg.paths;
