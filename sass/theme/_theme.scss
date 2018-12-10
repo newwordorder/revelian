@@ -1145,3 +1145,49 @@ canvas{
   display: block;
   top: 57px;
 }
+
+.card-header{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content: space-between;
+}
+
+.controls{
+  display:flex;
+  flex-direction:column;
+}
+#pageList{
+  .page-link{
+    font-family:$isidora-bold;
+  }
+  .page-item{
+    margin:0;
+  }
+}
+
+.activePage{
+  a.page-link{
+    background-color:$primary;
+    color:#fff;
+    font-family:$isidora-bold;
+  }
+}
+
+.counter {
+  font-size: 6rem;
+  margin-bottom: 0;
+  position: absolute;
+  top: -4rem;
+  opacity: 0.2;
+  font-family:$isidora-bold;
+
+  &__wrapper {
+    margin: 2rem 0;
+  }
+
+}
+
+.counter__text {
+  padding-left: 4rem;
+}

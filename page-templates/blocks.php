@@ -35,6 +35,8 @@ if( have_rows('blocks') ) {
          get_template_part('page-templates/blocks/blog-posts');
          get_template_part('page-templates/blocks/amchart');
          get_template_part('page-templates/blocks/solutions');
+         get_template_part('page-templates/blocks/skillstests');
+         get_template_part('page-templates/blocks/counter');
 
 
       }
