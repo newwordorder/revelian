@@ -167,3 +167,27 @@ function misha_loadmore_ajax_handler(){
 
 add_action('wp_ajax_loadmore', 'misha_loadmore_ajax_handler'); // wp_ajax_{action}
 add_action('wp_ajax_nopriv_loadmore', 'misha_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
+
+function saveRemoteJsonData(){
+
+	$jsonurl = "https://app.revelian.com/rss/skillsTests/skillsTests.json";
+	$json = file_get_contents($jsonurl);
+	var_dump(json_decode($json));
+
+	$file = fopen(get_template_directory() . '/js/skillsTests.json','w');
+	fwrite($file, $json);
+	fclose($file);
+
+} add_action('saveRemoteJsonData', 'saveRemoteJsonData');
+
+function readLocalJsonData(){
+
+    //Use file_get_contents to GET the URL in question.
+    $contents = file_get_contents(get_template_directory() . '/js/skillsTests.json');
+
+    //If $contents is not a boolean FALSE value.
+    if($contents !== false){
+        //Print out the contents.
+        return $contents;
+    }
+}
