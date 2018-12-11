@@ -28,8 +28,8 @@ if( get_row_layout() == 'skills_tests' ):
 
 
 <script>
-const a = <?php echo readLocalJsonData(); ?>;
-new testsBox(a);
+var _skillsTests = <?php echo readLocalJsonData(); ?>;
+new testsBox(_skillsTests);
 </script>
 
 <?php endif;
