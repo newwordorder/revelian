@@ -1191,3 +1191,18 @@ canvas{
 .counter__text {
   padding-left: 4rem;
 }
+
+.dropdownTitle{
+  font-family:$isidora-bold;
+  color:$primary;
+  text-transform: uppercase;
+}
+
+select{
+  font-family:$isidora-bold;
+}
+input{
+  font-family: $isidora-bold;
+  padding-left:8px;
+  border: 1px solid #efefef;
+}

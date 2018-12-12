@@ -112,13 +112,11 @@ class testsBox {
 
   mapData(data, index) {
     return `<div class="card my-2">
-       <div class="card-header" id="heading${index}">
-         <h5 class="mb-0">
-            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse${index}" aria-expanded="false" aria-controls="collapse${index}">
+       <div class="card-header" id="heading${index}" data-toggle="collapse" data-target="#collapse${index}" aria-expanded="false" aria-controls="collapse${index}">
+         <p class="mb-0 dropdownTitle">
                ${data.title}
-             </button>
-         </h5>
-         <div class="d-flex row align-items-center justify-content-between">
+         </p>
+         <div class="d-none row align-items-center justify-content-between d-sm-flex">
          <h6 class="category mb-0 px-2">${data.category}</h6>
          <h6 class="mb-0 px-2"><i class="far fa-clock"></i><span style="font-weight:bold;" class="px-2">${
            data.completeTime
@@ -137,7 +135,7 @@ class testsBox {
               <p class="mb-0 px-2"><b>Number of Questions: </b><span class="px-2">${
                 data.questions
               }</span></p>
-              <p class="mb-0 px-2"><b>Language: </b>${data.us}</p>
+              <p class="mb-0 px-2"><b>Language: </b>${this.dataUs(data.us)}</p>
             </div> 
             <p class="description"><b>Description: </b><br />${
               data.description
@@ -146,6 +144,10 @@ class testsBox {
          </div>
        </div>
    `;
+  }
+
+  dataUs(bool){
+    return bool ?  'English (US)' : 'English (UK)'
   }
 
   isMultiPage(array) {

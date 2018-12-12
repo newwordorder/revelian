@@ -18745,6 +18745,19 @@ canvas {
 .counter__text {
   padding-left: 4rem; }
 
+.dropdownTitle {
+  font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif;
+  color: #ef0d33;
+  text-transform: uppercase; }
+
+select {
+  font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif; }
+
+input {
+  font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif;
+  padding-left: 8px;
+  border: 1px solid #efefef; }
+
 /*
 * Use existing Bootstrap 4 classes and
 * variables to extend - override CF7 style
