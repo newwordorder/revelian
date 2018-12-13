@@ -16,7 +16,7 @@ if( get_row_layout() == 'skills_tests' ):
           </select>
         </div>
         <div class="col-md-5">
-          <input id="search" placeholder="Search"></input>
+          <input id="search" placeholder="Search with keyword"></input>
         </div>
         <div class="col-md-2">
         <button class="d-block btn btn--solid w-100 m-0" id="searchbtn">Search</button>

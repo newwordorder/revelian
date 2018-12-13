@@ -1,6 +1,7 @@
 class testsBox {
 
   constructor(data) {
+    this.initialData = Object.values(data.tests);
     this.data = Object.values(data.tests);
     this.activePage = 0;
     this.pagination = [];
@@ -37,12 +38,16 @@ class testsBox {
     const previousPage = this.getActivePage() - 1;
 
     const buttons = () => {
-      if(this.getActivePage() === 0){
-        return `<li id="pageNo--${nextPage}" class="page-item"><a class="page-link">Next</a></li>`;
-      }else if(this.getActivePage() === this.chunkArray(this.mapped, 20).length - 1){
-         return `<li id="pageNo--${previousPage}" class="page-item"><a class="page-link">Previous</a></li>`;
+      if(this.getNumberOfPages() != 1){
+        if(this.getActivePage() === 0){
+          return `<li class="page-item"><a class="page-link">Page ${this.getActivePage() + 1} of ${this.getNumberOfPages() + 1}</a></li><li id="pageNo--${nextPage}" class="page-item"><a class="page-link">Next</a></li>`;
+        }else if(this.getActivePage() === this.chunkArray(this.mapped, 20).length - 1){
+          return `<li id="pageNo--${previousPage}" class="page-item"><a class="page-link">Previous</a></li><li class="page-item"><a class="page-link">Page ${this.getActivePage() + 1} of ${this.getNumberOfPages() + 1}</a></li>`;
+        }else{
+          return `<li id="pageNo--${previousPage}" class="page-item"><a class="page-link">Previous</a></li><li class="page-item"><a class="page-link">Page ${this.getActivePage() + 1} of ${this.getNumberOfPages() + 1}</a></li><li id="pageNo--${nextPage}" class="page-item"><a class="page-link">Next</a></li>`;
+        }
       }else{
-        return `<li id="pageNo--${previousPage}" class="page-item"><a class="page-link">Previous</a></li><li id="pageNo--${nextPage}" class="page-item"><a class="page-link">Next</a></li>`;
+        return ``;
       }
     }
 
@@ -64,12 +69,16 @@ class testsBox {
     const previousPage = this.getActivePage() - 1;
 
     const buttons = () => {
-      if(this.getActivePage() === 0){
-        return `<li id="pageNo--${nextPage}" class="page-item"><a class="page-link">Next</a></li>`;
-      }else if(this.getActivePage() === this.chunkArray(this.mapped, 20).length - 1){
-         return `<li id="pageNo--${previousPage}" class="page-item"><a class="page-link">Previous</a></li>`;
+      if(this.getNumberOfPages() != 1){
+        if(this.getActivePage() === 0){
+          return `<li class="page-item"><a class="page-link">Page ${this.getActivePage() + 1} of ${this.getNumberOfPages() + 1}</a></li><li id="pageNo--${nextPage}" class="page-item"><a class="page-link">Next</a></li>`;
+        }else if(this.getActivePage() === this.chunkArray(this.mapped, 20).length - 1){
+          return `<li id="pageNo--${previousPage}" class="page-item"><a class="page-link">Previous</a></li><li class="page-item"><a class="page-link">Page ${this.getActivePage() + 1} of ${this.getNumberOfPages() + 1}</a></li>`;
+        }else{
+          return `<li id="pageNo--${previousPage}" class="page-item"><a class="page-link">Previous</a></li><li class="page-item"><a class="page-link">Page ${this.getActivePage() + 1} of ${this.getNumberOfPages() + 1}</a></li><li id="pageNo--${nextPage}" class="page-item"><a class="page-link">Next</a></li>`;
+        }
       }else{
-        return `<li id="pageNo--${previousPage}" class="page-item"><a class="page-link">Previous</a></li><li id="pageNo--${nextPage}" class="page-item"><a class="page-link">Next</a></li>`;
+        return ``;
       }
     }
   
@@ -82,6 +91,11 @@ class testsBox {
         this.navigateTo(a.id.split("--")[1]);
       })
     );
+  }
+
+  getNumberOfPages(){
+    const no = this.chunkArray(this.mapped, 20).length;
+    return no;
   }
 
   getActivePage(){
@@ -107,7 +121,7 @@ class testsBox {
   }
 
   prepareData(data) {
-    return Object.values(data).map((a, index) => this.mapData(a, index));
+    return data.map((a, index) => this.mapData(a, index));
   }
 
   mapData(data, index) {
@@ -117,11 +131,11 @@ class testsBox {
                ${data.title}
          </p>
          <div class="d-none row align-items-center justify-content-between d-sm-flex">
-         <h6 class="category mb-0 px-2">${data.category}</h6>
-         <h6 class="mb-0 px-2"><i class="far fa-clock"></i><span style="font-weight:bold;" class="px-2">${
+         <h6 class="category mb-0 px-4">${data.category}</h6>
+         <h6 class="mb-0 px-4"><i class="far fa-clock"></i><span style="font-weight:bold;" class="px-2">${
            data.completeTime
          }</span></h6>
-         <h6 class="mb-0 px-2"><i class="fas fa-hashtag"></i><span style="font-weight:bold;" class="px-2">${
+         <h6 class="mb-0 px-4"><i class="fas fa-hashtag"></i><span style="font-weight:bold;" class="px-2">${
            data.questions
          }</span></h6>
          </div>
@@ -129,13 +143,13 @@ class testsBox {
        <div id="collapse${index}" class="collapse" aria-labelledby="heading${index}" data-parent="#accordionExample">
          <div class="card-body">
             <div class="d-flex row align-items-center justify-content-between p-2">
-              <p class="mb-0 px-2"><b>Time to Complete: </b>${
+              <p class="mb-0 px-2"><b>Time to Complete: </b><span class="px-2">${
                 data.completeTime
               }</span></p>
               <p class="mb-0 px-2"><b>Number of Questions: </b><span class="px-2">${
                 data.questions
               }</span></p>
-              <p class="mb-0 px-2"><b>Language: </b>${this.dataUs(data.us)}</p>
+              <p class="mb-0 px-2"><b>Language: </b> <span class="px-2">${this.dataUs(data.us)} </span></p>
             </div> 
             <p class="description"><b>Description: </b><br />${
               data.description
@@ -179,7 +193,7 @@ class testsBox {
   }
 
   selectorSetup() {
-    const categories_all = this.data.map(a => a.category);
+    const categories_all = this.initialData.map(a => a.category);
     const categories = [...new Set(categories_all)];
     const selectObjects = categories.map(
       a => `<option value="${a}">${a}</option>`
@@ -189,7 +203,11 @@ class testsBox {
 
     category.addEventListener("change", e => {
       const newList = this.categoryFilter(category.value);
-      this.updateList(newList);
+      if (newList.length > 0) {
+        this.updateList(newList);
+      }else{
+        this.emptyList();
+      }
     });
   }
 
@@ -198,8 +216,18 @@ class testsBox {
     this.resetResults();
     this.activePage = 0;
 
+    this.data = data;
+
     this.mapped = this.prepareData(data)
     this.pageSetup(this.mapped);
+  }
+
+  emptyList() {
+    this.resetPagination();
+    this.resetResults();
+    this.activePage = 0;
+    console.log('no values');
+    this.addToTestBox('<div class="my-4"><h4 class="text-center">No tests found</h4></div>')
   }
 
   resetPagination() {
@@ -212,21 +240,58 @@ class testsBox {
   }
 
   categoryFilter(value) {
+    if(search.value === ''){
     if (value === "all") {
-      return this.data;
+      return this.initialData;
     } else {
-      return this.data.filter(a => a.category === category.value);
+      return this.initialData.filter(a => a.category === category.value);
+    }
+    }else{
+      if (value === "all") {
+        const searchResults = this.search(this.initialData, search.value);
+        return searchResults;
+      } else {
+        const categorydata = this.initialData.filter(a => a.category === category.value);
+        const searchResults = this.search(categorydata, search.value);
+        return searchResults;
+      }
     }
   }
 
   searchSetup() {
     searchbtn.addEventListener("click", () => {
       const value = search.value;
-      const searchValues = this.search(this.data, value);
-      if (searchValues.length > 0) {
-        this.updateList(searchValues);
-      }
+      if(value != ''){
+        const searchValues = this.search(this.data, value);
+        if (searchValues.length > 0) {
+          this.updateList(searchValues);
+        }else{
+          this.emptyList();
+        }
+        }else{
+          const newList = this.categoryFilter(category.value);
+          this.updateList(newList);
+        }
     });
+
+    search.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        const value = search.value;
+        if(value != ''){
+        const searchValues = this.search(this.data, value);
+        if (searchValues.length > 0) {
+          this.updateList(searchValues);
+        }else{
+          this.emptyList();
+        }
+        }else{
+          const newList = this.categoryFilter(category.value);
+          this.updateList(newList);
+        }
+      }
+    })
+
+
   }
 
   search(data, searchValue) {

@@ -18712,6 +18712,9 @@ canvas {
       -ms-flex-pack: justify;
           justify-content: space-between; }
 
+.description {
+  text-align: left; }
+
 .controls {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -18757,6 +18760,17 @@ input {
   font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif;
   padding-left: 8px;
   border: 1px solid #efefef; }
+
+.card-header {
+  cursor: pointer; }
+
+#category {
+  border-radius: 0;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.6); }
+
+#pageList {
+  margin-bottom: 2rem; }
 
 /*
 * Use existing Bootstrap 4 classes and
