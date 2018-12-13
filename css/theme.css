@@ -7169,6 +7169,187 @@ a.skip-link {
 .gallery-caption {
   display: block; }
 
+@font-face {
+  font-family: "Isidora Sans Bold";
+  src: url("../fonts/isidora/Isidora Sans Bold.otf"); }
+
+@font-face {
+  font-family: "Isidora Sans SemiBold";
+  src: url("../fonts/isidora/Isidora Sans SemiBold.otf"); }
+
+@font-face {
+  font-family: "Isidora Sans Regular";
+  src: url("../fonts/isidora/Isidora Sans Regular.otf"); }
+
+@font-face {
+  font-family: "Isidora Sans Regular It";
+  src: url("../fonts/isidora/Isidora Sans Regular It.otf"); }
+
+@font-face {
+  font-family: "Isidora Sans Light";
+  src: url("../fonts/isidora/Isidora Sans Light.otf"); }
+
+@font-face {
+  font-family: "Font Awesome 5";
+  src: url("../fonts/fontawesome-webfont.eot");
+  src: url("../fonts/fontawesome-webfont.woff2") format("woff2"), url("../../fonts/fontawesome-webfont.woff") format("woff"), url("../../fonts/fontawesome-webfont.ttf") format("truetype"), url("../../fonts/fontawesome-webfont.svg") format("svg");
+  /* Legacy iOS */ }
+
+html {
+  font-size: 16px !important;
+  line-height: 26px; }
+
+body {
+  font-family: "Isidora Sans Regular", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.625rem;
+  margin: auto; }
+
+h1, .h1 {
+  font-size: 2.5rem;
+  line-height: 2.5rem; }
+
+h2, .h2 {
+  font-size: 2rem;
+  line-height: 2rem; }
+
+h3, .h3 {
+  font-size: 1.75rem;
+  line-height: 1.75rem; }
+
+h4, .h4 {
+  font-size: 1.5rem;
+  line-height: 1.5rem; }
+
+h5, .h5 {
+  font-size: 1.25rem;
+  line-height: 1.25rem; }
+
+h6, .h6 {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  text-transform: uppercase; }
+
+.lead {
+  font-size: 1.25rem;
+  line-height: 1.875rem; }
+
+p, li {
+  font-size: 1rem;
+  line-height: 1.625rem;
+  margin-bottom: 0.5rem; }
+
+.small {
+  font-size: 0.875rem;
+  line-height: 1.367rem; }
+
+html {
+  font-size: 1rem; }
+
+b {
+  font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif; }
+
+@media (min-width: 992px) {
+  html {
+    font-size: 1.2rem; } }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, li {
+  margin-bottom: 1rem;
+  color: #000;
+  font-family: "Isidora Sans Light", "Helvetica Neue", Helvetica, sans-serif; }
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, li {
+  font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif;
+  text-transform: none; }
+
+p {
+  color: #000;
+  font-family: "Isidora Sans Regular", "Helvetica Neue", Helvetica, sans-serif; }
+
+.lead {
+  color: #000; }
+
+.page-title {
+  font-size: 5em;
+  line-height: 1em; }
+
+p:last-of-type {
+  margin-bottom: 1rem; }
+
+.page-title {
+  margin-bottom: 0; }
+
+ul {
+  font-family: "Isidora Sans Light", "Helvetica Neue", Helvetica, sans-serif; }
+
+hr.short {
+  height: 3px;
+  width: 70px;
+  background: #ef0d33;
+  border: none; }
+
+strong {
+  font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif; }
+
+blockquote {
+  font-family: "Isidora Sans Regular It", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 1.875rem;
+  line-height: 2.5rem; }
+  blockquote * {
+    font-family: "Isidora Sans Regular It", "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 1.875rem;
+    line-height: 2.5rem; }
+
+.headingtext {
+  font-family: "Isidora Sans Light", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 4.5rem;
+  line-height: 4.5rem; }
+  @media (max-width: 767.98px) {
+    .headingtext {
+      padding: 0px;
+      font-size: 2.5rem;
+      line-height: 2.5rem; } }
+
+#site-logo {
+  font-size: 2rem; }
+
+#main-menu * {
+  font-size: 0.875rem; }
+
+.container li {
+  font-family: "Isidora Sans Light", "Helvetica Neue", Helvetica, sans-serif;
+  margin-left: 1em;
+  list-style-type: disc; }
+
+.page-header * {
+  list-style-type: none;
+  margin-left: none; }
+
+.navbar li, .slider li {
+  list-style-type: none;
+  margin-left: none; }
+  .navbar li:before, .slider li:before {
+    content: '';
+    padding: none; }
+
+.flippable_text blockquote {
+  border-left: 4px solid #ef0d33;
+  padding-left: 15px; }
+  .flippable_text blockquote strong {
+    font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif !important;
+    font-size: 1rem !important;
+    color: black !important; }
+
+.testimony-author {
+  font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif; }
+
+.fa-check {
+  color: #ef0d33; }
+
 /**!**************/
 /**! Contents **/
 /**! 01. Reset **/
@@ -8402,17 +8583,17 @@ form:after {
 
 label {
   margin: 0;
-  font-size: 1.14285714em;
+  font-size: 0.875em;
   font-weight: 400; }
 
 input[type],
 textarea,
 select {
   -webkit-appearance: none;
-  background: #fcfcfc;
+  background: #fff;
   padding: 0.46428571em;
-  border-radius: 6px;
-  border: 1px solid #ececec; }
+  border-radius: 0px;
+  border: 2px solid #efefef; }
 
 input[type]:focus,
 textarea:focus,
@@ -8472,9 +8653,11 @@ input[type="submit"] {
   background: none;
   outline: none;
   border: none;
-  background: #4a90e2;
+  background: #ef0d33;
   padding: 0.46428571em 2.78571429em 0.46428571em 2.78571429em;
-  color: #fff; }
+  color: #fff;
+  font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif;
+  text-transform: uppercase; }
 
 @keyframes load {
   0% {
@@ -14057,7 +14240,7 @@ textarea {
 input[type]:focus,
 select:focus,
 textarea:focus {
-  border-color: #76abe9; }
+  border-color: #35B4CA; }
 
 input[type="image"] {
   border: none;
@@ -14324,10 +14507,10 @@ label {
   border-left: none; }
 
 .input-select:focus:after {
-  border-color: #4a90e2; }
+  border-color: #35B4CA; }
 
 .input-select select:focus {
-  border-color: #4a90e2; }
+  border-color: #35B4CA; }
 
 .input-number {
   position: relative; }
@@ -15831,187 +16014,6 @@ footer.footer-7 {
     margin-left: auto;
     margin-right: auto; } }
 
-@font-face {
-  font-family: "Isidora Sans Bold";
-  src: url("../fonts/isidora/Isidora Sans Bold.otf"); }
-
-@font-face {
-  font-family: "Isidora Sans SemiBold";
-  src: url("../fonts/isidora/Isidora Sans SemiBold.otf"); }
-
-@font-face {
-  font-family: "Isidora Sans Regular";
-  src: url("../fonts/isidora/Isidora Sans Regular.otf"); }
-
-@font-face {
-  font-family: "Isidora Sans Regular It";
-  src: url("../fonts/isidora/Isidora Sans Regular It.otf"); }
-
-@font-face {
-  font-family: "Isidora Sans Light";
-  src: url("../fonts/isidora/Isidora Sans Light.otf"); }
-
-@font-face {
-  font-family: "Font Awesome 5";
-  src: url("../fonts/fontawesome-webfont.eot");
-  src: url("../fonts/fontawesome-webfont.woff2") format("woff2"), url("../../fonts/fontawesome-webfont.woff") format("woff"), url("../../fonts/fontawesome-webfont.ttf") format("truetype"), url("../../fonts/fontawesome-webfont.svg") format("svg");
-  /* Legacy iOS */ }
-
-html {
-  font-size: 16px !important;
-  line-height: 26px; }
-
-body {
-  font-family: sans-serif;
-  font-size: 1rem;
-  line-height: 1.625rem;
-  margin: auto; }
-
-h1, .h1 {
-  font-size: 2.5rem;
-  line-height: 2.5rem; }
-
-h2, .h2 {
-  font-size: 2rem;
-  line-height: 2rem; }
-
-h3, .h3 {
-  font-size: 1.75rem;
-  line-height: 1.75rem; }
-
-h4, .h4 {
-  font-size: 1.5rem;
-  line-height: 1.5rem; }
-
-h5, .h5 {
-  font-size: 1.25rem;
-  line-height: 1.25rem; }
-
-h6, .h6 {
-  font-size: 1rem;
-  line-height: 1.25rem;
-  text-transform: uppercase; }
-
-.lead {
-  font-size: 1.25rem;
-  line-height: 1.875rem; }
-
-p, li {
-  font-size: 1rem;
-  line-height: 1.625rem;
-  margin-bottom: 0.5rem; }
-
-.small {
-  font-size: 0.875rem;
-  line-height: 1.367rem; }
-
-html {
-  font-size: 1rem; }
-
-b {
-  font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif; }
-
-@media (min-width: 992px) {
-  html {
-    font-size: 1.2rem; } }
-
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, li {
-  margin-bottom: 1rem;
-  color: #000;
-  font-family: "Isidora Sans Light", "Helvetica Neue", Helvetica, sans-serif; }
-
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, li {
-  font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif;
-  text-transform: none; }
-
-p {
-  color: #000;
-  font-family: "Isidora Sans Regular", "Helvetica Neue", Helvetica, sans-serif; }
-
-.lead {
-  color: #000; }
-
-.page-title {
-  font-size: 5em;
-  line-height: 1em; }
-
-p:last-of-type {
-  margin-bottom: 1rem; }
-
-.page-title {
-  margin-bottom: 0; }
-
-ul {
-  font-family: "Isidora Sans Light", "Helvetica Neue", Helvetica, sans-serif; }
-
-hr.short {
-  height: 3px;
-  width: 70px;
-  background: #ef0d33;
-  border: none; }
-
-strong {
-  font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif; }
-
-blockquote {
-  font-family: "Isidora Sans Regular It", "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 1.875rem;
-  line-height: 2.5rem; }
-  blockquote * {
-    font-family: "Isidora Sans Regular It", "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 1.875rem;
-    line-height: 2.5rem; }
-
-.headingtext {
-  font-family: "Isidora Sans Light", "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 4.5rem;
-  line-height: 4.5rem; }
-  @media (max-width: 767.98px) {
-    .headingtext {
-      padding: 0px;
-      font-size: 2.5rem;
-      line-height: 2.5rem; } }
-
-#site-logo {
-  font-size: 2rem; }
-
-#main-menu * {
-  font-size: 0.875rem; }
-
-.container li {
-  font-family: "Isidora Sans Light", "Helvetica Neue", Helvetica, sans-serif;
-  margin-left: 1em;
-  list-style-type: disc; }
-
-.page-header * {
-  list-style-type: none;
-  margin-left: none; }
-
-.navbar li, .slider li {
-  list-style-type: none;
-  margin-left: none; }
-  .navbar li:before, .slider li:before {
-    content: '';
-    padding: none; }
-
-.flippable_text blockquote {
-  border-left: 4px solid #ef0d33;
-  padding-left: 15px; }
-  .flippable_text blockquote strong {
-    font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif !important;
-    font-size: 1rem !important;
-    color: black !important; }
-
-.testimony-author {
-  font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif; }
-
-.fa-check {
-  color: #ef0d33; }
-
 .navbar {
   position: absolute;
   background: transparent;
@@ -16124,6 +16126,14 @@ blockquote {
         flex-direction: column;
         margin-top: 0;
         display: none; } }
+    .navbar__upper .dropdown-menu.show {
+      top: 30px;
+      width: auto;
+      background: #000; }
+      .navbar__upper .dropdown-menu.show a {
+        font-size: 0.875rem;
+        padding: 0.25rem 0.75rem;
+        transition: 0.2s; }
 
 .dropdown-toggle--heading {
   color: white;
@@ -17486,6 +17496,13 @@ canvas {
 .dropdown-menu.show {
   display: block;
   top: 57px; }
+
+.gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type=submit], .gform_wrapper .gform_page_footer input.button, .gform_wrapper .gform_page_footer input[type=submit] {
+  font-size: 1em;
+  width: auto;
+  margin: 0 16px 0 0;
+  padding: 0 20px !important;
+  line-height: 50px; }
 
 /*
 * Use existing Bootstrap 4 classes and

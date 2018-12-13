@@ -23,7 +23,7 @@ $layout = get_sub_field('layout');
     <?php elseif($layout == "vertical"): ?>
         <div class="container space-below--<?php echo $spaceBelow ?>">
             <div class="row justify-content-center">
-                <div class="col-md-8 cta__text">
+                <div class="col-md-8 cta__text text-center">
                     <?php echo $text ?>
 
                 </div>
