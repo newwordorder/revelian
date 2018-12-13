@@ -855,8 +855,7 @@ canvas{
   position: relative;
  /*  height: 100%; */
 
-  .owl-stage{
-  }
+
 
   .owl-item {
     .background-image-holder{
@@ -935,9 +934,7 @@ canvas{
     padding-left: 0;
     padding-right: 0; 
   }
-  .background-image-holder {
 
-  }
 
     &:hover {
       box-shadow: 0 15px 20px rgba(0, 0, 0, 0.05);
@@ -1047,9 +1044,7 @@ canvas{
 }
 
 .entry{
-  &-title{
 
-  }
   &-meta{
     *{
     font-size:12px;
@@ -1153,6 +1148,11 @@ canvas{
   justify-content: space-between;
 }
 
+.description{
+  text-align:left;
+}
+
+
 .controls{
   display:flex;
   flex-direction:column;
@@ -1190,4 +1190,34 @@ canvas{
 
 .counter__text {
   padding-left: 4rem;
+}
+
+.dropdownTitle{
+  font-family:$isidora-bold;
+  color:$primary;
+  text-transform: uppercase;
+}
+
+select{
+  font-family:$isidora-bold;
+}
+input{
+  font-family: $isidora-bold;
+  padding-left:8px;
+  border: 1px solid #efefef;
+}
+
+.card-header{
+  cursor:pointer;
+}
+
+#category{
+  border-radius:0;
+  background-color:#fff;
+  color:rgba(0,0,0,0.6);
+
+}
+
+#pageList{
+  margin-bottom:2rem;
 }

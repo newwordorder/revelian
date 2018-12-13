@@ -27,12 +27,16 @@ var babel = require("gulp-babel");
 
 
 gulp.task("js_babel", function () {
-  return gulp.src("./js/testsbox.js")
+  return gulp.src(['./js/testsbox.js', '!./js/testsbox.min.js'])
     .pipe(babel())
     .pipe( rename( { suffix: '.min' } ) )
     .pipe(gulp.dest("./js"));
 });
 
+
+gulp.task('js_watch', function () {
+    gulp.watch( paths.js + '/**/*.js', ['js_babel'] );
+})
 
 // Configuration file to keep your code DRY
 var cfg = require( './gulpconfig.json' );
