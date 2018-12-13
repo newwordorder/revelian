@@ -1,6 +1,6 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
-@import "stack";
 @import "typography";
+@import "stack";
 @import "sections/sections";
 
 body {
@@ -1141,6 +1141,16 @@ canvas{
   top: 57px;
 }
 
+
+// FORM HACKS
+
+.gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type=submit], .gform_wrapper .gform_page_footer input.button, .gform_wrapper .gform_page_footer input[type=submit] {
+  font-size: 1em;
+  width: auto;
+  margin: 0 16px 0 0;
+  padding: 0 20px!important;
+  line-height: 50px;
+}
 .card-header{
   display:flex;
   flex-direction:row;
