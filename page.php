@@ -21,7 +21,10 @@ $backgroundImage = get_field('background_image');
   $headingtext = get_field('headingtext');
   $hideTitle = get_field('hide_page_title');
 
+  $justImage = get_field('just_image');
+
 ?>
+<?php if(!$justImage): ?>
 
 <section
 
@@ -89,6 +92,15 @@ if( !empty($image) ):
 <?php endif;?>
 
 </section>
+
+<?php else:   	$url = $image['url'];
+ ?>
+
+<img style="width:100%" src="<?php echo $url; ?>" />
+
+<h1 style="display:none;"><?php the_title(); ?></h1>
+
+<?php endif; ?>
 
 <?php get_template_part( 'page-templates/blocks' ); ?>
 

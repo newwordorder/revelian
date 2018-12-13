@@ -17504,6 +17504,67 @@ canvas {
   padding: 0 20px !important;
   line-height: 50px; }
 
+.card-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; }
+
+.description {
+  text-align: left; }
+
+.controls {
+  display: flex;
+  flex-direction: column; }
+
+#pageList .page-link {
+  font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif; }
+
+#pageList .page-item {
+  margin: 0; }
+
+.activePage a.page-link {
+  background-color: #ef0d33;
+  color: #fff;
+  font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif; }
+
+.counter {
+  font-size: 6rem;
+  margin-bottom: 0;
+  position: absolute;
+  top: -4rem;
+  opacity: 0.2;
+  font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif; }
+  .counter__wrapper {
+    margin: 2rem 0; }
+
+.counter__text {
+  padding-left: 4rem; }
+
+.dropdownTitle {
+  font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif;
+  color: #ef0d33;
+  text-transform: uppercase; }
+
+select {
+  font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif; }
+
+input {
+  font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif;
+  padding-left: 8px;
+  border: 1px solid #efefef; }
+
+.card-header {
+  cursor: pointer; }
+
+#category {
+  border-radius: 0;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.6); }
+
+#pageList {
+  margin-bottom: 2rem; }
+
 /*
 * Use existing Bootstrap 4 classes and
 * variables to extend - override CF7 style

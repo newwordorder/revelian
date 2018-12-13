@@ -100,6 +100,11 @@ function closeSearch() {
 <script src="<?php echo get_template_directory_uri(); ?>/js/aos.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/mixitup.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/scripts.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/countUp.js"></script>
+
+<script src="<?php echo get_template_directory_uri(); ?>/js/fuse.min.js"></script>
+
+
 
 <script src="<?php echo get_template_directory_uri(); ?>/js/owl.carousel.js"></script>
 
