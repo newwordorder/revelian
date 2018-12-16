@@ -10,7 +10,7 @@ if( get_row_layout() == 'feature' ):
 
 
     <div class="container space-below--<?php echo $spaceBelow ?> switchable">
-        <div class="row h-100 align-items-center">
+        <div class="row align-items-center">
             <div class="col-sm-6 col-md-5 offset-md-1 switchable__text <?php if($feature_left == true){ echo "order-md-1";} ?>">
                 <div class='my-auto'>
                 <?php echo $textBlock; ?>
