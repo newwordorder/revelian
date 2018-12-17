@@ -20,10 +20,23 @@ $url = get_sub_field('author_url');
         <div class="row">
             <div class="col-lg-4">
                 <div style="position:relative; min-height:240px;" class=" d-flex justify-content-center align-items-center">
-                        <div class="author__image" style="
-                            background-image:url('<?php echo $image['url']; ?>');    
-                            
-                            " alt="<?php echo $image['alt']; ?>" ></div>
+                <div class="author__image" >
+                    <?php
+
+                    if( !empty($image) ):
+
+                        // vars
+                        $url = $image['url'];
+                        $alt = $image['alt'];
+
+                    ?>
+
+                    <div class="background-image-holder" style="background-image:url('<?php echo $url; ?>')">
+                        <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                    </div>
+                    <?php endif; ?>
+
+                    </div>
                     </div>
             </div>
                 <div class="col-lg-8 d-flex justify-content-center flex-column">
