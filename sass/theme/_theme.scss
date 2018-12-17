@@ -1019,12 +1019,12 @@ canvas{
   margin: 15px 0;
 
   &__image {
-    position: relative;
-    width: 100%;
-    padding-top: 100%;
-    height: 0;
-    border-radius: 50%;
-    overflow: hidden;
+    width: 180px;
+                            height: 180px;
+                            background-size: cover;
+                            background-position: center;
+                            border-radius:50%;
+                            background-color: $light;
   }
 
   &__link {
@@ -1034,6 +1034,36 @@ canvas{
     text-transform: uppercase;
     &:hover {
       color: darken($primary,10%);
+    }
+  }
+}
+
+.author {
+
+  padding: 2rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+
+  &__image {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    height: 0;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &__link {
+    display: inline-block;
+    color: $primary;
+    transition: 0.2s;
+    font-family: $isidora-bold;
+    text-transform: uppercase;
+    &:hover {
+      color: darken($primary,10%);
+    }
+
+    svg {
+      margin-right: 0.25rem;
     }
   }
 }

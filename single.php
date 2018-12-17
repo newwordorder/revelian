@@ -47,9 +47,7 @@ $backgroundImage = get_field('background_image');
   <div class="container">
     <div class="row">
       <div class="col-lg-10 col-md-10">
-      <?php if ( get_field('minutes_to_read')): ?>
-          <p class="h6"><?php the_field('minutes_to_read'); ?> minute read</p>
-        <?php endif; ?>
+
           <h1 class="<?php if( $hideTitle == 'yes' ): echo 'd-none'; endif; ?>"><?php the_title(); ?></h1>
           <?php if ($headingtext): ?>
             <p class="headingtext"><?php echo $headingtext; ?></p>
@@ -153,6 +151,9 @@ if( !empty($image) ):
 
 
 								<div class="blog-tile__content">
+                <?php if ( get_field('minutes_to_read')): ?>
+										<p class="small"><?php the_field('minutes_to_read'); ?> minute read</p>
+									<?php endif; ?>
 									<h5><?php the_title(); ?></h5>
 									<a class="btn" href="<?php the_permalink(); ?>">Read</a>
 								</div>

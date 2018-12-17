@@ -7398,19 +7398,6 @@ blockquote {
 /**!**************/
 /**!**************/
 /**! 01. Reset **/
-*,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-a {
-  margin: 0;
-  padding: 0; }
-
 /**! 02. Typography
 html {
   font-size: 87.5%;
@@ -8974,6 +8961,10 @@ img + .boxed {
     margin-bottom: 15px; } }
 
 /**! 18. Sliders Flickity **/
+.slides {
+  margin: 0;
+  padding: 0; }
+
 .slides:not(.flickity-enabled) li.imagebg:not(:first-child) {
   display: none; }
 
@@ -17414,12 +17405,12 @@ canvas {
 .team {
   margin: 15px 0; }
   .team__image {
-    position: relative;
-    width: 100%;
-    padding-top: 100%;
-    height: 0;
+    width: 180px;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
     border-radius: 50%;
-    overflow: hidden; }
+    background-color: #f8f9fa; }
   .team__link {
     color: #ef0d33;
     transition: 0.2s;
@@ -17427,6 +17418,27 @@ canvas {
     text-transform: uppercase; }
     .team__link:hover {
       color: #bf0a29; }
+
+.author {
+  padding: 2rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); }
+  .author__image {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    height: 0;
+    border-radius: 50%;
+    overflow: hidden; }
+  .author__link {
+    display: inline-block;
+    color: #ef0d33;
+    transition: 0.2s;
+    font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif;
+    text-transform: uppercase; }
+    .author__link:hover {
+      color: #bf0a29; }
+    .author__link svg {
+      margin-right: 0.25rem; }
 
 .feature-column__icon--center {
   transform: translateY(-50%) translateX(-50%);
