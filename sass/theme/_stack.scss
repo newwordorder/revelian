@@ -56,8 +56,8 @@ h6,
 p,
 ul,
 a {
-  margin: 0;
-  padding: 0;
+//  margin: 0;
+//  padding: 0;
 }
 /**! 02. Typography
 html {
@@ -1677,6 +1677,11 @@ img + .boxed {
   }
 }
 /**! 18. Sliders Flickity **/
+
+.slides {
+  margin: 0;
+  padding: 0;
+}
 .slides:not(.flickity-enabled) li.imagebg:not(:first-child) {
   display: none;
 }
