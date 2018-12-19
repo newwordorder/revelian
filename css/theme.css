@@ -17304,6 +17304,9 @@ canvas {
   ._container {
     max-width: 540px; } }
 
+.product-flex {
+  display: flex; }
+
 .product-tile {
   margin: 1em 0;
   position: relative;
