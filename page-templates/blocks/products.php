@@ -54,7 +54,7 @@ if( get_row_layout() == 'products' ):
 
 <?php setup_postdata($post); ?>
 <?php if(get_post_status() == 'publish'): ?>
-<div class="col-md-6 col-lg-<?php echo $columns; ?> mix <?php echo $outcome_filter_class_array; ?> d-flex">
+<div class="col-md-6 col-lg-<?php echo $columns; ?> mix <?php echo $outcome_filter_class_array; ?> product-flex">
     <div class="product-tile">
             <a href="<?php the_permalink(); ?>"  class="product-tile__link"></a>
             <a href="<?php the_permalink(); ?>">

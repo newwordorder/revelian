@@ -901,6 +901,10 @@ canvas{
   }
 }
 
+.product-flex {
+  display: flex;
+}
+
 .product-tile {
   margin: 1em 0;
   position: relative;
@@ -1019,12 +1023,12 @@ canvas{
   margin: 15px 0;
 
   &__image {
-    width: 180px;
-                            height: 180px;
-                            background-size: cover;
-                            background-position: center;
-                            border-radius:50%;
-                            background-color: $light;
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    height: 0;
+    border-radius: 50%;
+    overflow: hidden;
   }
 
   &__link {
@@ -1050,6 +1054,7 @@ canvas{
     height: 0;
     border-radius: 50%;
     overflow: hidden;
+    
   }
 
   &__link {
