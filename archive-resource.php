@@ -1,13 +1,6 @@
 <?php
 /**
- * The main template file.
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
+ * Resources archive
  * @package understrap
  */
 
@@ -128,7 +121,7 @@ $alt = $image['alt'];
 
 						// don't display the button if there are not enough posts
 						if (  $wp_query->max_num_pages > 1 )
-							echo '<div id="loadmore" class="loadmore btn btn--solid" style="margin:auto;">More posts</div>'; // you can use <a> as well
+							echo '<div class="text-center w-100"><div id="loadmore" class="loadmore btn btn--solid" style="margin:auto;">More posts</div>'; // you can use <a> as well
 							?>
 
 

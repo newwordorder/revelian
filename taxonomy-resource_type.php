@@ -33,13 +33,18 @@ get_header();
 
 		<div class="row">
 
-	<?php while ( have_posts() ) : the_post(); 
+	<?php
+	
+	
+	
+	while ( have_posts() ) : the_post(); 
 	
 	get_template_part( 'loop-templates/content-resource', get_post_format() );
 	
 endwhile; // end of the loop. ?>
 
 		</div><!-- .row end -->
+		
 
 	</div><!-- .container end -->
 </section>
