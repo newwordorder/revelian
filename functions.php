@@ -121,7 +121,7 @@ function misha_loadmore_ajax_handler(){
 		while( have_posts() ): the_post();
 
         ?>
-            <div class="col-sm-6 col-lg-4">
+            <div class="col-sm-6 col-lg-4 d-flex">
 							<div class="blog-tile">
 								<a href="<?php the_permalink(); ?>" class="blog-tile__tile-link">
 								</a>

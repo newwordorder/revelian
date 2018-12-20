@@ -17523,7 +17523,11 @@ canvas {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+  border-radius: 0; }
+
+.card {
+  border-radius: 0; }
 
 .description {
   text-align: left; }
@@ -17567,7 +17571,7 @@ select {
 input {
   font-family: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif;
   padding-left: 8px;
-  border: 1px solid #efefef; }
+  border: 2px solid #efefef; }
 
 .card-header {
   cursor: pointer; }
