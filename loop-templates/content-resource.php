@@ -64,7 +64,15 @@
 						<?php if(get_field('description')): ?>
 							<p><?php the_field('description'); ?></p>
 						<?php endif; ?>
-						<a class="btn" <?php if($category == 'media'): ?>target="_blank"<?php endif; ?> href="<?php the_permalink(); ?>">Read</a>
+						<a class="btn" <?php if($category == 'media'): ?>target="_blank"<?php endif; ?> href="<?php the_permalink(); ?>">
+						<?php if($category == 'video'): ?>
+							Watch
+						<?php else: ?>
+							Read
+						<?php endif; ?>
+						
+						
+						</a>
 					</div>
 			</div>
 

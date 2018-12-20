@@ -1191,6 +1191,11 @@ canvas{
   flex-direction:row;
   align-items:center;
   justify-content: space-between;
+  border-radius: 0;
+}
+
+.card {
+  border-radius: 0;
 }
 
 .description{
@@ -1249,7 +1254,7 @@ select{
 input{
   font-family: $isidora-bold;
   padding-left:8px;
-  border: 1px solid #efefef;
+  border: 2px solid #efefef;
 }
 
 .card-header{

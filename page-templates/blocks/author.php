@@ -41,7 +41,7 @@ $url = get_sub_field('author_url');
             </div>
                 <div class="col-lg-8 d-flex justify-content-center flex-column">
                     <?php echo $blurb ?>
-                    <a href="<?php echo $url; ?>" class="author__link"><i class="fab fa-linkedin"></i> LINKEDIN</a>
+                    <a target="_blank" href="<?php echo $url; ?>" class="author__link"><i class="fab fa-linkedin"></i> LINKEDIN</a>
                 </div>
                 </div>
             </div>
