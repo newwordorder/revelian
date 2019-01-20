@@ -1265,9 +1265,51 @@ input{
   border-radius:0;
   background-color:#fff;
   color:rgba(0,0,0,0.6);
-
+  &.active{
+    color:#fff;
+    background-color:$primary;
+  }
+}
+.select__wrapper{
+  &:after{
+    content:"\f078";
+    font-family:"Font Awesome 5 Pro";
+    font-weight: bold;
+    pointer-events:none;
+    color: $primary;
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &.active{
+    &:after{
+      content:"\f078";
+      font-family:"Font Awesome 5 Pro";
+      font-weight: bold;
+      pointer-events:none;
+      color: $white;
+      position: absolute;
+      right: 2rem;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
 }
 
 #pageList{
   margin-bottom:2rem;
+}
+
+.page-link{
+  &--nonlink{
+    cursor: default !important;
+
+    &:hover { 
+      color: $pagination-hover-color;
+      text-decoration: none;
+      background-color: $pagination-bg;
+      border-color: $pagination-hover-border-color; 
+    }
+  }
 }

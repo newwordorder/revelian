@@ -1,5 +1,4 @@
 class testsBox {
-
   constructor(data) {
     this.initialData = Object.values(data.tests);
     this.data = Object.values(data.tests);
@@ -9,14 +8,14 @@ class testsBox {
     this.pageSetup(this.mapped);
     this.selectorSetup();
     this.searchSetup();
+    this.clearbtnSetup();
+    this.copySetup();
   }
 
   pageSetup(data) {
     this.isMultiPage(data)
       ? this.singlePageSetup(data)
-      : this.multiPageSetup(
-        this.chunkArray(data, 20)
-      );
+      : this.multiPageSetup(this.chunkArray(data, 20));
   }
 
   singlePageSetup(data) {
@@ -24,11 +23,9 @@ class testsBox {
   }
 
   multiPageSetup(data) {
-
     this.paginationSetup(data);
 
     this.addToTestBox(this.prepareArrayForPrinting(data[this.activePage]));
-
   }
 
   paginationSetup(data) {
@@ -38,19 +35,26 @@ class testsBox {
     const previousPage = this.getActivePage() - 1;
 
     const buttons = () => {
-      if(this.getNumberOfPages() != 1){
-        if(this.getActivePage() === 0){
-          return `<li class="page-item"><a class="page-link">Page ${this.getActivePage() + 1} of ${this.getNumberOfPages() + 1}</a></li><li id="pageNo--${nextPage}" class="page-item"><a class="page-link">Next</a></li>`;
-        }else if(this.getActivePage() === this.chunkArray(this.mapped, 20).length - 1){
-          return `<li id="pageNo--${previousPage}" class="page-item"><a class="page-link">Previous</a></li><li class="page-item"><a class="page-link">Page ${this.getActivePage() + 1} of ${this.getNumberOfPages() + 1}</a></li>`;
-        }else{
-          return `<li id="pageNo--${previousPage}" class="page-item"><a class="page-link">Previous</a></li><li class="page-item"><a class="page-link">Page ${this.getActivePage() + 1} of ${this.getNumberOfPages() + 1}</a></li><li id="pageNo--${nextPage}" class="page-item"><a class="page-link">Next</a></li>`;
+      if (this.getNumberOfPages() != 1) {
+        if (this.getActivePage() === 0) {
+          return `<li class="page-item"><a class="page-link page-link--nonlink">Page ${this.getActivePage() +
+            1} of ${this.getNumberOfPages() +
+            1}</a></li><li id="pageNo--${nextPage}" class="page-item"><a class="page-link">Next</a></li>`;
+        } else if (
+          this.getActivePage() ===
+          this.chunkArray(this.mapped, 20).length - 1
+        ) {
+          return `<li id="pageNo--${previousPage}" class="page-item"><a class="page-link">Previous</a></li><li class="page-item"><a class="page-link page-link--nonlink">Page ${this.getActivePage() +
+            1} of ${this.getNumberOfPages() + 1}</a></li>`;
+        } else {
+          return `<li id="pageNo--${previousPage}" class="page-item"><a class="page-link">Previous</a></li><li class="page-item"><a class="page-link page-link--nonlink">Page ${this.getActivePage() +
+            1} of ${this.getNumberOfPages() +
+            1}</a></li><li id="pageNo--${nextPage}" class="page-item"><a class="page-link">Next</a></li>`;
         }
-      }else{
+      } else {
         return ``;
       }
-    }
-
+    };
 
     this.pagination.push(buttons());
     this.addContent({ id: pageList, array: this.pagination });
@@ -69,19 +73,26 @@ class testsBox {
     const previousPage = this.getActivePage() - 1;
 
     const buttons = () => {
-      if(this.getNumberOfPages() != 1){
-        if(this.getActivePage() === 0){
-          return `<li class="page-item"><a class="page-link">Page ${this.getActivePage() + 1} of ${this.getNumberOfPages() + 1}</a></li><li id="pageNo--${nextPage}" class="page-item"><a class="page-link">Next</a></li>`;
-        }else if(this.getActivePage() === this.chunkArray(this.mapped, 20).length - 1){
-          return `<li id="pageNo--${previousPage}" class="page-item"><a class="page-link">Previous</a></li><li class="page-item"><a class="page-link">Page ${this.getActivePage() + 1} of ${this.getNumberOfPages() + 1}</a></li>`;
-        }else{
-          return `<li id="pageNo--${previousPage}" class="page-item"><a class="page-link">Previous</a></li><li class="page-item"><a class="page-link">Page ${this.getActivePage() + 1} of ${this.getNumberOfPages() + 1}</a></li><li id="pageNo--${nextPage}" class="page-item"><a class="page-link">Next</a></li>`;
+      if (this.getNumberOfPages() != 1) {
+        if (this.getActivePage() === 0) {
+          return `<li class="page-item"><a class="page-link page-link--nonlink">Page ${this.getActivePage() +
+            1} of ${this.getNumberOfPages() +
+            1}</a></li><li id="pageNo--${nextPage}" class="page-item"><a class="page-link">Next</a></li>`;
+        } else if (
+          this.getActivePage() ===
+          this.chunkArray(this.mapped, 20).length - 1
+        ) {
+          return `<li id="pageNo--${previousPage}" class="page-item"><a class="page-link">Previous</a></li><li class="page-item"><a class="page-link page-link--nonlink">Page ${this.getActivePage() +
+            1} of ${this.getNumberOfPages() + 1}</a></li>`;
+        } else {
+          return `<li id="pageNo--${previousPage}" class="page-item"><a class="page-link">Previous</a></li><li class="page-item"><a class="page-link page-link--nonlink">Page ${this.getActivePage() +
+            1} of ${this.getNumberOfPages() +
+            1}</a></li><li id="pageNo--${nextPage}" class="page-item"><a class="page-link">Next</a></li>`;
         }
-      }else{
+      } else {
         return ``;
       }
-    }
-  
+    };
 
     this.pagination.push(buttons());
     this.addContent({ id: pageList, array: this.pagination });
@@ -93,12 +104,12 @@ class testsBox {
     );
   }
 
-  getNumberOfPages(){
+  getNumberOfPages() {
     const no = this.chunkArray(this.mapped, 20).length;
     return no;
   }
 
-  getActivePage(){
+  getActivePage() {
     return parseInt(this.activePage);
   }
 
@@ -149,19 +160,33 @@ class testsBox {
               <p class="mb-0 px-2"><b>Number of Questions: </b><span class="px-2">${
                 data.questions
               }</span></p>
-              <p class="mb-0 px-2"><b>Language: </b> <span class="px-2">${this.dataUs(data.us)} </span></p>
+              <p class="mb-0 px-2"><b>Language: </b> <span class="px-2">${this.dataUs(
+                data.us
+              )} </span></p>
             </div> 
             <p class="description"><b>Description: </b><br />${
               data.description
             }</p>
+            <div class="btn btn--solid copybtn" 
+              data-content="<h4>${data.title}</h4>
+                <br />
+                <b>Category:</b> ${data.category} 
+                <br />
+                <b>Time to complete:</b> ${data.completeTime}
+                <br />
+                <b>No. of questions:</b> ${data.questions} 
+                <br />
+                <b>Language:</b> ${this.dataUs(data.us)}
+                <br />
+                <b>Description: </b> ${data.description}"><i class="far fa-copy"></i> Copy</div>
             </div>
          </div>
-       </div>
+         </div>
    `;
   }
 
-  dataUs(bool){
-    return bool ?  'English (US)' : 'English (UK)'
+  dataUs(bool) {
+    return bool ? "English (US)" : "English (UK)";
   }
 
   isMultiPage(array) {
@@ -184,7 +209,9 @@ class testsBox {
       this.togglePageList(this.listObjects());
       controls.scrollIntoView();
       this.paginationUpdate(this.chunkArray(this.mapped, 20));
-      testsbox.innerHTML = this.prepareArrayForPrinting(this.chunkArray(this.mapped, 20)[this.activePage]);
+      testsbox.innerHTML = this.prepareArrayForPrinting(
+        this.chunkArray(this.mapped, 20)[this.activePage]
+      );
     }
   }
 
@@ -202,10 +229,20 @@ class testsBox {
     selectObjects.forEach(a => category.insertAdjacentHTML("beforeend", a));
 
     category.addEventListener("change", e => {
+      if (category.value === "all") {
+        if (category.classList.contains("active")) {
+          category.classList.remove("active");
+          selectwrapper.classList.remove("active");
+        }
+      } else {
+        category.classList.add("active");
+        selectwrapper.classList.add("active");
+      }
+
       const newList = this.categoryFilter(category.value);
       if (newList.length > 0) {
         this.updateList(newList);
-      }else{
+      } else {
         this.emptyList();
       }
     });
@@ -218,16 +255,20 @@ class testsBox {
 
     this.data = data;
 
-    this.mapped = this.prepareData(data)
+    this.mapped = this.prepareData(data);
     this.pageSetup(this.mapped);
+    this.copySetup();
+
   }
 
   emptyList() {
     this.resetPagination();
     this.resetResults();
     this.activePage = 0;
-    console.log('no values');
-    this.addToTestBox('<div class="my-4"><h4 class="text-center">No tests found</h4></div>')
+    console.log("no values");
+    this.addToTestBox(
+      '<div class="my-4"><h4 class="text-center">No tests found</h4></div>'
+    );
   }
 
   resetPagination() {
@@ -240,18 +281,20 @@ class testsBox {
   }
 
   categoryFilter(value) {
-    if(search.value === ''){
-    if (value === "all") {
-      return this.initialData;
+    if (search.value === "") {
+      if (value === "all") {
+        return this.initialData;
+      } else {
+        return this.initialData.filter(a => a.category === category.value);
+      }
     } else {
-      return this.initialData.filter(a => a.category === category.value);
-    }
-    }else{
       if (value === "all") {
         const searchResults = this.search(this.initialData, search.value);
         return searchResults;
       } else {
-        const categorydata = this.initialData.filter(a => a.category === category.value);
+        const categorydata = this.initialData.filter(
+          a => a.category === category.value
+        );
         const searchResults = this.search(categorydata, search.value);
         return searchResults;
       }
@@ -261,37 +304,44 @@ class testsBox {
   searchSetup() {
     searchbtn.addEventListener("click", () => {
       const value = search.value;
-      if(value != ''){
+      if (value != "") {
         const searchValues = this.search(this.data, value);
         if (searchValues.length > 0) {
           this.updateList(searchValues);
-        }else{
+        } else {
           this.emptyList();
         }
-        }else{
-          const newList = this.categoryFilter(category.value);
-          this.updateList(newList);
-        }
+      } else {
+        const newList = this.categoryFilter(category.value);
+        this.updateList(newList);
+      }
     });
 
-    search.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
+    search.addEventListener("input", e => {
+      if (e.key === "Enter") {
         const value = search.value;
-        if(value != ''){
-        const searchValues = this.search(this.data, value);
-        if (searchValues.length > 0) {
-          this.updateList(searchValues);
-        }else{
-          this.emptyList();
-        }
-        }else{
+        if (value != "") {
+          const searchValues = this.search(this.data, value);
+          if (searchValues.length > 0) {
+            this.updateList(searchValues);
+          } else {
+            this.emptyList();
+          }
+        } else {
           const newList = this.categoryFilter(category.value);
           this.updateList(newList);
         }
       }
-    })
-
-
+      if (search.value != "") {
+        if (!search.classList.contains("active")) {
+          search.classList.add("active");
+        }
+      } else {
+        if (search.classList.contains("active")) {
+          search.classList.remove("active");
+        }
+      }
+    });
   }
 
   search(data, searchValue) {
@@ -302,5 +352,59 @@ class testsBox {
     return fuse.search(searchValue);
   }
 
-  cloneArray(array){return array.slice(0)}
+  reset() {
+    this.emptyList();
+    category.value = "all";
+    category.setAttribute("selected", "");
+    search.value = "";
+    if (search.classList.contains("active")) {
+      search.classList.remove("active");
+    }
+    if (category.classList.contains("active")) {
+      category.classList.remove("active");
+      selectwrapper.classList.remove("active");
+    }
+
+    const newList = this.categoryFilter(category.value);
+    if (newList.length > 0) {
+      this.updateList(newList);
+    } else {
+      this.emptyList();
+    }
+  }
+
+  clearbtnSetup() {
+    clearbtn.addEventListener("click", () => {
+      this.reset();
+    });
+  }
+
+  copyToClipboard(str) {
+
+    function listener(e) {
+      e.clipboardData.setData("text/html", str);
+      e.clipboardData.setData("text/plain", str);
+      e.preventDefault();
+    }
+    document.addEventListener("copy", listener);
+    document.execCommand("copy");
+    document.removeEventListener("copy", listener);
+  }
+
+  copySetup() {
+    const buttons = document.querySelectorAll(".copybtn");
+    buttons.forEach(button =>
+      button.addEventListener("click", () => {
+        this.copyToClipboard(button.dataset.content);
+        button.innerHTML = "Copied!";
+        setTimeout(() => {
+          button.innerHTML = `<i class="far fa-copy"></i> Copy`;
+        }, 1000);
+      })
+    );
+  }
+
+  cloneArray(array) {
+    return array.slice(0);
+  }
 }
