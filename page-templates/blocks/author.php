@@ -20,19 +20,28 @@ $url = get_sub_field('author_url');
         <div class="row">
             <div class="col-lg-4">
                 <div style="position:relative; min-height:240px;" class=" d-flex justify-content-center align-items-center">
-                        <div style="
-                            background-image:url('<?php echo $image['url']; ?>');    
-                            width: 180px;
-                            height: 180px;
-                            background-size: cover;
-                            background-position: center;
-                            border-radius:50%;
-                            " alt="<?php echo $image['alt']; ?>" ></div>
+                <div class="author__image" >
+                    <?php
+
+                    if( !empty($image) ):
+
+                        // vars
+                        $url = $image['url'];
+                        $alt = $image['alt'];
+
+                    ?>
+
+                    <div class="background-image-holder" style="background-image:url('<?php echo $url; ?>')">
+                        <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                    </div>
+                    <?php endif; ?>
+
+                    </div>
                     </div>
             </div>
                 <div class="col-lg-8 d-flex justify-content-center flex-column">
                     <?php echo $blurb ?>
-                    <a href="<?php echo $url; ?>" class="author__link d-flex align-items-center"><i class="fab fa-linkedin"></i>LINKEDIN</a>
+                    <a target="_blank" href="<?php echo $url; ?>" class="author__link"><i class="fab fa-linkedin"></i> LINKEDIN</a>
                 </div>
                 </div>
             </div>

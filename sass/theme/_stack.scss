@@ -56,8 +56,8 @@ h6,
 p,
 ul,
 a {
-  margin: 0;
-  padding: 0;
+//  margin: 0;
+//  padding: 0;
 }
 /**! 02. Typography
 html {
@@ -1278,17 +1278,17 @@ form:after {
 }
 label {
   margin: 0;
-  font-size: 1.14285714em;
+  font-size: 0.875em;
   font-weight: 400;
 }
 input[type],
 textarea,
 select {
   -webkit-appearance: none;
-  background: #fcfcfc;
+  background: #fff;
   padding: 0.46428571em;
-  border-radius: 6px;
-  border: 1px solid #ececec;
+  border-radius: 0px;
+  border: 2px solid #efefef;
 }
 input[type]:focus,
 textarea:focus,
@@ -1348,9 +1348,11 @@ input[type="submit"] {
   background: none;
   outline: none;
   border: none;
-  background: #4a90e2;
+  background: $primary;
   padding: 0.46428571em 2.78571429em 0.46428571em 2.78571429em;
   color: #fff;
+  font-family:$isidora-bold;
+  text-transform: uppercase;
 }
 @keyframes load {
   0% {
@@ -1675,6 +1677,11 @@ img + .boxed {
   }
 }
 /**! 18. Sliders Flickity **/
+
+.slides {
+  margin: 0;
+  padding: 0;
+}
 .slides:not(.flickity-enabled) li.imagebg:not(:first-child) {
   display: none;
 }
@@ -7220,7 +7227,7 @@ textarea {
 input[type]:focus,
 select:focus,
 textarea:focus {
-  border-color: #76abe9;
+  border-color: #35B4CA;
 }
 input[type="image"] {
   border: none;
@@ -7488,10 +7495,10 @@ label {
   border-left: none;
 }
 .input-select:focus:after {
-  border-color: #4a90e2;
+  border-color: #35B4CA;
 }
 .input-select select:focus {
-  border-color: #4a90e2;
+  border-color: #35B4CA;
 }
 .input-number {
   position: relative;

@@ -24,24 +24,50 @@ if( get_row_layout() == 'video' ):
 
 
       <div class="container space-below--<?php echo $spaceBelow ?>">
+      <?php if($videoEmbedCode):?>
         <div class="row justify-content-center">
-          <div class="col-md-<?php echo $width; ?> d-flex justify-content-center">
+          <div class="col-md-<?php echo $width; ?> d-flex  flex-column justify-content-center">
 
-            <?php if($videoEmbedCode):?><?php echo $videoEmbedCode; ?><? endif; ?>
+              <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>
+                <?php echo $videoEmbedCode; ?>
+              </div>    
 
+            </div>
           </div>
-        </div>
+        <? endif; ?>
+        <?php if($text):?>
+          <div class="row justify-content-center">
+            <div class="col-md-8 d-flex  flex-column justify-content-center mt-3">
+
+              <?php echo $text; ?>
+
+            </div>
+          </div>
+        <? endif; ?>
       </div>
     <?php endif; // end $width ?>
       <?php else: ?>
       <div class="container space-below--md">
-        <div class="row justify-content-center">
-          <div class="col-md-10 d-flex justify-content-center">
+        <?php if($videoEmbedCode):?>
+          <div class="row justify-content-center">
+            <div class="col-md-10 d-flex  flex-column justify-content-center">
 
-            <?php if($videoEmbedCode):?><?php echo $videoEmbedCode; ?><? endif; ?>
+            <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>
+                <?php echo $videoEmbedCode; ?>
+              </div> 
 
+            </div>
           </div>
-        </div>
+        <? endif; ?>
+        <?php if($text):?>
+          <div class="row justify-content-center">
+            <div class="col-md-8 d-flex  flex-column justify-content-center  mt-3">
+
+              <?php echo $text; ?>
+
+            </div>
+          </div>
+        <? endif; ?>
       </div>
 
        <?php endif; ?>

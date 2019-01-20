@@ -1,6 +1,6 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
-@import "stack";
 @import "typography";
+@import "stack";
 @import "sections/sections";
 
 body {
@@ -901,6 +901,10 @@ canvas{
   }
 }
 
+.product-flex {
+  display: flex;
+}
+
 .product-tile {
   margin: 1em 0;
   position: relative;
@@ -1038,6 +1042,37 @@ canvas{
   }
 }
 
+.author {
+
+  padding: 2rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+
+  &__image {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    height: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    
+  }
+
+  &__link {
+    display: inline-block;
+    color: $primary;
+    transition: 0.2s;
+    font-family: $isidora-bold;
+    text-transform: uppercase;
+    &:hover {
+      color: darken($primary,10%);
+    }
+
+    svg {
+      margin-right: 0.25rem;
+    }
+  }
+}
+
 .feature-column__icon--center{
   transform: translateY(-50%) translateX(-50%);
   left: 50%;
@@ -1141,11 +1176,26 @@ canvas{
   top: 57px;
 }
 
+
+// FORM HACKS
+
+.gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type=submit], .gform_wrapper .gform_page_footer input.button, .gform_wrapper .gform_page_footer input[type=submit] {
+  font-size: 1em;
+  width: auto;
+  margin: 0 16px 0 0;
+  padding: 0 20px!important;
+  line-height: 50px;
+}
 .card-header{
   display:flex;
   flex-direction:row;
   align-items:center;
   justify-content: space-between;
+  border-radius: 0;
+}
+
+.card {
+  border-radius: 0;
 }
 
 .description{
@@ -1204,7 +1254,7 @@ select{
 input{
   font-family: $isidora-bold;
   padding-left:8px;
-  border: 1px solid #efefef;
+  border: 2px solid #efefef;
 }
 
 .card-header{

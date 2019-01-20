@@ -54,7 +54,7 @@ if( get_row_layout() == 'team_block' ):
                 <h5><?php echo $name; ?></h5>
                 <p><?php echo $position; ?></p>
                 <?php if ($linkedin): ?>
-                <a class="team__link" href="<?php echo $linkedin; ?>"><i class="fab fa-linkedin"></i> Linkedin</a>
+                <a target="_blank" class="team__link" href="<?php echo $linkedin; ?>"><i class="fab fa-linkedin"></i> Linkedin</a>
                     <?php endif; ?>
             </div>
             </div>

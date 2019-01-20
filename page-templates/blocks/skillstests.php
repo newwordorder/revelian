@@ -1,8 +1,8 @@
 <?php // TEXT BLOCK
 
-if( get_row_layout() == 'skills_tests' ):
+if (get_row_layout() == 'skills_tests') :
 
-  ?>
+?>
 
 
 <div class="container">

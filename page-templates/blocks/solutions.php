@@ -54,11 +54,10 @@ if( get_row_layout() == 'solutions' ):
 
 <?php setup_postdata($post); ?>
 <?php if(get_post_status() == 'publish'): ?>
-<div class="col-md-6 col-lg-<?php echo $columns; ?> mix <?php echo $outcome_filter_class_array; ?>">
+<div class="col-md-6 col-lg-<?php echo $columns; ?> mix <?php echo $outcome_filter_class_array; ?> product-flex">
     <div class="product-tile">
             <a href="<?php the_permalink(); ?>"  class="product-tile__link"></a>
             <a href="<?php the_permalink(); ?>">
-                <div class="product-tile__image">
                     <?php
                     $workImage = get_field('background_image');
 
@@ -69,11 +68,13 @@ if( get_row_layout() == 'solutions' ):
                     $alt = $workImage['alt'];
 
                     ?>
-                    <div class="background-image-holder" style="background-image:url('<?php echo $url['url']; ?>')">
-                        <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                    <div class="product-tile__image">
+                        <div class="background-image-holder" style="background-image:url('<?php echo $url['url']; ?>')">
+                            <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
+                        </div>
                     </div>
                     <?php endif; ?>
-                </div>
+                
                 </a>
                 <div class="product-tile__content">
                     <h5><?php the_title(); ?></h5>

@@ -633,11 +633,14 @@ if($page_title == "Blog"): ?>
 	var array = name.split(" ");
 	subsite = array[array.length - 1];
 	console.log(subsite);
-	if(subsite === 'Employer'){
-		subsite = 'I am an employer';
-	}else{
-		subsite = 'I am a jobseeker';
-
+	if (subsite === 'Employer') {
+		subsite = 'For employers';
+	}
+	else if (subsite === 'Jobseeker') {
+		subsite = 'For jobseekers';
+	} 
+	else {
+		subsite = 'Home';
 	}
 
 		document.querySelector('#dropdownMenuLink').innerHTML = subsite;
