@@ -301,8 +301,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 							<a class="dropdown-item" href="<?php echo network_home_url(); ?>">Home</a>
-							<a class="dropdown-item" href="<?php echo network_home_url(); ?>/employer/">For employers</a>
-							<a class="dropdown-item" href="<?php echo network_home_url(); ?>/jobseeker/">For jobseekers</a>
+							<a class="dropdown-item" href="<?php echo network_home_url(); ?>employer/">For employers</a>
+							<a class="dropdown-item" href="<?php echo network_home_url(); ?>jobseeker/">For jobseekers</a>
 						</div>
 					</div>
 
