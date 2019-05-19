@@ -38,18 +38,16 @@ class testsBox {
       if (this.getNumberOfPages() != 1) {
         if (this.getActivePage() === 0) {
           return `<li class="page-item"><a class="page-link page-link--nonlink">Page ${this.getActivePage() +
-            1} of ${this.getNumberOfPages() +
-            1}</a></li><li id="pageNo--${nextPage}" class="page-item"><a class="page-link">Next</a></li>`;
+            1} of ${this.getNumberOfPages()}</a></li><li id="pageNo--${nextPage}" class="page-item"><a class="page-link">Next</a></li>`;
         } else if (
           this.getActivePage() ===
           this.chunkArray(this.mapped, 20).length - 1
         ) {
           return `<li id="pageNo--${previousPage}" class="page-item"><a class="page-link">Previous</a></li><li class="page-item"><a class="page-link page-link--nonlink">Page ${this.getActivePage() +
-            1} of ${this.getNumberOfPages() + 1}</a></li>`;
+            1} of ${this.getNumberOfPages()}</a></li>`;
         } else {
           return `<li id="pageNo--${previousPage}" class="page-item"><a class="page-link">Previous</a></li><li class="page-item"><a class="page-link page-link--nonlink">Page ${this.getActivePage() +
-            1} of ${this.getNumberOfPages() +
-            1}</a></li><li id="pageNo--${nextPage}" class="page-item"><a class="page-link">Next</a></li>`;
+            1} of ${this.getNumberOfPages()}</a></li><li id="pageNo--${nextPage}" class="page-item"><a class="page-link">Next</a></li>`;
         }
       } else {
         return ``;
@@ -76,18 +74,16 @@ class testsBox {
       if (this.getNumberOfPages() != 1) {
         if (this.getActivePage() === 0) {
           return `<li class="page-item"><a class="page-link page-link--nonlink">Page ${this.getActivePage() +
-            1} of ${this.getNumberOfPages() +
-            1}</a></li><li id="pageNo--${nextPage}" class="page-item"><a class="page-link">Next</a></li>`;
+            1} of ${this.getNumberOfPages()}</a></li><li id="pageNo--${nextPage}" class="page-item"><a class="page-link">Next</a></li>`;
         } else if (
           this.getActivePage() ===
           this.chunkArray(this.mapped, 20).length - 1
         ) {
           return `<li id="pageNo--${previousPage}" class="page-item"><a class="page-link">Previous</a></li><li class="page-item"><a class="page-link page-link--nonlink">Page ${this.getActivePage() +
-            1} of ${this.getNumberOfPages() + 1}</a></li>`;
+            1} of ${this.getNumberOfPages()}</a></li>`;
         } else {
           return `<li id="pageNo--${previousPage}" class="page-item"><a class="page-link">Previous</a></li><li class="page-item"><a class="page-link page-link--nonlink">Page ${this.getActivePage() +
-            1} of ${this.getNumberOfPages() +
-            1}</a></li><li id="pageNo--${nextPage}" class="page-item"><a class="page-link">Next</a></li>`;
+            1} of ${this.getNumberOfPages()}</a></li><li id="pageNo--${nextPage}" class="page-item"><a class="page-link">Next</a></li>`;
         }
       } else {
         return ``;
@@ -178,7 +174,9 @@ class testsBox {
                 <br />
                 <b>Language:</b> ${this.dataUs(data.us)}
                 <br />
-                <b>Description: </b> ${data.description}"><i class="far fa-copy"></i> Copy</div>
+                <b>Description: </b> ${
+                  data.description
+                }"><i class="far fa-copy"></i> Copy</div>
             </div>
          </div>
          </div>
@@ -258,7 +256,6 @@ class testsBox {
     this.mapped = this.prepareData(data);
     this.pageSetup(this.mapped);
     this.copySetup();
-
   }
 
   emptyList() {
@@ -380,7 +377,6 @@ class testsBox {
   }
 
   copyToClipboard(str) {
-
     function listener(e) {
       e.clipboardData.setData("text/html", str);
       e.clipboardData.setData("text/plain", str);
