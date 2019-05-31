@@ -148,11 +148,4 @@ function filter_function(){
 
 	die();
 }
-
-
-
-
-
-
-
 ?>

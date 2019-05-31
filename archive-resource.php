@@ -125,7 +125,6 @@ $alt = $image['alt'];
 							?>
 
 
-
 				<?php else : ?>
 
 					<?php get_template_part( 'loop-templates/content', 'none' ); ?>
