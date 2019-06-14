@@ -7320,9 +7320,14 @@ blockquote {
 #main-menu * {
   font-size: 0.875rem; }
 
+.container ul:not(#main-menu), .container ol {
+  font-family: "Isidora Sans Regular", "Helvetica Neue", Helvetica, sans-serif;
+  padding-left: 0.5rem; }
+
 .container li {
-  font-family: "Isidora Sans Light", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Isidora Sans Regular", "Helvetica Neue", Helvetica, sans-serif;
   margin-left: 1em;
+  margin-bottom: 0;
   list-style-type: disc; }
 
 .page-header * {
@@ -17593,8 +17598,7 @@ input {
   position: absolute;
   right: 2rem;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%); }
 
 .select__wrapper.active:after {
   content: "\f078";
@@ -17605,8 +17609,7 @@ input {
   position: absolute;
   right: 2rem;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%); }
 
 #pageList {
   margin-bottom: 2rem; }

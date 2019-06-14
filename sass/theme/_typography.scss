@@ -200,9 +200,15 @@ blockquote{
 
 
 .container{
+
+  ul:not(#main-menu), ol {
+     font-family:$isidora-regular;
+     padding-left: 0.5rem;
+  }
   li{
-      font-family:$isidora-light;
+      font-family:$isidora-regular;
       margin-left:1em;
+      margin-bottom: 0;
       list-style-type:disc;
   }
 }
