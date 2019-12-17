@@ -1,108 +1,146 @@
 @font-face {
-    font-family: "Isidora Sans Bold";
-    src: url('../fonts/isidora/Isidora\ Sans\ Bold.otf');
+  font-family: "Isidora Sans Bold";
+  font-display: swap;
+  src: url('../fonts/isidora/Isidora\ Sans\ Bold.otf');
 }
 
-@font-face{
+@font-face {
   font-family: "Isidora Sans SemiBold";
+  font-display: swap;
   src: url('../fonts/isidora/Isidora\ Sans\ SemiBold.otf');
 }
 
-@font-face{
+@font-face {
   font-family: "Isidora Sans Regular";
+  font-display: swap;
   src: url('../fonts/isidora/Isidora\ Sans\ Regular.otf');
 }
 
-@font-face{
+@font-face {
   font-family: "Isidora Sans Regular It";
+  font-display: swap;
   src: url('../fonts/isidora/Isidora\ Sans\ Regular\ It.otf');
 }
 
 @font-face {
   font-family: "Isidora Sans Light";
+  font-display: swap;
   src: url('../fonts/isidora/Isidora\ Sans\ Light.otf');
 }
 
-@font-face{
+@font-face {
   font-family: "Font Awesome 5";
+  font-display: swap;
   src: url('../fonts/fontawesome-webfont.eot');
-  src: url('../fonts/fontawesome-webfont.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../../fonts/fontawesome-webfont.woff') format('woff'), /* Pretty Modern Browsers */
-       url('../../fonts/fontawesome-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../../fonts/fontawesome-webfont.svg') format('svg'); /* Legacy iOS */
+  src: url('../fonts/fontawesome-webfont.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('../../fonts/fontawesome-webfont.woff') format('woff'),
+    /* Pretty Modern Browsers */
+    url('../../fonts/fontawesome-webfont.ttf') format('truetype'),
+    /* Safari, Android, iOS */
+    url('../../fonts/fontawesome-webfont.svg') format('svg');
+  /* Legacy iOS */
 }
 
-$isidora-bold: "Isidora Sans Bold", "Helvetica Neue", Helvetica, sans-serif !default;
-$isidora-semibold: "Isidora Sans SemiBold", "Helvetica Neue", Helvetica, sans-serif !default;
-$isidora-regular: "Isidora Sans Regular", "Helvetica Neue", Helvetica, sans-serif !default;
-$isidora-regular-italic: "Isidora Sans Regular It", "Helvetica Neue", Helvetica, sans-serif !default;
-$isidora-light: "Isidora Sans Light", "Helvetica Neue", Helvetica, sans-serif !default;
+$isidora-bold: "Isidora Sans Bold",
+"Helvetica Neue",
+Helvetica,
+sans-serif !default;
+$isidora-semibold: "Isidora Sans SemiBold",
+"Helvetica Neue",
+Helvetica,
+sans-serif !default;
+$isidora-regular: "Isidora Sans Regular",
+"Helvetica Neue",
+Helvetica,
+sans-serif !default;
+$isidora-regular-italic: "Isidora Sans Regular It",
+"Helvetica Neue",
+Helvetica,
+sans-serif !default;
+$isidora-light: "Isidora Sans Light",
+"Helvetica Neue",
+Helvetica,
+sans-serif !default;
 
 
 
-html{
+html {
   font-size: 16px !important;
   line-height: 26px;
 }
+
 body {
   font-family: $isidora-regular;
   font-size: 1rem;
   line-height: 1.625rem;
   margin: auto;
 }
-h1, .h1 {
+
+h1,
+.h1 {
   font-size: 2.5rem;
   line-height: 2.5rem;
 
 }
-h2, .h2 {
+
+h2,
+.h2 {
   font-size: 2rem;
   line-height: 2rem;
 
 }
-h3, .h3 {
+
+h3,
+.h3 {
   font-size: 1.75rem;
   line-height: 1.75rem;
 
 }
-h4, .h4 {
+
+h4,
+.h4 {
   font-size: 1.5rem;
   line-height: 1.5rem;
 
 }
-h5, .h5 {
+
+h5,
+.h5 {
   font-size: 1.25rem;
   line-height: 1.25rem;
 }
 
-h6, .h6 {
-  font-size:1rem;
-  line-height:1.25rem;
-  text-transform:uppercase;
+h6,
+.h6 {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  text-transform: uppercase;
 }
 
-.lead{
-  font-size:1.25rem;
-  line-height:1.875rem;
+.lead {
+  font-size: 1.25rem;
+  line-height: 1.875rem;
 }
 
-p, li{
-  font-size:1rem;
-  line-height:1.625rem;
-  margin-bottom:0.5rem;
+p,
+li {
+  font-size: 1rem;
+  line-height: 1.625rem;
+  margin-bottom: 0.5rem;
 }
 
-.small{
-  font-size:0.875rem;
-  line-height:1.367rem;
+.small {
+  font-size: 0.875rem;
+  line-height: 1.367rem;
 }
 
 html {
   font-size: 1rem;
 }
 
-b{
-  font-family:$isidora-bold;
+b {
+  font-family: $isidora-bold;
 }
 
 @include media-breakpoint-up(lg) {
@@ -116,20 +154,45 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, li {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+p,
+li {
   margin-bottom: 1rem;
   color: $heading-color;
   font-family: $isidora-light;
 }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, li {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+li {
   font-family: $isidora-bold;
   text-transform: none;
 }
 
 p {
   color: $body-color;
-  font-family:$isidora-regular;
+  font-family: $isidora-regular;
 }
 
 .lead {
@@ -162,93 +225,100 @@ hr {
   }
 }
 
-strong{
+strong {
   font-family: $isidora-bold;
 }
 
-blockquote{
-  font-family:$isidora-regular-italic;
-  font-size:1.875rem;
-  line-height:2.5rem;
-  *{
-    font-family:$isidora-regular-italic;
-    font-size:1.875rem;
-    line-height:2.5rem;
+blockquote {
+  font-family: $isidora-regular-italic;
+  font-size: 1.875rem;
+  line-height: 2.5rem;
+
+  * {
+    font-family: $isidora-regular-italic;
+    font-size: 1.875rem;
+    line-height: 2.5rem;
   }
 }
 
-.headingtext{
+.headingtext {
   font-family: $isidora-light;
-  font-size:4.5rem;
-  line-height:4.5rem;
+  font-size: 4.5rem;
+  line-height: 4.5rem;
+
   @include media-breakpoint-down(sm) {
     padding: 0px;
     font-size: 2.5rem;
-    line-height:2.5rem;
+    line-height: 2.5rem;
   }
 }
 
-#site-logo{
-  font-size:2rem;
+#site-logo {
+  font-size: 2rem;
 }
 
-#main-menu{
-  *{
-    font-size:0.875rem;
+#main-menu {
+  * {
+    font-size: 0.875rem;
   }
 }
 
 
-.container{
+.container {
 
-  ul:not(#main-menu), ol {
-     font-family:$isidora-regular;
-     padding-left: 0.5rem;
+  ul:not(#main-menu),
+  ol {
+    font-family: $isidora-regular;
+    padding-left: 0.5rem;
   }
-  li{
-      font-family:$isidora-regular;
-      margin-left:1em;
-      margin-bottom: 0;
-      list-style-type:disc;
-  }
-}
 
-.page-header{
-  *{
-    list-style-type:none;
-    margin-left:none;
+  li {
+    font-family: $isidora-regular;
+    margin-left: 1em;
+    margin-bottom: 0;
+    list-style-type: disc;
   }
 }
 
-.navbar, .slider{
-  li{
-    list-style-type:none;
-    margin-left:none;
-    &:before{
-      content:'';
+.page-header {
+  * {
+    list-style-type: none;
+    margin-left: none;
+  }
+}
+
+.navbar,
+.slider {
+  li {
+    list-style-type: none;
+    margin-left: none;
+
+    &:before {
+      content: '';
       padding: none;
       //content:'\25cf ';
     }
   }
 }
 
-.flippable_text{
-  blockquote{
-    border-left:4px solid $primary;
-    padding-left:15px;
-    strong{
-      font-family:$isidora-bold !important;
+.flippable_text {
+  blockquote {
+    border-left: 4px solid $primary;
+    padding-left: 15px;
+
+    strong {
+      font-family: $isidora-bold !important;
       font-size: 1rem !important;
-      color:black !important;
+      color: black !important;
 
     }
   }
 }
 
-.testimony-author{
-  font-family:$isidora-bold;
+.testimony-author {
+  font-family: $isidora-bold;
 }
 
-.fa-check{
-  color:$primary;
+.fa-check {
+  color: $primary;
 }

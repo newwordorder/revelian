@@ -60,10 +60,6 @@ require get_template_directory() . '/inc/jetpack.php';
  */
 require get_template_directory() . '/inc/bootstrap-wp-navwalker.php';
 
-/**
- * Load WooCommerce functions.
- */
-require get_template_directory() . '/inc/woocommerce.php';
 
 /**
  * Load Editor functions.
@@ -73,11 +69,16 @@ require get_template_directory() . '/inc/editor.php';
 require get_template_directory() . '/inc/acf-options.php';
 
 require get_template_directory() . '/inc/accordian-shortcode.php';
+require get_template_directory() . '/inc/pullquote-shortcode.php';
 
 require get_template_directory() . '/inc/menu-rename.php';
 
 require get_template_directory() . '/inc/resource-loader.php';
 
+function wpassist_remove_block_library_css(){
+    wp_dequeue_style( 'wp-block-library' );
+} 
+add_action( 'wp_enqueue_scripts', 'wpassist_remove_block_library_css' );
 
 function misha_my_load_more_scripts() {
 
@@ -121,13 +122,13 @@ function misha_loadmore_ajax_handler(){
 		while( have_posts() ): the_post();
 
         ?>
-            <div class="col-sm-6 col-lg-4 d-flex">
-							<div class="blog-tile">
-								<a href="<?php the_permalink(); ?>" class="blog-tile__tile-link">
-								</a>
+<div class="col-sm-6 col-lg-4 d-flex">
+    <div class="blog-tile">
+        <a href="<?php the_permalink(); ?>" class="blog-tile__tile-link">
+        </a>
 
 
-									<?php
+        <?php
 									$workImage = get_field('background_image_background_image');
 
 									if( !empty($workImage) ):
@@ -137,22 +138,22 @@ function misha_loadmore_ajax_handler(){
 						            $alt = $workImage['alt'];
 
 									?>
-									<div class="blog-tile__thumb">
-										<div class="background-image-holder" >
-											<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
-										</div>
-									</div>
-						        	<?php endif; ?>
+        <div class="blog-tile__thumb">
+            <div class="background-image-holder">
+                <img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" />
+            </div>
+        </div>
+        <?php endif; ?>
 
 
-									<div class="blog-tile__content">
-										<h5><?php the_title(); ?></h5>
-										<a class="btn" href="<?php the_permalink(); ?>">Read</a>
-									</div>
-							</div>
+        <div class="blog-tile__content">
+            <h5><?php the_title(); ?></h5>
+            <a class="btn" href="<?php the_permalink(); ?>">Read</a>
+        </div>
+    </div>
 
-						</div>
-            <?php
+</div>
+<?php
 
 
 			// for the test purposes comment the line above and uncomment the below one
@@ -191,3 +192,4 @@ function readLocalJsonData(){
         return $contents;
     }
 }
+

@@ -1,62 +1,41 @@
 {
-  "name": "understrap",
-  "version": "0.8.1",
-  "description": "WordPress Theme framework",
-  "main": "index.js",
   "scripts": {
-    "postinstall": "gulp copy-assets"
-  },
-  "engines": {
-    "npm": ">=2.1.8"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/holger1411/understrap.git"
-  },
-  "keywords": [
-    "wordpress",
-    "theme",
-    "framework",
-    "bootstrap",
-    "underscores"
-  ],
-  "author": "Holger Koenemann",
-  "license": "GPL-2.0",
-  "bugs": {
-    "url": "https://github.com/holger1411/understrap/issues"
-  },
-  "homepage": "https://understrap.com",
-  "dependencies": {
-    "@babel/core": "^7.2.0",
-    "bootstrap": "4.0.0",
-    "browser-sync": "^2.23.6",
-    "del": "^3.0.0",
-    "font-awesome": "^4.7.0",
-    "gulp": "3.9.1",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-clean-css": "^3.9.2",
-    "gulp-clone": "2.0.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-cssnano": "^2.1.2",
-    "gulp-ignore": "^2.0.2",
-    "gulp-imagemin": "^4.1.0",
-    "gulp-merge": "^0.1.1",
-    "gulp-plumber": "^1.2.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-replace": "^0.6.1",
-    "gulp-rimraf": "^0.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-sequence": "1.0.0",
-    "gulp-sourcemaps": "2.6.2",
-    "gulp-uglify": "^3.0.0",
-    "gulp-watch": "5.0.0",
-    "merge2": "^1.2.1",
-    "popper.js": "^1.12.9",
-    "run-sequence": "^2.2.1",
-    "undescores-for-npm": "^1.0.0"
+    "dev": "gulp watch",
+    "prod": "gulp"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.2.0",
-    "gulp-babel": "^8.0.0"
+    "@babel/core": "^7.5.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/preset-es2016": "^7.0.0-beta.53",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "cross-env": "^5.1",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-brotli": "^1.2.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssimport": "^7.0.0",
+    "gulp-gzip": "^1.4.2",
+    "gulp-postcss": "^8.0.0",
+    "gulp-purgecss": "^1.2.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-uglify": "^3.0.2",
+    "postcss": "^6.0.19",
+    "postcss-loader": "^2.1.1",
+    "postcss-nested": "^4.1.2",
+    "tailwindcss": "^1",
+    "tailwindcss-blend-mode": "^1.0.0",
+    "tailwindcss-important": "^1.0.0",
+    "tailwindcss-transforms": "^2.2.0",
+    "tailwindcss-transitions": "^2.0.1"
+  },
+  "dependencies": {
+    "micromodal": "^0.4.2",
+    "postcss-nested": "^4.1.2",
+    "tailwindcss-aspect-ratio": "^2.0.0"
   }
 }
