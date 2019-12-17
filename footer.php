@@ -300,6 +300,28 @@ if (subsite === 'Employer') {
 }
 
 document.querySelector('#dropdownMenuLink').innerHTML = subsite;
+
+
+var toggler = document.querySelector('[data-toggle="menu"]');
+	$(toggler).click(function (){toggleMenu(toggler)});
+
+	function toggleMenu(toggler){
+		var classList = document.getElementById('expanding-nav').classList;
+		if(classList.contains('active-menu')){
+			classList.remove('active-menu')
+			document.querySelector('#page').style.display = 'block';
+
+			$('.burger__container').toggleClass('active');
+		}else{
+			classList.add('active-menu');
+			document.querySelector('#page').style.display ='none';
+			$('.burger__container').toggleClass('active');
+		}
+	}
+
+	window.FontAwesomeConfig = {
+		searchPseudoElements: true
+	}
 </script>
 
 
