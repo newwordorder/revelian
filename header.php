@@ -55,7 +55,7 @@ $container = get_theme_mod( 'understrap_container_type' );
         content="<?php echo bloginfo('template_directory'); ?>/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
     <?php wp_head(); ?>
 
     <!-- Google Tag Manager -->
